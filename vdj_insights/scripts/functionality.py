@@ -16,13 +16,7 @@ from concurrent.futures import ProcessPoolExecutor, as_completed
 
 from .util import calculate_available_resources
 
-
-pd.set_option('display.max_rows', 500)
-pd.set_option('display.max_columns', 500)
-pd.set_option('display.width', 1000)
-
 warnings.simplefilter('ignore', BiopythonWarning)
-
 
 def open_files(cwd: Path) -> (pd.DataFrame, pd.DataFrame):
     data = cwd / "annotation" / "annotation_report_all.xlsx"

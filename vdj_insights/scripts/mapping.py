@@ -151,15 +151,15 @@ def all_commands(files: MappingFiles, fasta_file, rfasta, mapping_type, threads)
         list: A list of shell command strings to execute the mapping process.
     """
     if mapping_type == "bowtie2":
-        bowtie_command = make_bowtie2_command(files.bowtie_db, rfasta, files.sam, threads)
+        command = make_bowtie2_command(files.bowtie_db, rfasta, files.sam, threads)
     elif mapping_type == "minimap2":
-        bowtie_command = make_minimap2_command(fasta_file, rfasta, files.sam, threads)
+        command = make_minimap2_command(fasta_file, rfasta, files.sam, threads)
     else:
-        bowtie_command = make_bowtie_command(files.bowtie_db, rfasta, files.sam, threads)
+        command = make_bowtie_command(files.bowtie_db, rfasta, files.sam, threads)
 
     commands = [
         f"{mapping_type}-build {fasta_file} {files.bowtie_db}",
-        bowtie_command,
+        command,
         f"samtools sort -o {files.bam} {files.sam}",
         f"samtools index {files.bam}",
         f"bedtools bamtobed -i {files.bam} > {files.bed}",

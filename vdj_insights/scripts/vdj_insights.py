@@ -327,7 +327,11 @@ def setup_html(subparsers):
         action='store_true',
         help='Run in development mode and display Flask logs in the console.'
     )
-
+    p.add_argument(
+        '-M', '--metadata',
+        type=validate_file,
+        help='Metadata file directory.'
+    )
     p.set_defaults(func=run_html)
 
 
@@ -427,10 +431,34 @@ def run_html(args):
 
     Args:
         args (argparse.Namespace): Parsed command-line arguments.
+
+
+    if args.assembly and args.metadata:
+        if not validate_metadata_coverage(args.assembly, args.metadata):
+            console_log.error("Shutting down script. Metadata does not cover all assembly files.")
+            exit()
+
+    if args.metadata:
+        metadata_df = pd.read_excel(args.metadata)
+        merge_cols = []
+        for column in ["Accession", "Population"]:
+            if column in metadata_df.columns:
+                merge_cols.append(column)
+
+        if len(merge_cols) > 1:
+            df = pd.read_excel("annotation/annotation_report_all.xlsx")
+
+            df = df.merge(metadata_df[merge_cols], left_on="Sample", right_on="Accession", how="left")
+            df = df.drop(columns=["Accession"])
     """
+
     console_log.info("Launching HTML report...")
     output_dir = args.input
     os.chdir(output_dir.parent)
+
+    env = os.environ.copy()
+    env["METADATA"] = str(args.metadata)
+
     if not args.dev_mode:
         threading.Timer(1, open_browser).start()
     cmd = [
@@ -442,7 +470,7 @@ def run_html(args):
     ]
     if args.dev_mode:
         cmd.append("--debug")
-    subprocess.Popen(cmd).communicate()
+    subprocess.Popen(cmd, env=env).communicate()
 
 
 def run_scrape(args):

@@ -89,14 +89,20 @@ def get_fimo_output(fimo_intput: Path) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Processed DataFrame with FIMO output, including sequence index, scores, and p/q values.
     """
-    fimo_output = fimo_intput / "fimo.tsv"
-    df_fimo = pd.read_csv(fimo_output, sep='\t', comment='#')
+    try:
+        fimo_output = fimo_intput / "fimo.tsv"
+        print('Reading FIMO output from:', fimo_output)
+        df_fimo = pd.read_csv(fimo_output, sep='\t', comment='#')
+        print(df_fimo.shape)
+        if df_fimo.empty:
+            return pd.DataFrame()
 
-    #print(df_fimo[~df_fimo['sequence_name'].str.contains(r'__\d+$')].copy()) #fimo error check
-
-    df_fimo = df_fimo[df_fimo['sequence_name'].str.contains(r'__\d+$')].copy()
-    df_fimo["index_group_df"] = df_fimo["sequence_name"].str.split("__").str[-1]
-    df_fimo['index_group_df'] = df_fimo['index_group_df'].astype(int)
+        df_fimo = df_fimo[df_fimo['sequence_name'].str.contains(r'__\d+$')].copy()
+        df_fimo["index_group_df"] = df_fimo["sequence_name"].str.split("__").str[-1]
+        df_fimo['index_group_df'] = df_fimo['index_group_df'].astype(int)
+    except Exception as e:
+        print(f"Error reading FIMO output: {e}")
+        return pd.DataFrame()
     return df_fimo
 
 
@@ -238,7 +244,8 @@ def process_variant(locus_gene_type, group_locus, config, output_base, cwd, verb
             run_fimo(fimo_output=fimo_output, meme_output=meme_output, locus_fasta_file_name=locus_fasta_file_name, verbose=verbose)
 
             df_fimo = get_fimo_output(fimo_intput=fimo_output)
-            group_locus = process_group_locus(group_locus=group_locus, df_fimo=df_fimo, direction=direction, rss_length=rss_length)
+            if not df_fimo.empty:
+                group_locus = process_group_locus(group_locus=group_locus, df_fimo=df_fimo, direction=direction, rss_length=rss_length)
     combined_results = pd.concat([combined_results, group_locus])
     return combined_results
 
