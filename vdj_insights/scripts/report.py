@@ -451,10 +451,9 @@ def make_bed(data: pd.DataFrame, output: Union[str, Path]) -> None:
     """
     make_dir(output)
     for index, df in data.groupby(["Sample", "Path", "Region"]):
-        file_name = f"{index[0]}_{Path(index[1]).stem}_{index[2]}"
         df["Contig"] = Path(index[1]).stem
         bed_df = df[["Contig", "Start coord", "End coord", "Short name", "Strand"]]
-        bed_df.to_csv(Path(output) / f"{file_name}.bed", sep="\t", index=False, header=False)
+        bed_df.to_csv(Path(output) / f"{Path(index[1]).stem}.bed", sep="\t", index=False, header=False)
 
 
 def make_gtf(data: pd.DataFrame, output: Union[str, Path]) -> None:
@@ -471,7 +470,6 @@ def make_gtf(data: pd.DataFrame, output: Union[str, Path]) -> None:
     """
     make_dir(output)
     for index, df in data.groupby(["Sample", "Path", "Region"]):
-        file_name = f"{index[0]}_{Path(index[1]).stem}_{index[2]}"
         df["Contig"] = Path(index[1]).stem
 
         gtf_lines = []
@@ -490,7 +488,7 @@ def make_gtf(data: pd.DataFrame, output: Union[str, Path]) -> None:
             gtf_line = f"{contig}\t{source}\t{feature}\t{start}\t{end}\t{score}\t{strand}\t{frame}\t{attributes}"
             gtf_lines.append(gtf_line)
 
-        with open(f"{output}/{file_name}.gtf", "w") as f:
+        with open(f"{output}/{Path(index[1]).stem}.gtf", "w") as f:
             f.write("\n".join(gtf_lines))
 
 

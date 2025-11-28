@@ -564,8 +564,8 @@ def initialize_config(args, species_cfg, settings_dir, config):
         receptor_data = species_data.get(args.receptor_type, species_cfg['default'][args.receptor_type])
         flanking_genes = receptor_data.get("FLANKING_GENES")
 
-        if species_key not in species_cfg:
-            console_log.warning(f"Species '{args.species}' not found in configuration. falling back to default flanking genes. {flanking_genes}")
+        if species_key not in species_cfg and args.assembly:
+                console_log.warning(f"Species '{args.species}' not found in configuration. falling back to default flanking genes. {flanking_genes}")
 
     args.flanking_genes = flanking_genes
 

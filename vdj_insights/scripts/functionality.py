@@ -180,28 +180,27 @@ def check_functional_protein(segment, l_region, target_sequence, strand, protein
             return ["Pseudo", "Frameshift in L-part region"]
 
         if protein[0] != 'M':
-            return ["Pseudo", "No startcodon in protein"]
+            return ["Pseudo", "Missing start codon (M)"]
 
         if "*" in protein[:-1]:
-            return ["Pseudo", "Stopcodon within protein"]
-
-        if "*" not in protein:
-            base_status = ["Functional", ""]
-        elif protein[-1] == "*":
-            base_status = ["ORF", "Last protein is stopcodon"]
-        else:
-            base_status = ["Pseudo", ""]
+            return ["Pseudo", "Internal stop codon in V protein"]
 
         if donor_splice.upper() != "GT":
-            return ["ORF", f"Incorrect donor splice site {donor_splice}"]
+            return ["ORF", f"Incorrect donor splice site (found {donor_splice})"]
 
         if  acceptor_splice.upper() != "AG":
-            return ["ORF", f"Incorrect acceptor splice site {acceptor_splice}"]
+            return ["ORF", f"Incorrect acceptor splice site (found {acceptor_splice})"]
 
-        if Seq(target_sequence.replace("-", "")).translate(to_stop=False).upper().count("C") < 2:
-            return ["ORF", "Missing cysteine in protein"]
+        cysteines_count = Seq(target_sequence.replace("-", "")).translate(to_stop=False).upper().count("C")
+        if cysteines_count < 2:
+            return ["ORF", f"Fewer than two cysteines in V region (N= {cysteines_count})"]
 
-        return base_status
+        if "*" not in protein:
+            return ["Functional", ""]
+        elif protein[-1] == "*":
+            return ["ORF", "Stop codon at last position"]
+        else:
+            return ["Pseudo", "Invalid stop codon location"]
 
     elif segment == "J":
         J_target_sequence = Seq(target_sequence.replace("-", ""))
@@ -325,7 +324,7 @@ def main_functionality(immune_type, species, threads: int, verbose: bool) -> Non
                         combined_results = pd.concat([combined_results, group_result])
                         pbar.update(1)
 
-            combined_results[["Function", "Function_messenger"]] = combined_results.apply(lambda row: check_functional_protein(row["Segment"], row["L-PART"], row["Target sequence"], row['Strand'], row["Protein"], row["DONOR-SPLICE"], row["ACCEPTOR-SPLICE"]) if pd.notna(row["Protein"]) else ["Pseudo", ""], axis=1, result_type="expand")
+            combined_results[["Function", "Function_messenger"]] = combined_results.apply(lambda row: check_functional_protein(row["Segment"], row["L-PART"], row["Target sequence"], row['Strand'], row["Protein"], row["DONOR-SPLICE"], row["ACCEPTOR-SPLICE"]) if pd.notna(row["Protein"]) else ["Pseudo", "Does not meet full functional criteria (possible pseudogene). Further analysis required."], axis=1, result_type="expand")
 
             mask = combined_results["Segment"].isin(["D"])
             combined_results.loc[mask, ["Function", "Function_messenger"]] = ["Functional", ""]
