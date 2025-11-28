@@ -70,6 +70,8 @@ RSS_PATH = BASE_PATH / "tmp/RSS"
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
+    metadata_path = os.getenv("METADATA")
+
     commando_data = get_commando_data(BASE_PATH)
     input_row = commando_data.loc[commando_data["Argument"] == "input", "Given argument"].iloc[0]
     if input_row == None:
@@ -1153,7 +1155,32 @@ def clear_cache():
 #moet nog naar import_data maar geeft foutmerling met betrekking tot cache
 @cache.cached(timeout=600, key_prefix="data1")
 def get_annotation_data() -> pd.DataFrame:
-    df = pd.read_excel(BASE_PATH / "annotation/annotation_report_all.xlsx")
+    metadata_path = Path(os.getenv("METADATA", ""))
+    print(metadata_path.is_file())
+    if metadata_path.is_file():
+        metadata_df = pd.read_excel(metadata_path)
+        metadata_samples = set(metadata_df['Accession'])
+
+        df = pd.read_excel(BASE_PATH / "annotation/annotation_report_all.xlsx")
+        samples = set(df["Sample"].unique().tolist())
+
+        missing_samples = samples - metadata_samples
+        if missing_samples:
+            print("Warning: The following input files are not covered in the metadata:")
+            for sample in missing_samples:
+                print(f"{sample} is not in metadata")
+            exit()
+        else:
+            if "Accession" in metadata_df.columns and "Population" in metadata_df.columns:
+                df = df.merge(metadata_df[["Accession", "Population"]], left_on="Sample", right_on="Accession", how="left")
+                df = df.drop(columns=["Accession"])
+            else:
+                print("Warning: Metadata does not contain 'Accession' or 'Population' columns.")
+                exit()
+    else:
+        print('hier')
+        df = pd.read_excel(BASE_PATH / "annotation/annotation_report_all.xlsx")
+
     return df
 
 if __name__ == '__main__':
