@@ -1,4 +1,4 @@
-# VDJ-Insights
+<img width="2558" height="629" alt="Webbased-application" src="https://github.com/BPRC-Bioinfo/VDJ-Insights/blob/main/VDJ-logo-text-colour.svg" />
 
 ## Introduction
 
