@@ -68,7 +68,7 @@ def scaffolding_main(reference: str, assembly_dir: Path, scaffolding_dir: str,  
         total_tasks = len(assembly_files)
         max_jobs = calculate_available_resources(max_cores=threads, threads=4, memory_per_process=12)
         with ThreadPoolExecutor(max_workers=max_jobs) as executor:
-            futures = [executor.submit(run_scaffolding, assembly_file, reference, scaffolding_dir, verbose)for assembly_file in assembly_files]
+            futures = [executor.submit(run_scaffolding, assembly_file, reference, scaffolding_dir, verbose) for assembly_file in assembly_files]
             with tqdm(total=total_tasks, desc='Scaffolding:', unit="Assemblies") as pbar:
                 for future in as_completed(futures):
                     pbar.update(1)
