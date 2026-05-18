@@ -31,11 +31,11 @@ You can install VDJ-Insights using one of the following methods:
 ### Option 2: Install via pip
 1. Use pip to install VDJ-Insights:
    ```bash
-   pip install vdj_insights
+   pip install vdj-insights
    ```
 2. Run the pipeline:
    ```bash
-   vdj_insights <annotation|html> [arguments]
+   vdj-insights <annotation|html> [arguments]
    ```
 
 ## Using VDJ-Insights
