@@ -730,18 +730,18 @@ def annotation_main(args: argparse.Namespace):
     save_args(args)
 
     # Figures
-    t0 = time.time()
-    if args.metadata:
-        functions = [barplot_main, boxplot_main, sub_families_main, venn_diagram_main, heatmap_main]
-        args_list = [(annotation_folder,), (annotation_folder,), (annotation_folder,), (annotation_folder, args.receptor_type), (annotation_folder,)]
-        with tqdm(total=len(functions), desc="Creating plots", unit="Plot") as pbar:
-            for func, args_ in zip(functions, args_list):
-                func(*args_)
-                pbar.update()
-    timings["figures"] = round(time.time() - t0, 2)
+   # t0 = time.time()
+   # if args.metadata:
+   #     functions = [barplot_main, boxplot_main, sub_families_main, venn_diagram_main, heatmap_main]
+   #     args_list = [(annotation_folder,), (annotation_folder,), (annotation_folder,), (annotation_folder, args.receptor_type), (annotation_folder,)]
+   #     with tqdm(total=len(functions), desc="Creating plots", unit="Plot") as pbar:
+   #         for func, args_ in zip(functions, args_list):
+   #             func(*args_)
+   #             pbar.update()
+   # timings["figures"] = round(time.time() - t0, 2)
 
-    timings["total_time"] = round(time.time() - start_total, 2)
-    timings["date"] = datetime.today().strftime("%Y-%m-%d")
+    #timings["total_time"] = round(time.time() - start_total, 2)
+    #timings["date"] = datetime.today().strftime("%Y-%m-%d")
 
     with open("timing.json", "w") as f:
         json.dump(timings, f, indent=4)
@@ -769,7 +769,7 @@ def main():
 
     args = parser.parse_args()
     args.func(args)
-    console_log.info("Starting VDJ Insights pipeline.")
+
 
 
 
