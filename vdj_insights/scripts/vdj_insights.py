@@ -281,8 +281,8 @@ def setup_annotation_args(subparsers):
     )
     opt.add_argument(
         '-t', '--threads', metavar='<int>',
-        type=int, default=8,
-        help='Number of threads. [default: 8]'
+        type=int, default=1,
+        help='Number of threads. [default: 1]'
     )
     opt.add_argument(
         '--verbose',
