@@ -167,12 +167,12 @@ def map_main(flanking_genes: dict[list[str]], assembly_dir: Union[str, Path], sp
     console_log.info(f"Number of assembly files: {len(assembly_files)}")
 
     tasks = [
-        (map_flanking_genes_dir, gene_output, Path(assembly_file), 4, verbose)
+        (map_flanking_genes_dir, gene_output, Path(assembly_file), 1, verbose)
         for assembly_file in assembly_files
     ]
     total_tasks = len(tasks)
 
-    max_jobs = calculate_available_resources(max_cores=threads, threads=4, memory_per_process=12)
+    max_jobs = calculate_available_resources(max_cores=threads, threads=1, memory_per_process=12)
     with ProcessPoolExecutor(max_workers=max_jobs) as executor:
         futures = {executor.submit(map_flanking_genes, *arg): arg for arg in tasks}
         with tqdm(total=total_tasks, desc="Mapping flanking genes", unit='task') as pbar:
