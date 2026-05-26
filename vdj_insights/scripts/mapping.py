@@ -270,9 +270,9 @@ def mapping_main(mapping_type: str, input_dir: Path, library: Path, threads: int
 
     total_tasks = len(assembly_files)
 
-    max_jobs = calculate_available_resources(max_cores=threads, threads=2, memory_per_process=2)
+    max_jobs = calculate_available_resources(max_cores=threads, threads=1, memory_per_process=2)
     with ThreadPoolExecutor(max_workers=max_jobs) as executor:
-        futures = [executor.submit(run_single_task, fasta, outdir, rfasta, mapping_type, 2, verbose) for fasta in assembly_files]
+        futures = [executor.submit(run_single_task, fasta, outdir, rfasta, mapping_type, 1, verbose) for fasta in assembly_files]
         with tqdm(total=total_tasks, desc=f'Mapping library with {mapping_type}:', unit="file") as pbar:
             for future in as_completed(futures):
                 try:
