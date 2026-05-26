@@ -14,7 +14,7 @@ You can install VDJ-Insights using one of the following methods:
 ### Option 1: Clone the repository
 1. Clone the VDJ-Insights repository:
    ```bash
-   git clone https://github.com/BPRC-CGR/VDJ-insights
+   git clone https://github.com/BPRC-Bioinfo/VDJ-insights
    ```
 
 2. Navigate to the repository directory:
