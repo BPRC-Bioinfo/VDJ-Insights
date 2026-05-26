@@ -185,7 +185,7 @@ def region_main(flanking_genes: dict[list[str]], assembly_dir: Union[str, Path],
     for region, extract_flanking_genes in flanking_genes.items():
         for assembly in assembly_files:
             tasks.append((cwd, assembly, directory, extract_flanking_genes[0], extract_flanking_genes[1], assembly.stem, region, verbose))
-    max_jobs = calculate_available_resources(max_cores=threads, threads=4, memory_per_process=12)
+    max_jobs = calculate_available_resources(max_cores=threads, threads=1, memory_per_process=12)
     total_tasks = len(tasks)
     with ProcessPoolExecutor(max_workers=max_jobs) as executor:
         futures = {executor.submit(extract, *task): task for task in tasks}
