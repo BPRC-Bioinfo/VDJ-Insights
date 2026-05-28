@@ -170,7 +170,7 @@ def run_blast_per_sample(df: pd.DataFrame, db_path: Path, output_csv: Path, thre
     blast_cols = ["query", "subject", "% identity", "alignment length", "mismatches", "gap opens", "q. start", "q. end", "s. start", "s. end", "evalue", "bit score", "query seq", "subject seq", "query cov", "btop"]
     aggregated_rows = []
 
-    max_jobs = calculate_available_resources(max_cores=threads, threads=4, memory_per_process=12)
+    max_jobs = calculate_available_resources(max_cores=threads, threads=1, memory_per_process=12)
     with ThreadPoolExecutor(max_workers=max_jobs) as executor:
         futures = [executor.submit(run_blast, df, db_path, tmp_dir, sample, blast_cols,  threads, verbose) for sample in samples]
         with tqdm(total=len(samples), desc='Blast reevaluation:', unit="sample") as pbar:
