@@ -51,12 +51,15 @@ def run_meme(locus_fasta_file_name: Path, meme_output: Path, rss_length: int, su
     """
     meme_command = f"meme {locus_fasta_file_name} -o {meme_output} -dna -mod zoops -nmotifs 1 -minw {rss_length} -maxw {rss_length} -maxsize {sum_lenght_seq}"
     if not meme_output.exists():
-        subprocess.run(meme_command,
-                       shell=True,
-                       check=True,
-                       stdout=subprocess.PIPE if not verbose else None,
-                       stderr=subprocess.PIPE if not verbose else None
-                       )
+        try:
+            subprocess.run(meme_command,
+                           shell=True,
+                           check=True,
+                           stdout=subprocess.PIPE if not verbose else None,
+                           stderr=subprocess.PIPE if not verbose else None
+                           )
+        except subprocess.CalledProcessError as e:
+            print(f"Error running MEME: {e}")
 
 
 @log_error()
@@ -71,12 +74,16 @@ def run_fimo(fimo_output: Path, meme_output: Path, locus_fasta_file_name: Path, 
     """
     fimo_command = f"fimo --thresh 0.0001 --o {fimo_output} {meme_output}/meme.txt {locus_fasta_file_name}"
     if not fimo_output.exists():
-        subprocess.run(fimo_command,
-                       shell=True,
-                       check=True,
-                       stdout=subprocess.PIPE if not verbose else None,
-                       stderr=subprocess.PIPE if not verbose else None
-                       )
+        try:
+
+            subprocess.run(fimo_command,
+                           shell=True,
+                           check=True,
+                           stdout=subprocess.PIPE if not verbose else None,
+                           stderr=subprocess.PIPE if not verbose else None
+                           )
+        except subprocess.CalledProcessError as e:
+            print(f"Error running FIMO: {e}")
 
 
 def get_fimo_output(fimo_intput: Path) -> pd.DataFrame:
