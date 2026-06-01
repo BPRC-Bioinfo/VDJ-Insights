@@ -106,10 +106,11 @@ def get_fimo_output(fimo_intput: Path) -> pd.DataFrame:
         df_fimo = df_fimo[df_fimo['sequence_name'].str.contains(r'__\d+$')].copy()
         df_fimo["index_group_df"] = df_fimo["sequence_name"].str.split("__").str[-1]
         df_fimo['index_group_df'] = df_fimo['index_group_df'].astype(int)
+        return df_fimo
+
     except Exception as e:
         print(f"Error reading FIMO output: {e}")
         return pd.DataFrame()
-    return df_fimo
 
 
 def process_group_locus(group_locus, df_fimo, direction, rss_length):

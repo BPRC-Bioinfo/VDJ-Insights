@@ -749,7 +749,7 @@ def annotation_main(args: argparse.Namespace):
 
     file_log.info(f"Annotation process completed. Results are available in {annotation_folder}")
     console_log.info(f"Annotation process completed. Results are available in {annotation_folder}")
-    console_log.info(f"Showing report:  vdj-insights html - i {cwd}")
+    console_log.info(f"Showing report:  vdj-insights html -i {cwd}")
 
 
 def main():

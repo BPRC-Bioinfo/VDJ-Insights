@@ -172,7 +172,6 @@ def region_main(flanking_genes: dict[list[str]], assembly_dir: Union[str, Path],
     make_dir(directory)
 
     assembly_files = [file for ext in ["*.fna", "*.fasta", "*.fa"] for file in Path(assembly_dir).glob(ext)]
-    print(assembly_files)
     log_file = cwd / "broken_regions.json"
     if log_file.is_file():
         with open(log_file) as f:
