@@ -13,4 +13,4 @@ COPY . /app
 
 EXPOSE 5004
 
-CMD ["gunicorn", "--chdir", "flask", "--bind", "0.0.0.0:5004", "app:app"]
+CMD ["gunicorn", "--chdir", "/app/rabbit_ig_results/flask", "--bind", "0.0.0.0:5004", "app:app"]
