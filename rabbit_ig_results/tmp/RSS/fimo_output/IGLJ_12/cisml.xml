@@ -1,0 +1,176 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<command-line>fimo --thresh 0.0001 --o /content/rabbit_ig_results/tmp/RSS/fimo_output/IGLJ_12 /content/rabbit_ig_results/tmp/RSS/meme_output/IGLJ_12/meme.txt /content/rabbit_ig_results/tmp/RSS/fasta/IGLJ_12.fasta</command-line>
+<pattern-file>/content/rabbit_ig_results/tmp/RSS/meme_output/IGLJ_12/meme.txt</pattern-file>
+<sequence-file>/content/rabbit_ig_results/tmp/RSS/fasta/IGLJ_12.fasta</sequence-file>
+<site-pvalue-cutoff>0.0001</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="AGTTTTTGCKKKKKKKKKKKKCACWGTG" name="MEME-1">
+<scanned-sequence accession="NW_003159316_IGLJ1*01_Oryctolagus_cuniculus_Thorbecke_inbred__122" name="NW_003159316_IGLJ1*01_Oryctolagus_cuniculus_Thorbecke_inbred__122">
+<matched-element start="1" stop="28" score="0.699187" pvalue="1.79e-05">
+<sequence>GGTTTTGGTCCGAGTCTCAGTCACCGTG</sequence>
+<mem:qvalue>3.58e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="M23226_IGLJ5*01_Oryctolagus_cuniculus-like__123" name="M23226_IGLJ5*01_Oryctolagus_cuniculus-like__123">
+<matched-element start="1" stop="28" score="31.7154" pvalue="5.72e-11">
+<sequence>AGTTTTTGCATGAGTCTGTGTCACAGTG</sequence>
+<mem:qvalue>2.45e-10</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="M23228_IGLJ6*01_Oryctolagus_cuniculus__124" name="M23228_IGLJ6*01_Oryctolagus_cuniculus__124">
+<matched-element start="1" stop="28" score="32.2927" pvalue="3.13e-11">
+<sequence>AGTTTTTGCATGAGTCTGTGTCACTGTG</sequence>
+<mem:qvalue>2.35e-10</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="NW_003159316_IGLJ3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__125" name="NW_003159316_IGLJ3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__125">
+<matched-element start="1" stop="28" score="3.20325" pvalue="7.74e-06">
+<sequence>GTTTTGTGCATGGGGCTGTGTCACCGTG</sequence>
+<mem:qvalue>1.93e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="NW_003159316_IGLJ1*01_Oryctolagus_cuniculus_Thorbecke_inbred__163" name="NW_003159316_IGLJ1*01_Oryctolagus_cuniculus_Thorbecke_inbred__163">
+<matched-element start="1" stop="28" score="6.53659" pvalue="3.96e-06">
+<sequence>GGTTTTGGTCCAAGTCTCAGTCACTGTG</sequence>
+<mem:qvalue>1.32e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="M23228_IGLJ6*01_Oryctolagus_cuniculus-like__164" name="M23228_IGLJ6*01_Oryctolagus_cuniculus-like__164">
+<matched-element start="1" stop="28" score="32.2927" pvalue="3.13e-11">
+<sequence>AGTTTTTGCATGAGTCTGTGTCACTGTG</sequence>
+<mem:qvalue>2.35e-10</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="NW_003159316_IGLJ3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__165" name="NW_003159316_IGLJ3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__165">
+<matched-element start="1" stop="28" score="17.7967" pvalue="3.57e-08">
+<sequence>GGTTTGTGCATGGGGCTGTGTCACTGTG</sequence>
+<mem:qvalue>1.34e-07</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="NW_003159316_IGLJ1*01_Oryctolagus_cuniculus_Thorbecke_inbred__376" name="NW_003159316_IGLJ1*01_Oryctolagus_cuniculus_Thorbecke_inbred__376">
+<matched-element start="1" stop="28" score="0.699187" pvalue="1.79e-05">
+<sequence>GGTTTTGGTCCGAGTCTCAGTCACCGTG</sequence>
+<mem:qvalue>3.58e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="M23226_IGLJ5*01_Oryctolagus_cuniculus__377" name="M23226_IGLJ5*01_Oryctolagus_cuniculus__377">
+<matched-element start="1" stop="28" score="31.7154" pvalue="5.72e-11">
+<sequence>AGTTTTTGCATGAGTCTGTGTCACAGTG</sequence>
+<mem:qvalue>2.45e-10</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="M23228_IGLJ6*01_Oryctolagus_cuniculus__378" name="M23228_IGLJ6*01_Oryctolagus_cuniculus__378">
+<matched-element start="1" stop="28" score="32.2927" pvalue="3.13e-11">
+<sequence>AGTTTTTGCATGAGTCTGTGTCACTGTG</sequence>
+<mem:qvalue>2.35e-10</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="NW_003159316_IGLJ3*01_Oryctolagus_cuniculus_Thorbecke_inbred__379" name="NW_003159316_IGLJ3*01_Oryctolagus_cuniculus_Thorbecke_inbred__379">
+<matched-element start="1" stop="28" score="3.20325" pvalue="7.74e-06">
+<sequence>GTTTTGTGCATGGGGCTGTGTCACCGTG</sequence>
+<mem:qvalue>1.93e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="NW_003159316_IGLJ1*01_Oryctolagus_cuniculus_Thorbecke_inbred__538" name="NW_003159316_IGLJ1*01_Oryctolagus_cuniculus_Thorbecke_inbred__538">
+<matched-element start="1" stop="28" score="0.699187" pvalue="1.79e-05">
+<sequence>GGTTTTGGTCCGAGTCTCAGTCACCGTG</sequence>
+<mem:qvalue>3.58e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="M23226_IGLJ5*01_Oryctolagus_cuniculus__539" name="M23226_IGLJ5*01_Oryctolagus_cuniculus__539">
+<matched-element start="1" stop="28" score="31.7154" pvalue="5.72e-11">
+<sequence>AGTTTTTGCATGAGTCTGTGTCACAGTG</sequence>
+<mem:qvalue>2.45e-10</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="M23228_IGLJ6*01_Oryctolagus_cuniculus__540" name="M23228_IGLJ6*01_Oryctolagus_cuniculus__540">
+<matched-element start="1" stop="28" score="32.2927" pvalue="3.13e-11">
+<sequence>AGTTTTTGCATGAGTCTGTGTCACTGTG</sequence>
+<mem:qvalue>2.35e-10</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="NW_003159316_IGLJ3*01_Oryctolagus_cuniculus_Thorbecke_inbred__541" name="NW_003159316_IGLJ3*01_Oryctolagus_cuniculus_Thorbecke_inbred__541">
+<matched-element start="1" stop="28" score="3.20325" pvalue="7.74e-06">
+<sequence>GTTTTGTGCATGGGGCTGTGTCACCGTG</sequence>
+<mem:qvalue>1.93e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>

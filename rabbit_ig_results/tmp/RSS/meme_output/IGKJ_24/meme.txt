@@ -1,0 +1,313 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.8 (Release date: Thu May 15 15:01:46 2025 -0700)
+
+For further information on how to interpret these results please access https://meme-suite.org/meme.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /content/rabbit_ig_results/tmp/RSS/fasta_gaps/IGKJ_24.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+X00232_IGKJ2-3*01_Orycto 1.0000     39  X00232_IGKJ2-2*01_Orycto 1.0000     39  
+K01363_IGKJ1-1*02_Orycto 1.0000     39  K01363_IGKJ1-1*02_Orycto 1.0000     39  
+K01363_IGKJ1-2*03_Orycto 1.0000     39  K01363_IGKJ1-1*02_Orycto 1.0000     39  
+X00232_IGKJ2-3*01_Orycto 1.0000     39  X00232_IGKJ2-2*01_Orycto 1.0000     39  
+K01363_IGKJ1-1*02_Orycto 1.0000     39  K01360_IGKJ1-1*01_Orycto 1.0000     39  
+K01360_IGKJ1-2*01_Orycto 1.0000     39  K01360_IGKJ1-4*01_Orycto 1.0000     39  
+X00232_IGKJ2-3*01_Orycto 1.0000     39  X00232_IGKJ2-2*01_Orycto 1.0000     39  
+K01363_IGKJ1-1*02_Orycto 1.0000     39  K01363_IGKJ1-1*02_Orycto 1.0000     39  
+K01363_IGKJ1-2*03_Orycto 1.0000     39  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /content/rabbit_ig_results/tmp/RSS/fasta_gaps/IGKJ_24.fasta -o /content/rabbit_ig_results/tmp/RSS/meme_output/IGKJ_24 -dna -mod zoops -nmotifs 1 -minw 39 -maxw 39 -maxsize 663 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: +
+width:  minw=           39    maxw=           39
+nsites: minsites=        2    maxsites=       17    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             663    N=              17
+sample: seed=            0    hsfrac=          0
+        searchsize=    663    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.158 C 0.114 G 0.327 T 0.401 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.159 C 0.116 G 0.326 T 0.399 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG MEME-1	width =  39  sites =  16  llr = 223  E-value = 3.2e-046
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  6:::4:33:22222222222222222222222:8:::::
+pos.-specific     C  :::::::::111111111111111111111118:a::::
+probability       G  4a23:3:6433333333333333333333333::::a:a
+matrix            T  ::88688264444444444444444444444422:a:a:
+
+         bits    3.1                                   *    
+                 2.8                                   *    
+                 2.5                                   *    
+                 2.2                                 * *    
+Relative         1.9                                 * *    
+Entropy          1.6  *                              *** * *
+(20.1 bits)      1.2 **                              *******
+                 0.9 **  * *                         *******
+                 0.6 *******                         *******
+                 0.3 *********                       *******
+                 0.0 ---------------------------------------
+
+Multilevel           AGTTTTTGTTTTTTTTTTTTTTTTTTTTTTTTCACTGTG
+consensus            G  GAGAAGGGGGGGGGGGGGGGGGGGGGGGG       
+sequence                                                    
+                                                            
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value                             Site                
+-------------             ----- ---------            ---------------------------------------
+X00232_IGKJ2-2*01_Orycto      1  9.84e-10          . AGTTATTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+X00232_IGKJ2-2*01_Orycto      1  9.84e-10          . AGTTATTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+X00232_IGKJ2-2*01_Orycto      1  9.84e-10          . AGTTATTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01363_IGKJ1-2*03_Orycto      1  6.19e-09          . AGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01360_IGKJ1-2*01_Orycto      1  6.19e-09          . AGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01363_IGKJ1-2*03_Orycto      1  6.19e-09          . AGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01363_IGKJ1-1*02_Orycto      1  5.11e-08          . GGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01363_IGKJ1-1*02_Orycto      1  5.11e-08          . GGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01363_IGKJ1-1*02_Orycto      1  5.11e-08          . GGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01363_IGKJ1-1*02_Orycto      1  2.56e-07          . GGTGAGAAGNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01360_IGKJ1-1*01_Orycto      1  2.56e-07          . GGTGAGAAGNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01363_IGKJ1-1*02_Orycto      1  2.56e-07          . GGTGAGAAGNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+K01363_IGKJ1-1*02_Orycto      1  2.56e-07          . GGTGAGAAGNNNNNNNNNNNNNNNNNNNNNNNCACTGTG           
+X00232_IGKJ2-3*01_Orycto      1  5.15e-06          . AGGTTTTTGNNNNNNNNNNNNNNNNNNNNNNNTTCTGTG           
+X00232_IGKJ2-3*01_Orycto      1  5.15e-06          . AGGTTTTTGNNNNNNNNNNNNNNNNNNNNNNNTTCTGTG           
+X00232_IGKJ2-3*01_Orycto      1  5.15e-06          . AGGTTTTTGNNNNNNNNNNNNNNNNNNNNNNNTTCTGTG           
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+X00232_IGKJ2-2*01_Orycto          9.8e-10  [+1]
+X00232_IGKJ2-2*01_Orycto          9.8e-10  [+1]
+X00232_IGKJ2-2*01_Orycto          9.8e-10  [+1]
+K01363_IGKJ1-2*03_Orycto          6.2e-09  [+1]
+K01360_IGKJ1-2*01_Orycto          6.2e-09  [+1]
+K01363_IGKJ1-2*03_Orycto          6.2e-09  [+1]
+K01363_IGKJ1-1*02_Orycto          5.1e-08  [+1]
+K01363_IGKJ1-1*02_Orycto          5.1e-08  [+1]
+K01363_IGKJ1-1*02_Orycto          5.1e-08  [+1]
+K01363_IGKJ1-1*02_Orycto          2.6e-07  [+1]
+K01360_IGKJ1-1*01_Orycto          2.6e-07  [+1]
+K01363_IGKJ1-1*02_Orycto          2.6e-07  [+1]
+K01363_IGKJ1-1*02_Orycto          2.6e-07  [+1]
+X00232_IGKJ2-3*01_Orycto          5.1e-06  [+1]
+X00232_IGKJ2-3*01_Orycto          5.1e-06  [+1]
+X00232_IGKJ2-3*01_Orycto          5.1e-06  [+1]
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG width=39 seqs=16
+X00232_IGKJ2-2*01_Orycto (    1) AGTTATTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+X00232_IGKJ2-2*01_Orycto (    1) AGTTATTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+X00232_IGKJ2-2*01_Orycto (    1) AGTTATTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01363_IGKJ1-2*03_Orycto (    1) AGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01360_IGKJ1-2*01_Orycto (    1) AGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01363_IGKJ1-2*03_Orycto (    1) AGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01363_IGKJ1-1*02_Orycto (    1) GGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01363_IGKJ1-1*02_Orycto (    1) GGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01363_IGKJ1-1*02_Orycto (    1) GGTTTTTGTNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01363_IGKJ1-1*02_Orycto (    1) GGTGAGAAGNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01360_IGKJ1-1*01_Orycto (    1) GGTGAGAAGNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01363_IGKJ1-1*02_Orycto (    1) GGTGAGAAGNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+K01363_IGKJ1-1*02_Orycto (    1) GGTGAGAAGNNNNNNNNNNNNNNNNNNNNNNNCACTGTG  1 
+X00232_IGKJ2-3*01_Orycto (    1) AGGTTTTTGNNNNNNNNNNNNNNNNNNNNNNNTTCTGTG  1 
+X00232_IGKJ2-3*01_Orycto (    1) AGGTTTTTGNNNNNNNNNNNNNNNNNNNNNNNTTCTGTG  1 
+X00232_IGKJ2-3*01_Orycto (    1) AGGTTTTTGNNNNNNNNNNNNNNNNNNNNNNNTTCTGTG  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 39 n= 2 bayes= -664.386 E= 3.2e-046 
+   182  -1064     42  -1064 
+ -1064  -1064    162  -1064 
+ -1064  -1064    -80    103 
+ -1064  -1064    -38     91 
+   146  -1064  -1064     50 
+ -1064  -1064    -38     91 
+    65  -1064  -1064     91 
+    65  -1064     79   -109 
+ -1064  -1064     42     50 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+ -1064    281  -1064   -109 
+   235  -1064  -1064   -109 
+ -1064    311  -1064  -1064 
+ -1064  -1064  -1064    133 
+ -1064  -1064    162  -1064 
+ -1064  -1064  -1064    133 
+ -1064  -1064    162  -1064 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 39 nsites= 16 E= 3.2e-046 
+ 0.562500  0.000000  0.437500  0.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  0.187500  0.812500 
+ 0.000000  0.000000  0.250000  0.750000 
+ 0.437500  0.000000  0.000000  0.562500 
+ 0.000000  0.000000  0.250000  0.750000 
+ 0.250000  0.000000  0.000000  0.750000 
+ 0.250000  0.000000  0.562500  0.187500 
+ 0.000000  0.000000  0.437500  0.562500 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.159420  0.115942  0.326087  0.398551 
+ 0.000000  0.812500  0.000000  0.187500 
+ 0.812500  0.000000  0.000000  0.187500 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG MEME-1 regular expression
+--------------------------------------------------------------------------------
+[AG]GT[TG][TA][TG][TA][GA][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG]CACTGTG
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.31 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+X00232_IGKJ2-3*01_Orycto         5.15e-06  [+1(5.15e-06)]
+X00232_IGKJ2-2*01_Orycto         9.84e-10  [+1(9.84e-10)]
+K01363_IGKJ1-1*02_Orycto         5.11e-08  [+1(5.11e-08)]
+K01363_IGKJ1-1*02_Orycto         2.56e-07  [+1(2.56e-07)]
+K01363_IGKJ1-2*03_Orycto         6.19e-09  [+1(6.19e-09)]
+K01363_IGKJ1-1*02_Orycto         2.56e-07  [+1(2.56e-07)]
+X00232_IGKJ2-3*01_Orycto         5.15e-06  [+1(5.15e-06)]
+X00232_IGKJ2-2*01_Orycto         9.84e-10  [+1(9.84e-10)]
+K01363_IGKJ1-1*02_Orycto         5.11e-08  [+1(5.11e-08)]
+K01360_IGKJ1-1*01_Orycto         2.56e-07  [+1(2.56e-07)]
+K01360_IGKJ1-2*01_Orycto         6.19e-09  [+1(6.19e-09)]
+K01360_IGKJ1-4*01_Orycto         2.63e-01  39
+X00232_IGKJ2-3*01_Orycto         5.15e-06  [+1(5.15e-06)]
+X00232_IGKJ2-2*01_Orycto         9.84e-10  [+1(9.84e-10)]
+K01363_IGKJ1-1*02_Orycto         5.11e-08  [+1(5.11e-08)]
+K01363_IGKJ1-1*02_Orycto         2.56e-07  [+1(2.56e-07)]
+K01363_IGKJ1-2*03_Orycto         6.19e-09  [+1(6.19e-09)]
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 23d8d39df3be
+
+********************************************************************************

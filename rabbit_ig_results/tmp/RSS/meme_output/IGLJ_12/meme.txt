@@ -1,0 +1,240 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.8 (Release date: Thu May 15 15:01:46 2025 -0700)
+
+For further information on how to interpret these results please access https://meme-suite.org/meme.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /content/rabbit_ig_results/tmp/RSS/fasta_gaps/IGLJ_12.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+M23228_IGLJ6*01_Oryctola 1.0000     28  M23226_IGLJ5*01_Oryctola 1.0000     28  
+M23228_IGLJ6*01_Oryctola 1.0000     28  M23226_IGLJ5*01_Oryctola 1.0000     28  
+M23228_IGLJ6*01_Oryctola 1.0000     28  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /content/rabbit_ig_results/tmp/RSS/fasta_gaps/IGLJ_12.fasta -o /content/rabbit_ig_results/tmp/RSS/meme_output/IGLJ_12 -dna -mod zoops -nmotifs 1 -minw 28 -maxw 28 -maxsize 140 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: +
+width:  minw=           28    maxw=           28
+nsites: minsites=        2    maxsites=        5    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             140    N=               5
+sample: seed=            0    hsfrac=          0
+        searchsize=    140    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.15 C 0.188 G 0.25 T 0.412 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.155 C 0.19 G 0.25 T 0.405 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF AGTTTTTGCKKKKKKKKKKKKCACWGTG MEME-1	width =  28  sites =   5  llr = 101  E-value = 1.7e-015
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif AGTTTTTGCKKKKKKKKKKKKCACWGTG MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  a::::::::222222222222:a:4:::
+pos.-specific     C  ::::::::a222222222222a:a::::
+probability       G  :a:::::a:333333333333::::a:a
+matrix            T  ::aaaaa::444444444444:::6:a:
+
+         bits    2.7 *                     *     
+                 2.4 *       *            ***    
+                 2.2 *       *            ***    
+                 1.9 **     **            *** * *
+Relative         1.6 **     **            *** * *
+Entropy          1.3 *********            *** ***
+(29.3 bits)      1.1 *********            *** ***
+                 0.8 *********            *******
+                 0.5 *********            *******
+                 0.3 *********            *******
+                 0.0 ----------------------------
+
+Multilevel           AGTTTTTGCTTTTTTTTTTTTCACTGTG
+consensus                     GGGGGGGGGGGG   A   
+sequence                                         
+                                                 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AGTTTTTGCKKKKKKKKKKKKCACWGTG MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value                        Site          
+-------------             ----- ---------            ----------------------------
+M23226_IGLJ5*01_Oryctola      1  4.40e-10          . AGTTTTTGCNNNNNNNNNNNNCACAGTG           
+M23226_IGLJ5*01_Oryctola      1  4.40e-10          . AGTTTTTGCNNNNNNNNNNNNCACAGTG           
+M23228_IGLJ6*01_Oryctola      1  1.59e-09          . AGTTTTTGCNNNNNNNNNNNNCACTGTG           
+M23228_IGLJ6*01_Oryctola      1  1.59e-09          . AGTTTTTGCNNNNNNNNNNNNCACTGTG           
+M23228_IGLJ6*01_Oryctola      1  1.59e-09          . AGTTTTTGCNNNNNNNNNNNNCACTGTG           
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AGTTTTTGCKKKKKKKKKKKKCACWGTG MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+M23226_IGLJ5*01_Oryctola          4.4e-10  [+1]
+M23226_IGLJ5*01_Oryctola          4.4e-10  [+1]
+M23228_IGLJ6*01_Oryctola          1.6e-09  [+1]
+M23228_IGLJ6*01_Oryctola          1.6e-09  [+1]
+M23228_IGLJ6*01_Oryctola          1.6e-09  [+1]
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AGTTTTTGCKKKKKKKKKKKKCACWGTG MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF AGTTTTTGCKKKKKKKKKKKKCACWGTG width=28 seqs=5
+M23226_IGLJ5*01_Oryctola (    1) AGTTTTTGCNNNNNNNNNNNNCACAGTG  1 
+M23226_IGLJ5*01_Oryctola (    1) AGTTTTTGCNNNNNNNNNNNNCACAGTG  1 
+M23228_IGLJ6*01_Oryctola (    1) AGTTTTTGCNNNNNNNNNNNNCACTGTG  1 
+M23228_IGLJ6*01_Oryctola (    1) AGTTTTTGCNNNNNNNNNNNNCACTGTG  1 
+M23228_IGLJ6*01_Oryctola (    1) AGTTTTTGCNNNNNNNNNNNNCACTGTG  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AGTTTTTGCKKKKKKKKKKKKCACWGTG MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 28 n= 2 bayes= -664.386 E= 1.7e-015 
+   269   -897   -897   -897 
+  -897   -897    200   -897 
+  -897   -897   -897    130 
+  -897   -897   -897    130 
+  -897   -897   -897    130 
+  -897   -897   -897    130 
+  -897   -897   -897    130 
+  -897   -897    200   -897 
+  -897    239   -897   -897 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+  -897    239   -897   -897 
+   269   -897   -897   -897 
+  -897    239   -897   -897 
+   137   -897   -897     57 
+  -897   -897    200   -897 
+  -897   -897   -897    130 
+  -897   -897    200   -897 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AGTTTTTGCKKKKKKKKKKKKCACWGTG MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 28 nsites= 5 E= 1.7e-015 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.154762  0.190476  0.250000  0.404762 
+ 0.000000  1.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.400000  0.000000  0.000000  0.600000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif AGTTTTTGCKKKKKKKKKKKKCACWGTG MEME-1 regular expression
+--------------------------------------------------------------------------------
+AGTTTTTGC[TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG]CAC[TA]GTG
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.27 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+M23228_IGLJ6*01_Oryctola         1.59e-09  [+1(1.59e-09)]
+M23226_IGLJ5*01_Oryctola         4.40e-10  [+1(4.40e-10)]
+M23228_IGLJ6*01_Oryctola         1.59e-09  [+1(1.59e-09)]
+M23226_IGLJ5*01_Oryctola         4.40e-10  [+1(4.40e-10)]
+M23228_IGLJ6*01_Oryctola         1.59e-09  [+1(1.59e-09)]
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 23d8d39df3be
+
+********************************************************************************

@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<command-line>fimo --thresh 0.0001 --o /content/rabbit_ig_results/tmp/RSS/fimo_output/IGKJ_24 /content/rabbit_ig_results/tmp/RSS/meme_output/IGKJ_24/meme.txt /content/rabbit_ig_results/tmp/RSS/fasta/IGKJ_24.fasta</command-line>
+<pattern-file>/content/rabbit_ig_results/tmp/RSS/meme_output/IGKJ_24/meme.txt</pattern-file>
+<sequence-file>/content/rabbit_ig_results/tmp/RSS/fasta/IGKJ_24.fasta</sequence-file>
+<site-pvalue-cutoff>0.0001</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="RGTTWTTGKKKKKKKKKKKKKKKKKKKKKKKKCACTGTG" name="MEME-1">
+<scanned-sequence accession="X00232_IGKJ2-3*01_Oryctolagus_cuniculus__67" name="X00232_IGKJ2-3*01_Oryctolagus_cuniculus__67">
+<matched-element start="1" stop="39" score="12.602" pvalue="1.15e-06">
+<sequence>AGGTTTTTGTTGAGGGAAAGCAATAAAGCTAATTCTGTG</sequence>
+<mem:qvalue>3.91e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="X00232_IGKJ2-2*01_Oryctolagus_cuniculus__68" name="X00232_IGKJ2-2*01_Oryctolagus_cuniculus__68">
+<matched-element start="1" stop="39" score="25.7551" pvalue="2.46e-09">
+<sequence>AGTTATTGTACAGGAGGGAGGTTGTGAGGAACCACTGTG</sequence>
+<mem:qvalue>1.75e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__69" name="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__69">
+<matched-element start="1" stop="39" score="27.3367" pvalue="7.02e-10">
+<sequence>GGTTTTTGTACAGTGAGGCAATGGGGAGTTGTCACTGTG</sequence>
+<mem:qvalue>1.36e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__82" name="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__82">
+<matched-element start="1" stop="39" score="25.3673" pvalue="3.33e-09">
+<sequence>GGTGAGAAGGGTTTTGTACAGTGAGGAGTTGTCACTGTG</sequence>
+<mem:qvalue>1.75e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-4*02_Oryctolagus_cuniculus__83" name="K01363_IGKJ1-4*02_Oryctolagus_cuniculus__83">
+</scanned-sequence>
+<scanned-sequence accession="K01360_IGKJ1-5*01_Oryctolagus_cuniculus__84" name="K01360_IGKJ1-5*01_Oryctolagus_cuniculus__84">
+</scanned-sequence>
+<scanned-sequence accession="K01360_IGKJ1-5*01_Oryctolagus_cuniculus__85" name="K01360_IGKJ1-5*01_Oryctolagus_cuniculus__85">
+<matched-element start="1" stop="39" score="3.41837" pvalue="2.1e-05">
+<sequence>AGGTTTTTGTTGAGGGAAAGCAATAAAGCTAATTCCGTG</sequence>
+<mem:qvalue>6.1e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-4*02_Oryctolagus_cuniculus__86" name="K01363_IGKJ1-4*02_Oryctolagus_cuniculus__86">
+</scanned-sequence>
+<scanned-sequence accession="K01361_IGKJ1-3*02_Oryctolagus_cuniculus__87" name="K01361_IGKJ1-3*02_Oryctolagus_cuniculus__87">
+<matched-element start="1" stop="39" score="2.56122" pvalue="2.71e-05">
+<sequence>AGGGTTTTGTGGAGGGAGAAGGTAAAGGGAGCCACCATG</sequence>
+<mem:qvalue>7.13e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-2*03_Oryctolagus_cuniculus__88" name="K01363_IGKJ1-2*03_Oryctolagus_cuniculus__88">
+<matched-element start="1" stop="39" score="26.1122" pvalue="1.91e-09">
+<sequence>AGTTTTTGTACGGGAGGGAGGTTAGGAGGAACCACTGTG</sequence>
+<mem:qvalue>1.75e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__89" name="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__89">
+<matched-element start="1" stop="39" score="25.3673" pvalue="3.33e-09">
+<sequence>GGTGAGAAGGGTTTTGTACAGTGAGGAGTTGTCACTGTG</sequence>
+<mem:qvalue>1.75e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="M14067_IGKJ1-5*03_Oryctolagus_cuniculus__154" name="M14067_IGKJ1-5*03_Oryctolagus_cuniculus__154">
+<matched-element start="1" stop="39" score="3.41837" pvalue="2.1e-05">
+<sequence>AGGTTTTTGTTGAGGGAAAGCAATAAAGCTAATTCCGTG</sequence>
+<mem:qvalue>6.1e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01360_IGKJ1-3*01_Oryctolagus_cuniculus__155" name="K01360_IGKJ1-3*01_Oryctolagus_cuniculus__155">
+<matched-element start="1" stop="39" score="18.8163" pvalue="1.02e-07">
+<sequence>AGGGTTTGGCAGAGGGAGAAGGTAAAGCGAGCCACTGTG</sequence>
+<mem:qvalue>4.23e-07</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="X00232_IGKJ2-3*01_Oryctolagus_cuniculus__304" name="X00232_IGKJ2-3*01_Oryctolagus_cuniculus__304">
+<matched-element start="1" stop="39" score="12.602" pvalue="1.15e-06">
+<sequence>AGGTTTTTGTTGAGGGAAAGCAATAAAGCTAATTCTGTG</sequence>
+<mem:qvalue>3.91e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="X00232_IGKJ2-2*01_Oryctolagus_cuniculus__305" name="X00232_IGKJ2-2*01_Oryctolagus_cuniculus__305">
+<matched-element start="1" stop="39" score="25.7551" pvalue="2.46e-09">
+<sequence>AGTTATTGTACAGGAGGGAGGTTGTGAGGAACCACTGTG</sequence>
+<mem:qvalue>1.75e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__306" name="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__306">
+<matched-element start="1" stop="39" score="27.3367" pvalue="7.02e-10">
+<sequence>GGTTTTTGTACAGTGAGGCAATGGGGAGTTGTCACTGTG</sequence>
+<mem:qvalue>1.36e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01360_IGKJ1-1*01_Oryctolagus_cuniculus__328" name="K01360_IGKJ1-1*01_Oryctolagus_cuniculus__328">
+<matched-element start="1" stop="39" score="24.0612" pvalue="7.79e-09">
+<sequence>GGTGAGAAGGGTTTTGTACAATGAGGAGTTGTCACTGTG</sequence>
+<mem:qvalue>3.48e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01360_IGKJ1-2*01_Oryctolagus_cuniculus__329" name="K01360_IGKJ1-2*01_Oryctolagus_cuniculus__329">
+<matched-element start="1" stop="39" score="24.8061" pvalue="4.85e-09">
+<sequence>AGTTTTTGTACAGGAGGGAGGTTAGGAGGAACCACTGTG</sequence>
+<mem:qvalue>2.34e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01360_IGKJ1-3*01_Oryctolagus_cuniculus__330" name="K01360_IGKJ1-3*01_Oryctolagus_cuniculus__330">
+<matched-element start="1" stop="39" score="12.0306" pvalue="1.41e-06">
+<sequence>AGGGTTTTGTGGAGGGAGAAGGTAAAGGGAGCCACCGTG</sequence>
+<mem:qvalue>4.56e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01360_IGKJ1-4*01_Oryctolagus_cuniculus__331" name="K01360_IGKJ1-4*01_Oryctolagus_cuniculus__331">
+</scanned-sequence>
+<scanned-sequence accession="K01360_IGKJ1-5*01_Oryctolagus_cuniculus__332" name="K01360_IGKJ1-5*01_Oryctolagus_cuniculus__332">
+</scanned-sequence>
+<scanned-sequence accession="X00232_IGKJ2-3*01_Oryctolagus_cuniculus__475" name="X00232_IGKJ2-3*01_Oryctolagus_cuniculus__475">
+<matched-element start="1" stop="39" score="12.602" pvalue="1.15e-06">
+<sequence>AGGTTTTTGTTGAGGGAAAGCAATAAAGCTAATTCTGTG</sequence>
+<mem:qvalue>3.91e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="X00232_IGKJ2-2*01_Oryctolagus_cuniculus__476" name="X00232_IGKJ2-2*01_Oryctolagus_cuniculus__476">
+<matched-element start="1" stop="39" score="25.7551" pvalue="2.46e-09">
+<sequence>AGTTATTGTACAGGAGGGAGGTTGTGAGGAACCACTGTG</sequence>
+<mem:qvalue>1.75e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__477" name="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__477">
+<matched-element start="1" stop="39" score="27.3367" pvalue="7.02e-10">
+<sequence>GGTTTTTGTACAGTGAGGCAATGGGGAGTTGTCACTGTG</sequence>
+<mem:qvalue>1.36e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__498" name="K01363_IGKJ1-1*02_Oryctolagus_cuniculus__498">
+<matched-element start="1" stop="39" score="25.3673" pvalue="3.33e-09">
+<sequence>GGTGAGAAGGGTTTTGTACAGTGAGGAGTTGTCACTGTG</sequence>
+<mem:qvalue>1.75e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-2*03_Oryctolagus_cuniculus__499" name="K01363_IGKJ1-2*03_Oryctolagus_cuniculus__499">
+<matched-element start="1" stop="39" score="26.1122" pvalue="1.91e-09">
+<sequence>AGTTTTTGTACGGGAGGGAGGTTAGGAGGAACCACTGTG</sequence>
+<mem:qvalue>1.75e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01361_IGKJ1-3*02_Oryctolagus_cuniculus__500" name="K01361_IGKJ1-3*02_Oryctolagus_cuniculus__500">
+<matched-element start="1" stop="39" score="2.56122" pvalue="2.71e-05">
+<sequence>AGGGTTTTGTGGAGGGAGAAGGTAAAGGGAGCCACCATG</sequence>
+<mem:qvalue>7.13e-05</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-4*02_Oryctolagus_cuniculus__501" name="K01363_IGKJ1-4*02_Oryctolagus_cuniculus__501">
+</scanned-sequence>
+<scanned-sequence accession="K01363_IGKJ1-5*02_Oryctolagus_cuniculus__502" name="K01363_IGKJ1-5*02_Oryctolagus_cuniculus__502">
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>

@@ -1,0 +1,47 @@
+{
+    "set_release": "4 June 2026",
+    "species": "Oryctolagus cuniculus",
+    "type": "IG",
+    "output": "/content/rabbit_ig_results",
+    "frame_selection": "7.2",
+    "create_library": true,
+    "cleanup": true,
+    "simple_headers": true,
+    "fasta_files": [
+        {
+            "name": "IGHV.fasta",
+            "entries": 67,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+IGHV&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "IGHD.fasta",
+            "entries": 11,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+IGHD&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "IGHJ.fasta",
+            "entries": 11,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+IGHJ&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "IGKV.fasta",
+            "entries": 70,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+IGKV&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "IGKJ.fasta",
+            "entries": 19,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+IGKJ&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "IGLV.fasta",
+            "entries": 43,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+IGLV&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "IGLJ.fasta",
+            "entries": 4,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+IGLJ&species=Oryctolagus+cuniculus"
+        }
+    ]
+}

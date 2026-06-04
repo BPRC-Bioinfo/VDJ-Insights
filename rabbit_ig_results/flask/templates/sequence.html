@@ -1,0 +1,158 @@
+{% extends 'sharedTemplates/base.html' %}
+{% block title %}Reference data{% endblock %}
+{% block body %}
+    <div class="container">
+        <form action="/sequence_list" method="POST" id="form">
+
+               <div class="collapse" id="collapse_info">
+         <div id="infoBox" class="card mt-3 shadow">
+              <button
+              type="button"
+              class="btn p-0 position-absolute"
+              style="top: 0.5rem; right: 0.5rem; color: #6c757d; font-size: 1.25rem; line-height: 1;"
+              data-toggle="collapse"
+              data-target="#collapse_info"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <div class="card-body">
+  <h5 class="card-title">Frequency of individual gene segments</h5>
+  <p class="card-text">
+    This table shows the frequency of individual gene segments across all annotated samples.<br><br>
+    You can filter by <strong>region</strong> and <strong>segment type</strong>.<br><br>
+    For each gene segment, the following values are displayed:
+    <ul>
+      <li><strong>Known</strong>: the number of samples where this segment is annotated as known.</li>
+      <li><strong>Novel</strong>: the number of samples where this segment is annotated as novel.</li>
+    </ul>
+  </p>
+</div>
+
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <h2 class="mt-0">Segment frequency across samples</h2>
+            <a class="btn gap-2" data-toggle="collapse" href="#collapse_info" role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </a>
+        </div>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-6">
+                    <label for="region" class="form-label">Select region:</label>
+                    <select name="region" id="region" class="form-select" onchange="this.form.submit()">
+                        <option value="">-- Select region --</option>
+                        {% for region in regions %}
+                            <option value="{{ region }}" {% if region == selected_region %}selected{% endif %}>
+                                {{ region }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="segment" class="form-label">Select segment:</label>
+                    <select name="segment" id="segment" class="form-select" onchange="this.form.submit()">
+                        <option value="">-- Select segment --</option>
+                        {% for segment in segments %}
+                            <option value="{{ segment }}" {% if segment == selected_segment %}selected{% endif %}>
+                                {{ segment }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </form>
+
+          <div class="card card-body mb-4 shadow">
+                <div class="row d-flex align-items-center g-3">
+                    <div class="col">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search in annotation data...">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-warning" type="button" id="amountTable"></button>
+                    </div>
+                </div>
+                        <div class="table-responsive" style="height: 1000px;">
+
+            <table class="table table-hover" id="DataTable">
+
+                <thead>
+                <tr>
+                    <th class="column-header sortable" data-column=Reference">Segment name</th>
+                    <th class="column-header sortable" data-column=Known">Known</th>
+                    <th class="column-header sortable" data-column=Novel">Novel</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in pivot_data %}
+                    <tr>
+                        <td>{{ row["Target name"] }}</td>
+                        <td>{{ row["Known"] }}</td>
+                        <td>{{ row["Novel"] }}</td>
+                        <td>
+                            <form method="POST" action="/get_sequence_table">
+                                <input type="hidden" name="reference_id" value="{{ row['Target name'] }}">
+                                <button type="submit" class="btn btn-primary">&#8594;</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+            </div>
+ <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const table = document.getElementById('DataTable');
+            const headers = table.querySelectorAll('thead th.sortable');
+
+            headers.forEach((header, index) => {
+                header.addEventListener('click', function () {
+                    const currentAsc = header.classList.contains('asc');
+                    sortTableByColumn(table, index, !currentAsc);
+
+                    headers.forEach(h => h.classList.remove('asc', 'desc'));
+                    if (!currentAsc) {
+                        header.classList.add('asc');
+                    } else {
+                        header.classList.add('desc');
+                    }
+                });
+            });
+
+            function sortTableByColumn(table, columnIndex, ascending = true) {
+                const tBody = table.querySelector('tbody');
+                const rows = Array.from(tBody.querySelectorAll('tr'));
+
+                rows.sort((rowA, rowB) => {
+                    const cellA = rowA.querySelectorAll('td')[columnIndex].textContent.trim();
+                    const cellB = rowB.querySelectorAll('td')[columnIndex].textContent.trim();
+
+                    const numA = parseFloat(cellA.replace(',', '.'));
+                    const numB = parseFloat(cellB.replace(',', '.'));
+                    const aIsNumeric = !isNaN(numA);
+                    const bIsNumeric = !isNaN(numB);
+
+                    if (aIsNumeric && bIsNumeric) {
+                        return ascending ? numA - numB : numB - numA;
+                    } else {
+                        if (cellA.toLowerCase() < cellB.toLowerCase()) r / eturn
+                        ascending ? -1 : 1;
+                        if (cellA.toLowerCase() > cellB.toLowerCase()) return ascending ? 1 : -1;
+                        return 0;
+                    }
+                });
+
+                rows.forEach(row => tBody.appendChild(row));
+            }
+        });
+    </script>
+
+{% endblock %}

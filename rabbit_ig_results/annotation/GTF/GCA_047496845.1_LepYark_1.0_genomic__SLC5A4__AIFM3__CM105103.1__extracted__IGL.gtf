@@ -1,0 +1,5 @@
+GCA_047496845.1_LepYark_1.0_genomic__SLC5A4__AIFM3__CM105103.1__extracted__IGL	genomic_annotation	gene	212422	212719	.	+	.	gene_id "IGLV2S1*01-like_1"; region "IGL"; function "Pseudo";
+GCA_047496845.1_LepYark_1.0_genomic__SLC5A4__AIFM3__CM105103.1__extracted__IGL	genomic_annotation	gene	257494	257793	.	+	.	gene_id "IGLV3S1*01-like_2"; region "IGL"; function "Pseudo";
+GCA_047496845.1_LepYark_1.0_genomic__SLC5A4__AIFM3__CM105103.1__extracted__IGL	genomic_annotation	gene	294426	294464	.	+	.	gene_id "IGLJ1*01"; region "IGL"; function "ORF";
+GCA_047496845.1_LepYark_1.0_genomic__SLC5A4__AIFM3__CM105103.1__extracted__IGL	genomic_annotation	gene	300024	300062	.	+	.	gene_id "IGLJ6*01-like"; region "IGL"; function "Functional";
+GCA_047496845.1_LepYark_1.0_genomic__SLC5A4__AIFM3__CM105103.1__extracted__IGL	genomic_annotation	gene	304277	304315	.	+	.	gene_id "IGLJ3*01-like_2"; region "IGL"; function "Functional";

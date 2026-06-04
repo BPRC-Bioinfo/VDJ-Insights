@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!-- Document definition -->
+<!-- http://zlab.bu.edu/~phaverty/SupplementalData/CisML/cisml.dtd -->
+<!DOCTYPE cis-element-search[
+<!ELEMENT cis-element-search (program-name, parameters, (pattern | multi-pattern-scan)*)>
+<!ELEMENT program-name (#PCDATA)>
+<!ELEMENT parameters (
+  pattern-file, 
+  sequence-file, 
+  background-seq-file?,
+  pattern-pvalue-cutoff?,
+  sequence-pvalue-cutoff?,
+  site-pvalue-cutoff?,
+  sequence-filtering,
+  ANY*
+ )>
+<!ELEMENT command-line (#PCDATA)>
+<!ELEMENT pattern-file (#PCDATA)>
+<!ELEMENT sequence-file (#PCDATA)>
+<!ELEMENT background-seq-file (#PCDATA)>
+<!ELEMENT pattern-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-pvalue-cutoff (#PCDATA)>
+<!ELEMENT site-pvalue-cutoff (#PCDATA)>
+<!ELEMENT sequence-filtering EMPTY>
+<!ELEMENT multi-pattern-scan (pattern+, ANY*)>
+<!ELEMENT pattern (scanned-sequence+, ANY*)>
+<!ELEMENT scanned-sequence (matched-element*, ANY*)>
+<!ELEMENT matched-element (sequence)>
+<!ELEMENT sequence (#PCDATA)>
+<!ATTLIST cis-element-search
+xmlns:xsi CDATA #IMPLIED
+xmlns:mem CDATA #IMPLIED
+xsi:schemaLocation CDATA #IMPLIED
+>
+<!ATTLIST sequence-filtering
+on-off CDATA #REQUIRED
+type CDATA #IMPLIED
+>
+<!ATTLIST multi-pattern-scan
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+>
+<!ATTLIST pattern
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+pvalue CDATA #IMPLIED
+score CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST scanned-sequence
+accession CDATA #REQUIRED
+name CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+length CDATA #IMPLIED
+db CDATA #IMPLIED
+lsid CDATA #IMPLIED
+>
+<!ATTLIST matched-element
+start CDATA #REQUIRED
+stop CDATA #REQUIRED
+score CDATA #IMPLIED
+pvalue CDATA #IMPLIED
+clusterid CDATA #IMPLIED
+>
+
+]>
+<cis-element-search
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://zlab.bu.edu/schema/cisml cisml.xsd"
+  xmlns="http://zlab.bu.edu/schema/cisml"
+  xmlns:mem="http://noble.gs.washington.edu/meme"
+>
+<program-name>fimo</program-name>
+<parameters>
+<command-line>fimo --thresh 0.0001 --o /content/rabbit_ig_results/tmp/RSS/fimo_output/IGHD_13 /content/rabbit_ig_results/tmp/RSS/meme_output/IGHD_13/meme.txt /content/rabbit_ig_results/tmp/RSS/fasta/IGHD_13.fasta</command-line>
+<pattern-file>/content/rabbit_ig_results/tmp/RSS/meme_output/IGHD_13/meme.txt</pattern-file>
+<sequence-file>/content/rabbit_ig_results/tmp/RSS/fasta/IGHD_13.fasta</sequence-file>
+<site-pvalue-cutoff>0.0001</site-pvalue-cutoff>
+<sequence-filtering on-off="off"/>
+</parameters>
+<pattern accession="CACAGTGMMMMMMMMMMMMCAWAAAMCY" name="MEME-1">
+<scanned-sequence accession="AY386697_IGHD1-1*01_Oryctolagus_cuniculus-like_1__46" name="AY386697_IGHD1-1*01_Oryctolagus_cuniculus-like_1__46">
+<matched-element start="1" stop="28" score="16.4719" pvalue="3.79e-07">
+<sequence>CACAGTGACACAGCCCCGGTCCAAAAGC</sequence>
+<mem:qvalue>9.42e-07</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__47" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__47">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__48" name="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__48">
+<matched-element start="1" stop="28" score="10.4831" pvalue="2.98e-06">
+<sequence>CACACTCAAAACCAGCTGCACATACGGG</sequence>
+<mem:qvalue>5.96e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__49" name="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__49">
+<matched-element start="1" stop="28" score="14.5618" pvalue="7.44e-07">
+<sequence>CACACTCAAAACCAGCTGCACATACAGG</sequence>
+<mem:qvalue>1.59e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD4-2*01_Oryctolagus_cuniculus__50" name="AY386695_IGHD4-2*01_Oryctolagus_cuniculus__50">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD5-1*01_Oryctolagus_cuniculus__51" name="AY386695_IGHD5-1*01_Oryctolagus_cuniculus__51">
+<matched-element start="1" stop="28" score="25.3708" pvalue="3.13e-09">
+<sequence>CACAGTGGTGCACCCAGCACAAAACCCT</sequence>
+<mem:qvalue>9.93e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-3*01_Oryctolagus_cuniculus-like_1__52" name="AY386695_IGHD3-3*01_Oryctolagus_cuniculus-like_1__52">
+<matched-element start="1" stop="28" score="13.1348" pvalue="1.21e-06">
+<sequence>CACACTCAAAAGCAGCTGCACATACAGG</sequence>
+<mem:qvalue>2.48e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__53" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__53">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD8-1*01_Oryctolagus_cuniculus__54" name="AY386695_IGHD8-1*01_Oryctolagus_cuniculus__54">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD7-1*01_Oryctolagus_cuniculus__55" name="AY386695_IGHD7-1*01_Oryctolagus_cuniculus__55">
+<matched-element start="1" stop="28" score="25.8764" pvalue="2.08e-09">
+<sequence>CACAGTGCCTCAGGCCTCACATAAAACT</sequence>
+<mem:qvalue>6.84e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD5-1*01_Oryctolagus_cuniculus__56" name="AY386695_IGHD5-1*01_Oryctolagus_cuniculus__56">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD4-2*01_Oryctolagus_cuniculus__57" name="AY386695_IGHD4-2*01_Oryctolagus_cuniculus__57">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__58" name="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__58">
+<matched-element start="1" stop="28" score="14.5618" pvalue="7.44e-07">
+<sequence>CACACTCAAAACCAGCTGCACATACAGG</sequence>
+<mem:qvalue>1.59e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD4-1*01_Oryctolagus_cuniculus__59" name="AY386697_IGHD4-1*01_Oryctolagus_cuniculus__59">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD1-1*01_Oryctolagus_cuniculus-like_2__60" name="AY386697_IGHD1-1*01_Oryctolagus_cuniculus-like_2__60">
+<matched-element start="1" stop="28" score="16.4719" pvalue="3.79e-07">
+<sequence>CACAGTGACACAGCCCCGGTCCAAAAGC</sequence>
+<mem:qvalue>9.42e-07</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD8-1*01_Oryctolagus_cuniculus__131" name="AY386695_IGHD8-1*01_Oryctolagus_cuniculus__131">
+<matched-element start="1" stop="28" score="26.1236" pvalue="1.68e-09">
+<sequence>CACAGTGCCTCAGGCCGCACATAAAACT</sequence>
+<mem:qvalue>6.84e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__132" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__132">
+<matched-element start="1" stop="28" score="25.9551" pvalue="1.94e-09">
+<sequence>CACAGTGGTGCACCCAGCACCAAAACCC</sequence>
+<mem:qvalue>6.84e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD7-1*01_Oryctolagus_cuniculus-like__133" name="AY386695_IGHD7-1*01_Oryctolagus_cuniculus-like__133">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__134" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__134">
+<matched-element start="1" stop="28" score="25.9551" pvalue="1.94e-09">
+<sequence>CACAGTGGTGCACCCAGCACCAAAACCC</sequence>
+<mem:qvalue>6.84e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD4-1*01_Oryctolagus_cuniculus-like__135" name="AY386697_IGHD4-1*01_Oryctolagus_cuniculus-like__135">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__136" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__136">
+<matched-element start="1" stop="28" score="25.9551" pvalue="1.94e-09">
+<sequence>CACAGTGGTGCACCCAGCACCAAAACCC</sequence>
+<mem:qvalue>6.84e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD1-1*01_Oryctolagus_cuniculus-like_3__137" name="AY386697_IGHD1-1*01_Oryctolagus_cuniculus-like_3__137">
+<matched-element start="1" stop="28" score="16.4719" pvalue="3.79e-07">
+<sequence>CACAGTGACACAGCCCCGGTCCAAAAGC</sequence>
+<mem:qvalue>9.42e-07</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD8-1*01_Oryctolagus_cuniculus__172" name="AY386695_IGHD8-1*01_Oryctolagus_cuniculus__172">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__173" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__173">
+<matched-element start="1" stop="28" score="23.4719" pvalue="1.25e-08">
+<sequence>CACAGTAGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.72e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD7-1*01_Oryctolagus_cuniculus__174" name="AY386695_IGHD7-1*01_Oryctolagus_cuniculus__174">
+<matched-element start="1" stop="28" score="25.8764" pvalue="2.08e-09">
+<sequence>CACAGTGCCTCAGGCCTCACATAAAACT</sequence>
+<mem:qvalue>6.84e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__175" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__175">
+<matched-element start="1" stop="28" score="23.4719" pvalue="1.25e-08">
+<sequence>CACAGTAGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.72e-08</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD6-1*01_Oryctolagus_cuniculus__176" name="AY386695_IGHD6-1*01_Oryctolagus_cuniculus__176">
+<matched-element start="1" stop="28" score="25.9326" pvalue="1.99e-09">
+<sequence>CACAGTGCCTAAGGCCTCACATAAAACT</sequence>
+<mem:qvalue>6.84e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-3*01_Oryctolagus_cuniculus-like_2__177" name="AY386695_IGHD3-3*01_Oryctolagus_cuniculus-like_2__177">
+<matched-element start="1" stop="28" score="13.4607" pvalue="1.09e-06">
+<sequence>CACACTCAAAAGCAGCTGCCCCAACAGG</sequence>
+<mem:qvalue>2.27e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD5-1*01_Oryctolagus_cuniculus__178" name="AY386695_IGHD5-1*01_Oryctolagus_cuniculus__178">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD4-2*01_Oryctolagus_cuniculus__179" name="AY386695_IGHD4-2*01_Oryctolagus_cuniculus__179">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__180" name="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__180">
+<matched-element start="1" stop="28" score="14.5618" pvalue="7.44e-07">
+<sequence>CACACTCAAAACCAGCTGCACATACAGG</sequence>
+<mem:qvalue>1.59e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__181" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__181">
+<matched-element start="1" stop="28" score="16.7191" pvalue="3.46e-07">
+<sequence>CACAATAGTGCACCCAGCACAAAACCCT</sequence>
+<mem:qvalue>9.42e-07</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD4-1*01_Oryctolagus_cuniculus__182" name="AY386697_IGHD4-1*01_Oryctolagus_cuniculus__182">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__183" name="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__183">
+<matched-element start="1" stop="28" score="14.5618" pvalue="7.44e-07">
+<sequence>CACACTCAAAACCAGCTGCACATACAGG</sequence>
+<mem:qvalue>1.59e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__184" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__184">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD1-1*01_Oryctolagus_cuniculus__185" name="AY386697_IGHD1-1*01_Oryctolagus_cuniculus__185">
+<matched-element start="1" stop="28" score="16.4719" pvalue="3.79e-07">
+<sequence>CACAGTGACACAGCCCCGGTCCAAAAGC</sequence>
+<mem:qvalue>9.42e-07</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD8-1*01_Oryctolagus_cuniculus__385" name="AY386695_IGHD8-1*01_Oryctolagus_cuniculus__385">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__386" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__386">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD7-1*01_Oryctolagus_cuniculus__387" name="AY386695_IGHD7-1*01_Oryctolagus_cuniculus__387">
+<matched-element start="1" stop="28" score="25.8764" pvalue="2.08e-09">
+<sequence>CACAGTGCCTCAGGCCTCACATAAAACT</sequence>
+<mem:qvalue>6.84e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__388" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__388">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__389" name="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__389">
+<matched-element start="1" stop="28" score="14.5618" pvalue="7.44e-07">
+<sequence>CACACTCAAAACCAGCTGCACATACAGG</sequence>
+<mem:qvalue>1.59e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__390" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__390">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD4-1*01_Oryctolagus_cuniculus__391" name="AY386697_IGHD4-1*01_Oryctolagus_cuniculus__391">
+<matched-element start="1" stop="28" score="27.6067" pvalue="4.2e-10">
+<sequence>CACAGTGCCTCAGGCCACACATAAAACT</sequence>
+<mem:qvalue>3.51e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__392" name="AY386695_IGHD3-2*01_Oryctolagus_cuniculus__392">
+<matched-element start="1" stop="28" score="14.5618" pvalue="7.44e-07">
+<sequence>CACACTCAAAACCAGCTGCACATACAGG</sequence>
+<mem:qvalue>1.59e-06</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__393" name="AY386697_IGHD2-1*01_Oryctolagus_cuniculus__393">
+<matched-element start="1" stop="28" score="26.9663" pvalue="7.68e-10">
+<sequence>CACAGTGGTGCACCCAGCACAAAAACCC</sequence>
+<mem:qvalue>3.53e-09</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<scanned-sequence accession="AY386697_IGHD1-1*01_Oryctolagus_cuniculus-like_2__394" name="AY386697_IGHD1-1*01_Oryctolagus_cuniculus-like_2__394">
+<matched-element start="1" stop="28" score="16.4719" pvalue="3.79e-07">
+<sequence>CACAGTGACACAGCCCCGGTCCAAAAGC</sequence>
+<mem:qvalue>9.42e-07</mem:qvalue>
+</matched-element>
+</scanned-sequence>
+<mem:has-qvalues>yes</mem:has-qvalues>
+</pattern>
+</cis-element-search>

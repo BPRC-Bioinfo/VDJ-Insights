@@ -1,0 +1,14 @@
+Flask
+flask-caching
+pandas
+numpy
+biopython
+scikit-learn
+plotly
+scipy
+bokeh
+matplotlib
+matplotlib-venn
+dna-features-viewer
+openpyxl
+gunicorn

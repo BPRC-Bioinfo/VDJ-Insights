@@ -1,0 +1,75 @@
+{% extends 'sharedTemplates/base.html' %}
+{% block title %}About{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+  <div class="card shadow">
+      <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">
+          <h2 class="mb-0">Contributors</h2>
+        </div>
+        <div class="card-body">
+          <div class="row text-center">
+            {% set contributors = [
+              {'name': 'Jesse Mittertreiner', 'image': 'jessem.png'},
+              {'name': 'Giang Le', 'image': 'giang.jpg'},
+              {'name': 'Jaimy Mohammadi', 'image': 'jaimy.png'},
+              {'name': 'Jesse Bruijnesteijn', 'image': 'jesseb.png'},
+              {'name': 'Susan Ott', 'image': 'susan.png'}
+            ] %}
+
+            {% for contributor in contributors %}
+              <div class="col-md-4 mb-4">
+                <div class="card shadow-sm">
+                  <img class="card-img-top rounded-circle mx-auto mt-3" style="width: 100px;"
+                       src="{{ url_for('static', filename='images/' + contributor.image) }}"
+                       alt="{{ contributor.name }}">
+                  <div class="card-body">
+                    <h5 class="card-title">{{ contributor.name }}</h5>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Contributing Section -->
+      <div class="card mb-4">
+        <div class="card-header bg-secondary text-white">
+          <h2 class="mb-0">Contributing</h2>
+        </div>
+        <div class="card-body">
+          <p>
+            Contributions are welcome! Fork the repository and submit a pull request.
+            For significant changes, please open an issue to discuss them first.
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Buttons -->
+      <div class="d-flex justify-content-between">
+        <a href="https://github.com/your-username/vdj-insights" target="_blank" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <a href="mailto:your-email@example.com" class="btn btn-secondary">
+          <i class="fa-solid fa-paper-plane"></i> Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Copy Button Script -->
+<script>
+    document.querySelectorAll(".copy-button").forEach(button => {
+        button.addEventListener("click", function () {
+            const codeBlock = document.getElementById(this.getAttribute("data1-target"));
+            navigator.clipboard.writeText(codeBlock.textContent);
+            this.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            setTimeout(() => { this.innerHTML = '<i class="fa-regular fa-clone"></i> Copy Code'; }, 2000);
+        });
+    });
+</script>
+
+{% endblock %}
