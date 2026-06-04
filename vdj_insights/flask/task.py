@@ -1,6 +1,6 @@
 from time import sleep
 
-from celery import shared_task
+#from celery import shared_task
 import subprocess
 import os
 from Bio import SeqIO
@@ -18,7 +18,7 @@ def get_fasta(file_names):
     return sequences
 
 
-@shared_task
+#@shared_task
 def merge_sequences(file_names: list, output_dir: str):
     merged_dir = os.path.join(output_dir, "merged")
     aligned_dir = os.path.join(output_dir, "aligned")

@@ -23,7 +23,7 @@
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Annotation</a>
                     <div class="dropdown-menu">
                         <a class="nav-link {% if request.path == '/get_sample_table' %}active{% endif %} dropdown-item" href="/get_sample_table">Sampels</a>
-                        <a class="nav-link {% if request.path == '/get_count_contigs' %}active{% endif %} dropdown-item" href="/get_count_contigs">Contig composition</a>
+                        <!--<a class="nav-link {% if request.path == '/get_count_contigs' %}active{% endif %} dropdown-item" href="/get_count_contigs">Contig composition</a>-->
                         <a class="nav-link {% if request.path == '/sequence_list' %}active{% endif %} dropdown-item" href="/sequence_list">Segment frequency</a>
                         <a class="nav-link {% if request.path == '/unique_sequences' %}active{% endif %} dropdown-item" href="/unique_sequences">Segments unique to samples</a>
                         <a class="nav-link {% if request.path == '/get_rss' %}active{% endif %} dropdown-item" href="/get_rss">Recombination signal sequences</a>
@@ -33,7 +33,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tools</a>
                     <div class="dropdown-menu">
-                        <a class="nav-link {% if request.path == '/run_mafft' %}active{% endif %} dropdown-item" href="/run_mafft">Haplotype alignment</a>
+                        <!--<a class="nav-link {% if request.path == '/run_mafft' %}active{% endif %} dropdown-item" href="/run_mafft">Haplotype alignment</a>-->
                         <a class="nav-link {% if request.path == '/get_haplotype_alignment' %}active{% endif %} dropdown-item" href="/get_haplotype_alignment">Haplotype viewer</a>
                         <a class="nav-link {% if request.path == '/get_compare' %}active{% endif %} dropdown-item" href="/get_compare">Compare samples</a>
                     </div>
@@ -50,7 +50,7 @@
             </div>
             <div class="navbar-nav ms-auto">
                 <li><a class="nav-link {% if request.path == '/help_annotation' %}active{% endif %}" href="/help_annotation">Info annotation report</a></li>
-                <li><a class="nav-link {% if request.path == '/get_about' %}active{% endif %}" href="/get_about">About</a></li>
+                <!--<li><a class="nav-link {% if request.path == '/get_about' %}active{% endif %}" href="/get_about">About</a></li>-->
             </div>
         </div>
     </div>

@@ -12,7 +12,7 @@ import pandas as pd
 import numpy as np
 from flask import Flask, render_template, request, make_response, flash, redirect, url_for, send_file, Response, session, abort
 
-from celery import Celery
+#from celery import Celery
 from flask_caching import Cache
 import base64
 from Bio import SeqIO
@@ -58,8 +58,8 @@ app.config["CACHE_DEFAULT_TIMEOUT"] = 3600
 app.config["CELERY_BROKER_URL"] = "redis://localhost:6379/0"
 app.config["CELERY_RESULT_BACKEND"] = "redis://localhost:6379/0"
 
-celery = Celery(app.name, broker=app.config["CELERY_BROKER_URL"])
-celery.conf.update(app.config)
+#celery = Celery(app.name, broker=app.config["CELERY_BROKER_URL"])
+#celery.conf.update(app.config)
 
 cache = Cache(app)
 
