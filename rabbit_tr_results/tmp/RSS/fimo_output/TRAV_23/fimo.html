@@ -1,0 +1,2601 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:cis="http://zlab.bu.edu/schema/cisml" xmlns:fimo="http://noble.gs.washington.edu/schema/cisml" xmlns:mem="http://noble.gs.washington.edu/meme">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>FIMO Results</title>
+<style type="text/css">
+td.left {text-align: left;}
+td.right {text-align: right; padding-right: 1cm;}
+</style>
+</head>
+<body color="#000000">
+<a name="top_buttons"></a>
+<hr>
+<table summary="buttons" align="left" cellspacing="0">
+<tr>
+<td bgcolor="#00FFFF"><a href="#database_and_motifs"><b>Database and Motifs</b></a></td>
+<td bgcolor="#DDFFDD"><a href="#sec_i"><b>High-scoring Motif Occurences</b></a></td>
+<td bgcolor="#DDDDFF"><a href="#debugging_information"><b>Debugging Information</b></a></td>
+<td bgcolor="#FFDD00"><a href="fimo.tsv""><b>Results in TSV Format</b></a></td>
+<td bgcolor="#FFDDFF"><a href="fimo.gff""><b>Results in GFF3 Format</b></a></td>
+<td bgcolor="#00FFFF" id="best_site"><a href="best_site.narrowPeak""><b>Best Site per Sequence</b></a></td>
+<script>
+var new_icon_src = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAQCAMAAAAyEe/dAAAACVBMVEX//wAAAAD////s2cV/AAAAdUlEQVQYlXVRBxLAIAhL+P+jC2HZhXcBZEWEldDsZcLIcAhHWWnK8SDcWQhMFUHdAQ1CqQ5+CWPmlHojl+nCJNRtzu4qRc3IUzmTVpXYK0nox0z0PI1stgchdK7lEv7ekhvalw8WW547Gyzedt/2/gLx8WXjXF/1AYFriNAWAAAAAElFTkSuQmCC";
+var new_icon = document.createElement("img");
+new_icon.src = new_icon_src;
+new_icon.alt = "NEW";
+const elem = document.getElementById("best_site");
+elem.appendChild(document.createTextNode("  "));
+elem.appendChild(new_icon);
+</script>
+</tr>
+</table>
+<br/>
+<br/>
+<hr/>
+<center><big><b>FIMO - Motif search tool</b></big></center>
+<hr>
+<p>
+FIMO version 5.5.8, (Release date: Thu May 15 15:01:46 2025 -0700)
+</p>
+<p>
+For further information on how to interpret these results please access <a href="https://meme-suite.org/meme/doc/fimo-output-format.html">https://meme-suite.org/meme/doc/fimo-output-format.html</a>.<br>
+To get a copy of the FIMO software please access <a href="https://meme-suite.org">https://meme-suite.org</a>
+
+</p>
+<p>If you use FIMO in your research, please cite the following paper:<br>
+Charles E. Grant, Timothy L. Bailey, and William Stafford Noble,
+"FIMO: Scanning for occurrences of a given motif",
+<i>Bioinformatics</i>, <b>27</b>(7):1017-1018, 2011.
+<a href="http://bioinformatics.oxfordjournals.org/content/27/7/1017">[full text]</a></p>
+<hr>
+<center><big><b><a name="database_and_motifs">DATABASE AND MOTIFS</a></b></big></center>
+<hr>
+<div style="padding-left: 0.75in; line-height: 1em; font-family: monospace;">
+<p>
+  DATABASE /content/rabbit_tr_results/tmp/RSS/fasta/TRAV_23.fasta
+  <br />
+  Database contains 241 sequences, 9399 residues
+</p>
+<p>
+  MOTIFS /content/rabbit_tr_results/tmp/RSS/meme_output/TRAV_23/meme.txt (DNA)
+  <table>
+    <thead>
+      <tr>
+        <th style="border-bottom: 1px dashed;">MOTIF</th>
+        <th style="border-bottom: 1px dashed; padding-left: 1em;">WIDTH</th>
+        <th style="border-bottom: 1px dashed; padding-left: 1em;text-align:left;" >
+         BEST POSSIBLE MATCH
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align:right;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+        <td style="text-align:right;padding-left: 1em;">39</td>
+        <td style="text-align:left;padding-left: 1em;">CACAGTGCCCCCCCCCCCCCCCCCCCCCCCACACAAACC</td>
+       </tr>
+    </tbody>
+  </table>
+</p>
+<p>
+Random model letter frequencies (--nrdb--):
+<br/>
+
+A 0.275 C 0.225 G 0.225 T 0.275 </p>
+</div>
+<hr>
+<center><big><b><a name="sec_i">SECTION I: HIGH-SCORING MOTIF OCCURENCES</a></b></big></center>
+<hr>
+<ul>
+<li>
+There were 219 motif occurences with a p-value less than 0.0001.
+
+The full set of motif occurences can be seen in the
+TSV (tab-delimited values) output file
+<a href="fimo.tsv">fimo.tsv</a>, 
+the GFF3 file 
+<a href="fimo.gff">fimo.gff</a> 
+which may be suitable for uploading to the 
+<a href="http://genome.ucsc.edu/cgi-bin/hgTables">UCSC Genome Table Browser</a>
+(assuming the FASTA input sequences included genomic coordinates in UCSC or Galaxy format),
+or the XML file 
+<a href="fimo.xml">fimo.xml</a>.
+</li>
+<li>
+The <i>p</i>-value of a motif occurrence is defined as the
+probability of a random sequence of the same length as the motif
+matching that position of the sequence with as good or better a score.
+</li>
+<li>
+The score for the match of a position in a sequence to a motif
+is computed by summing the appropriate entries from each column of
+the position-dependent scoring matrix that represents the motif.
+</li>
+<li>
+The q-value of a motif occurrence is defined as the
+false discovery rate if the occurrence is accepted as significant.
+</li>
+<li>The table is sorted by increasing <i>p</i>-value.</li>
+</ul>
+<table border="1">
+<thead>
+<tr>
+<th>Motif ID</th>
+<th>Alt ID</th>
+<th>Sequence Name</th>
+<th>Strand</th>
+<th>Start</th>
+<th>End</th>
+<th>p-value</th>
+<th>q-value</th>
+<th>Matched Sequence</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV41*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__297</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.73e-12</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTTCCCAAGCACCCGCAGCCCACACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__4</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.31e-12</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATCCACCCAAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_4__507</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATCCACCCGAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__336</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATCCACCCGAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__516</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGACACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV23*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__310</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGACACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__503</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATCCACCCGAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__2</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGACACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__726</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGACACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-3*01_Oryctolagus_cuniculus_Thorbecke_inbred__514</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATCCACCCGAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__8</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATCCACCCGAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_5__719</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-11</td>
+      <td style="text-align:left;">4.27e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATCCACCCGAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV41*01_Oryctolagus_cuniculus_Thorbecke_inbred__672</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTTCCCAAGCACCTGCAGCCCACACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV41*01_Oryctolagus_cuniculus_Thorbecke_inbred__452</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTTCCCAAGCACCTGCAGCCCACACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV41*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__60</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTTCCCAAGCACCTGCAGCCCACACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-10*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__338</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-10*01_Oryctolagus_cuniculus_Thorbecke_inbred__17</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-10*01_Oryctolagus_cuniculus_Thorbecke_inbred__498</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-6*01_Oryctolagus_cuniculus_Thorbecke_inbred__502</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV23*01_Oryctolagus_cuniculus_Thorbecke_inbred__47</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__335</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__340</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV23*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__686</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV23*01_Oryctolagus_cuniculus_Thorbecke_inbred__466</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.8e-11</td>
+      <td style="text-align:left;">4.98e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV17*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__316</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.82e-11</td>
+      <td style="text-align:left;">5.16e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCTCCTACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-8*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__508</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6e-11</td>
+      <td style="text-align:left;">5.16e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGTGCCCCAGACACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-8*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__13</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6e-11</td>
+      <td style="text-align:left;">5.16e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGTGCCCCAGACACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-8*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__500</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6e-11</td>
+      <td style="text-align:left;">5.16e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGTGCCCCAGACACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-8*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__15</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6e-11</td>
+      <td style="text-align:left;">5.16e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGTGCCCCAGACACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-6*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__7</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.78e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATGCACCTGCAGCCTCTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_4__720</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.66e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__504</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.66e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__9</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.66e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__10</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.66e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__505</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.66e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-3*01_Oryctolagus_cuniculus_Thorbecke_inbred__510</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.66e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__715</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.66e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-2*01_Oryctolagus_cuniculus_Thorbecke_inbred__721</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.66e-11</td>
+      <td style="text-align:left;">6.34e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-9*01_Oryctolagus_cuniculus_Thorbecke_inbred__16</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.09e-10</td>
+      <td style="text-align:left;">6.77e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCTCATCCACCCGAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-9*01_Oryctolagus_cuniculus_Thorbecke_inbred__499</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.09e-10</td>
+      <td style="text-align:left;">6.77e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCTCATCCACCCGAAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV24*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__308</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.61e-10</td>
+      <td style="text-align:left;">9.8e-10</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGTCAGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_5__509</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.39e-10</td>
+      <td style="text-align:left;">1.8e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-10*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__506</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.39e-10</td>
+      <td style="text-align:left;">1.8e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-10*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__716</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.39e-10</td>
+      <td style="text-align:left;">1.8e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-4*01_Oryctolagus_cuniculus_Thorbecke_inbred__513</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.39e-10</td>
+      <td style="text-align:left;">1.8e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV16*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__317</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.39e-10</td>
+      <td style="text-align:left;">1.8e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGCCATTGCAAGCGAAGCAGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__5</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.39e-10</td>
+      <td style="text-align:left;">1.8e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV21*01_Oryctolagus_cuniculus_Thorbecke_inbred-like__312</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.95e-10</td>
+      <td style="text-align:left;">2.05e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGCAACAGGCACCTGTAACTGACACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-6*01_Oryctolagus_cuniculus_Thorbecke_inbred__20</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.24e-10</td>
+      <td style="text-align:left;">2.11e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-6*01_Oryctolagus_cuniculus_Thorbecke_inbred__495</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.24e-10</td>
+      <td style="text-align:left;">2.11e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_4__501</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.68e-10</td>
+      <td style="text-align:left;">2.62e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__14</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.68e-10</td>
+      <td style="text-align:left;">2.62e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_6__717</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.68e-10</td>
+      <td style="text-align:left;">2.62e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__12</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.68e-10</td>
+      <td style="text-align:left;">2.62e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCATGCACCTGCAGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__724</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.68e-10</td>
+      <td style="text-align:left;">2.84e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCGGCCTCTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV16*01_Oryctolagus_cuniculus_Thorbecke_inbred__41</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.68e-10</td>
+      <td style="text-align:left;">2.84e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGCCTTCGCAAGGGAAGCAGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV16*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__692</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.68e-10</td>
+      <td style="text-align:left;">2.84e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGCCTTCGCAAGGGAAGCAGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV16*01_Oryctolagus_cuniculus_Thorbecke_inbred__474</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.68e-10</td>
+      <td style="text-align:left;">2.84e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGCCTTCGCAAGGGAAGCAGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__69</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.84e-10</td>
+      <td style="text-align:left;">2.84e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATCCAGATGCTCAGGAAGCCTGCACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__664</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.84e-10</td>
+      <td style="text-align:left;">2.84e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATCCAGATGCTCAGGAAGCCTGCACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-7*01_Oryctolagus_cuniculus_Thorbecke_inbred__470</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.24e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__334</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.24e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__337</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.24e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__18</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.24e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATAGGAACCAGAGGGGGAGCCGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__313</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.24e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__688</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.24e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-7*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__44</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.24e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-5*01_Oryctolagus_cuniculus_Thorbecke_inbred__496</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.42e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAAGGAGTTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-5*01_Oryctolagus_cuniculus_Thorbecke_inbred__19</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.42e-10</td>
+      <td style="text-align:left;">3.04e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAAGGAGTTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-2*01_Oryctolagus_cuniculus_Thorbecke_inbred__511</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.58e-09</td>
+      <td style="text-align:left;">5.32e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGAAGTTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__714</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.58e-09</td>
+      <td style="text-align:left;">5.32e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGTTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-6*01_Oryctolagus_cuniculus_Thorbecke_inbred-like__713</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.58e-09</td>
+      <td style="text-align:left;">5.32e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGAGGGAGTTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__11</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.58e-09</td>
+      <td style="text-align:left;">5.32e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGAAGTTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__512</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.58e-09</td>
+      <td style="text-align:left;">5.32e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGAAGTTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__341</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.66e-09</td>
+      <td style="text-align:left;">5.51e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCACCCAGGTCATCTGCAGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-6*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__718</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.77e-09</td>
+      <td style="text-align:left;">5.82e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCCAGGCACCTGCAGCCTCTACCCAAAAC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV17*01_Oryctolagus_cuniculus_Thorbecke_inbred__473</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.97e-09</td>
+      <td style="text-align:left;">6.3e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTTCTCCCCAGGCACCTGCAGCTCCTACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV17*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__691</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.97e-09</td>
+      <td style="text-align:left;">6.3e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTTCTCCCCAGGCACCTGCAGCTCCTACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__321</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.27e-09</td>
+      <td style="text-align:left;">7.16e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACACTGCTCCCCAGGCACCTGCATCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__722</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.87e-09</td>
+      <td style="text-align:left;">8.84e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGAACCACAGGGGGAGTTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV45-4*01_Oryctolagus_cuniculus_Thorbecke_inbred__497</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.87e-09</td>
+      <td style="text-align:left;">8.84e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATAGGAACCAGAGGGGGAGCTGAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__1</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.01e-09</td>
+      <td style="text-align:left;">8.87e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCACCCAGGTCGTCTGCAGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__727</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.01e-09</td>
+      <td style="text-align:left;">8.87e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCACCCAGGTCGTCTGCAGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__517</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.01e-09</td>
+      <td style="text-align:left;">8.87e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCACCCAGGTCGTCTGCAGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV39*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__298</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.15e-09</td>
+      <td style="text-align:left;">8.87e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCACCTGCCACTGTCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV39*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__59</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.15e-09</td>
+      <td style="text-align:left;">8.87e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCACCTGCCACTGTCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV39*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__453</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.15e-09</td>
+      <td style="text-align:left;">8.87e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCACCTGCCACTGTCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV39*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__673</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.15e-09</td>
+      <td style="text-align:left;">8.87e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCACCTGCCACTGTCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__323</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.17e-09</td>
+      <td style="text-align:left;">8.87e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV27*01_Oryctolagus_cuniculus_Thorbecke_inbred__462</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.63e-09</td>
+      <td style="text-align:left;">9.83e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTCAGGGCACCTGCTGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV27*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__51</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.63e-09</td>
+      <td style="text-align:left;">9.83e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTCAGGGCACCTGCTGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV27*01_Oryctolagus_cuniculus_Thorbecke_inbred__682</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.63e-09</td>
+      <td style="text-align:left;">9.83e-09</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTCAGGGCACCTGCTGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-5*01_Oryctolagus_cuniculus_Thorbecke_inbred__463</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.78e-09</td>
+      <td style="text-align:left;">1e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGGGACTGCAGGGGAAGCTGAACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-5*01_Oryctolagus_cuniculus_Thorbecke_inbred__683</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.78e-09</td>
+      <td style="text-align:left;">1e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGGGACTGCAGGGGAAGCTGAACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV37*01_Oryctolagus_cuniculus_Thorbecke_inbred__456</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.22e-09</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTTCCCAGCACCTGCACCCTGCACCTCAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV37*01_Oryctolagus_cuniculus_Thorbecke_inbred__676</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.22e-09</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTTCCCAGCACCTGCACCCTGCACCTCAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV37*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__301</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.22e-09</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCCTCCCAGCACCTGCACCCTGTACCTCAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV24*01_Oryctolagus_cuniculus_Thorbecke_inbred__464</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.24e-09</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTTCCGAGGCACCTGCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV24*01_Oryctolagus_cuniculus_Thorbecke_inbred__684</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.24e-09</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTTCCGAGGCACCTGCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV24*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__49</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.24e-09</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTTCCGAGGCACCTGCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__326</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.55e-09</td>
+      <td style="text-align:left;">1.12e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGCGCCTGCTGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV18*01_Oryctolagus_cuniculus_Thorbecke_inbred__472</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.07e-09</td>
+      <td style="text-align:left;">1.22e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGGGTTGCAGAGGGAGCCAAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV18*01_Oryctolagus_cuniculus_Thorbecke_inbred__690</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.07e-09</td>
+      <td style="text-align:left;">1.22e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGGGTTGCAGAGGGAGCCAAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV18*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__42</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.07e-09</td>
+      <td style="text-align:left;">1.22e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGGGTTGCAGAGGGAGCCAAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV5*01_Oryctolagus_cuniculus_Thorbecke_inbred__61</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.61e-09</td>
+      <td style="text-align:left;">1.31e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAAAAGTAACAGAGAAAGCTTTGCAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV5*01_Oryctolagus_cuniculus_Thorbecke_inbred__451</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.61e-09</td>
+      <td style="text-align:left;">1.31e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAAAAGTAACAGAGAAAGCTTTGCAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV5*01_Oryctolagus_cuniculus_Thorbecke_inbred__671</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.61e-09</td>
+      <td style="text-align:left;">1.31e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAAAAGTAACAGAGAAAGCTTTGCAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV10*01_Oryctolagus_cuniculus_Thorbecke_inbred__694</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.88e-09</td>
+      <td style="text-align:left;">1.36e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGCTCCCCGGGCACTTGCTGCCAGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV38-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__299</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.42e-09</td>
+      <td style="text-align:left;">1.43e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATAGGAGCAACAGAGAGAGGCTTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV38-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__58</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.42e-09</td>
+      <td style="text-align:left;">1.43e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATAGGAGCAACAGAGAGAGGCTTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV38-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__454</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.42e-09</td>
+      <td style="text-align:left;">1.43e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATAGGAGCAACAGAGAGAGGCTTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV38-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__674</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.42e-09</td>
+      <td style="text-align:left;">1.43e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATAGGAGCAACAGAGAGAGGCTTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__50</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.6e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGGGACTGCAGGGGGAGCTGAACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__307</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.6e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTGGGACTGCAGGGGGAGCTGAACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV38-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__300</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.97e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGACAGGTGACATAGAGAGTCACACAGAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-4*01_Oryctolagus_cuniculus_Thorbecke_inbred__479</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.05e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTCCCCAGGCACCTGCATGCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__28</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.05e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTTCCCCTGCACCTGCAGGCAGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__705</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.05e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTTCCCCTGCACCTGCAGGCAGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__697</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.05e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTCCCCAGGCACCTGCATGCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__327</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.05e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTTCCCCTGCACCTGCAGGCAGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__36</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.05e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTCCCCAGGCACCTGCATGCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-2*01_Oryctolagus_cuniculus_Thorbecke_inbred__487</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.05e-09</td>
+      <td style="text-align:left;">1.44e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTTCCCCTGCACCTGCAGGCAGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV12*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__693</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.96e-09</td>
+      <td style="text-align:left;">1.6e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCACTCCCCAGACACCTGCAGTCTATACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV12*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__318</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.96e-09</td>
+      <td style="text-align:left;">1.6e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCACTCCCCAGACACCTGCAGTCTATACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV18*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__315</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">8.88e-09</td>
+      <td style="text-align:left;">1.77e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGAGGGGTTGCAGAGAGAGTCAAGCACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-3*01_Oryctolagus_cuniculus_Thorbecke_inbred__32</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.62e-09</td>
+      <td style="text-align:left;">1.86e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACACTGCTCCCCAGGCACCTGCATCCTGTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-3*01_Oryctolagus_cuniculus_Thorbecke_inbred__701</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.62e-09</td>
+      <td style="text-align:left;">1.86e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACACTGCTCCCCAGGCACCTGCATCCTGTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__325</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.62e-09</td>
+      <td style="text-align:left;">1.86e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACACTGCTCCCCAGGCACCTGCATCCTGTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-3*01_Oryctolagus_cuniculus_Thorbecke_inbred__483</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.62e-09</td>
+      <td style="text-align:left;">1.86e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACACTGCTCCCCAGGCACCTGCATCCTGTACTCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__712</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like__710</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_4__703</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__699</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__23</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__333</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__331</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__21</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__494</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-2*01_Oryctolagus_cuniculus_Thorbecke_inbred__492</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__34</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-3*01_Oryctolagus_cuniculus_Thorbecke_inbred__485</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-4*01_Oryctolagus_cuniculus_Thorbecke_inbred__481</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.06e-08</td>
+      <td style="text-align:left;">1.87e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGCCGGACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV38-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__455</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.18e-08</td>
+      <td style="text-align:left;">2.03e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGACAGGTGACAGAGAGAGTCCTACAGAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV38-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__57</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.18e-08</td>
+      <td style="text-align:left;">2.03e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGACAGGTGACAGAGAGAGTCCTACAGAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV38-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__675</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.18e-08</td>
+      <td style="text-align:left;">2.03e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGAGACAGGTGACAGAGAGAGTCCTACAGAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__322</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.23e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATGCCAGGGCATCTGTAACCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV37*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__56</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.26e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCCTTCCCAGCACCTGCACCCTGTACCTCAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV12*01_Oryctolagus_cuniculus_Thorbecke_inbred__475</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.34e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCACTCCCCAGACACCTGCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV12*01_Oryctolagus_cuniculus_Thorbecke_inbred__40</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.34e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCACTCCCCAGACACCTGCAGTCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__31</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.35e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGCGTCTGCTGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_5__702</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.35e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGCGTCTGCTGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_4__330</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.35e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGTGCCTGCTGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-2*01_Oryctolagus_cuniculus_Thorbecke_inbred__491</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.35e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGCGTCTGCTGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-4*01_Oryctolagus_cuniculus_Thorbecke_inbred__484</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.35e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGCGTCTGCTGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV19*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__43</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.36e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCGATGGGTGCCTGCAGAGGCTCCACCAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-4*01_Oryctolagus_cuniculus_Thorbecke_inbred__477</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__29</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__711</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__704</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_4__700</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__695</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__22</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__324</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__320</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-4*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__38</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__493</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-2*01_Oryctolagus_cuniculus_Thorbecke_inbred__486</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__33</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV9-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__482</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.4e-08</td>
+      <td style="text-align:left;">2.06e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGACAGGGACTGCAGGGGGAGCTGAGCACAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV10*01_Oryctolagus_cuniculus_Thorbecke_inbred__476</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.7e-08</td>
+      <td style="text-align:left;">2.48e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGCTCCCTGGGCACTTGCTGCCAGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV10*01_Oryctolagus_cuniculus_Thorbecke_inbred__39</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.7e-08</td>
+      <td style="text-align:left;">2.48e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGCTCCCTGGGCACTTGCTGCCAGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV8-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__30</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.8e-08</td>
+      <td style="text-align:left;">2.61e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCGCCTGGGCCTGCAGGGGGAGTCGAACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__725</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.04e-08</td>
+      <td style="text-align:left;">2.88e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCCCCGCTCAGGCACCTGCAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-5*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__698</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.04e-08</td>
+      <td style="text-align:left;">2.88e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATGCCAGGGCGTCTGTAACCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-5*01_Oryctolagus_cuniculus_Thorbecke_inbred__35</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.04e-08</td>
+      <td style="text-align:left;">2.88e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATGCCAGGGCGTCTGTAACCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-5*01_Oryctolagus_cuniculus_Thorbecke_inbred__480</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.04e-08</td>
+      <td style="text-align:left;">2.88e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGATGCCAGGGCGTCTGTAACCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__3</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.04e-08</td>
+      <td style="text-align:left;">2.88e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCCCCGCTCAGGCACCTGCAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV42*01_Oryctolagus_cuniculus_Thorbecke_inbred__467</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.06e-08</td>
+      <td style="text-align:left;">4.28e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTCCCGCGGCCTTCGGGAGGAGCTGCACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__24</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.66e-08</td>
+      <td style="text-align:left;">5.03e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGTGTCTGCTGCCTGGACCCAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV19*01_Oryctolagus_cuniculus_Thorbecke_inbred__471</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.67e-08</td>
+      <td style="text-align:left;">5.03e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCGATGGGTGCCTGCAGAGGCTCTACCAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV19*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__689</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.67e-08</td>
+      <td style="text-align:left;">5.03e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCGATGGGTGCCTGCAGAGGCTCTACCAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV19*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__314</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.67e-08</td>
+      <td style="text-align:left;">5.03e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCGATGGGTGCCTGCAGAGGCTCTACCAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__339</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.37e-08</td>
+      <td style="text-align:left;">7.31e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCCCTGCTCAGGCACCTGCAGCCTGTACCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV42*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__46</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.55e-08</td>
+      <td style="text-align:left;">7.43e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTCCCGGGGCCTTCGGGAGGAGCTGCACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV42*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__687</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.55e-08</td>
+      <td style="text-align:left;">7.43e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTCCCGGGGCCTTCGGGAGGAGCTGCACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV42*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__311</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.55e-08</td>
+      <td style="text-align:left;">7.43e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTCCCGGGGCCTTCGGGAGGAGCTGCACACAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV1*01_Oryctolagus_cuniculus_Thorbecke_inbred__465</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">6.09e-08</td>
+      <td style="text-align:left;">8.11e-08</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGTTTGAAGTGATAGCAGAAGCTGAACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV21*01_Oryctolagus_cuniculus_Thorbecke_inbred__468</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.16e-08</td>
+      <td style="text-align:left;">1.21e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCGCAACAGGCACCTGTAACTGGCACCCAGACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV21*01_Oryctolagus_cuniculus_Thorbecke_inbred__45</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.16e-08</td>
+      <td style="text-align:left;">1.21e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCGCAACAGGCACCTGTAACTGGCACCCAGACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV14-2*01_Oryctolagus_cuniculus_Thorbecke_inbred__478</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.8e-08</td>
+      <td style="text-align:left;">1.27e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGAGAGGACTCGCGTAGGGAGGCGTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV14-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__696</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.8e-08</td>
+      <td style="text-align:left;">1.27e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGAGAGGACTCGCGTAGGGAGGCGTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV14-2*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__37</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.8e-08</td>
+      <td style="text-align:left;">1.27e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGAGAGGACTCGCGTAGGGAGGCGTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV14-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__489</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">9.8e-08</td>
+      <td style="text-align:left;">1.27e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGAGAGGACTCGCGTAGGGAGGCGTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__685</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.48e-07</td>
+      <td style="text-align:left;">1.88e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGTTTGAAGTGATAGTAGAAGCTGAACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__309</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.48e-07</td>
+      <td style="text-align:left;">1.88e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGTTTGAAGTGATAGTAGAAGCTGAACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRDV1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__48</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.48e-07</td>
+      <td style="text-align:left;">1.88e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGTTTGAAGTGATAGTAGAAGCTGAACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV14-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__26</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.53e-07</td>
+      <td style="text-align:left;">1.91e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGAGAGGACTCGTGTAGAGAGGCGTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV14-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_3__707</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.53e-07</td>
+      <td style="text-align:left;">1.91e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGAGAGGACTCGTGTAGAGAGGCGTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV14-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__328</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.53e-07</td>
+      <td style="text-align:left;">1.91e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGAGAGGACTCGTGTAGAGAGGCGTACAAAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV5-2*01_Oryctolagus_cuniculus_Thorbecke_inbred__515</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.06e-07</td>
+      <td style="text-align:left;">2.56e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGCCCCGCTCAGGCACCTGCAGCCTGTACCCAAAAC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV27*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__306</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.26e-07</td>
+      <td style="text-align:left;">2.8e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTCAGGGCACCTGCTGCCTGTACGCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__706</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.24e-07</td>
+      <td style="text-align:left;">5.18e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGTGTCTGCAGCCCGGACCCAAAGT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like__27</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.24e-07</td>
+      <td style="text-align:left;">5.18e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGTGTCTGCAGCCCGGACCCAAAGT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV43-3*01_Oryctolagus_cuniculus_Thorbecke_inbred__488</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.24e-07</td>
+      <td style="text-align:left;">5.18e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCCCAGGGTGTCTGCAGCCCGGACCCAAAGT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV10*01_Oryctolagus_cuniculus_Thorbecke_inbred-like__319</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">4.65e-07</td>
+      <td style="text-align:left;">5.65e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACTGTGCTCCCCTGGCACTTGCTGCCAGTTCCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV46*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__296</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">7.2e-07</td>
+      <td style="text-align:left;">8.71e-07</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCGTGAGACATGCTGGAGAGCACACTGAGCAAAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV32*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__53</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.54e-06</td>
+      <td style="text-align:left;">1.84e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTATAGGAACTGCAGTCTGTACCCAAACCT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV32*01_Oryctolagus_cuniculus_Thorbecke_inbred__459</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.54e-06</td>
+      <td style="text-align:left;">1.84e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTATAGGAACTGCAGTCTGTACCCAAACCT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV32*01_Oryctolagus_cuniculus_Thorbecke_inbred__679</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">1.54e-06</td>
+      <td style="text-align:left;">1.84e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTATAGGAACTGCAGTCTGTACCCAAACCT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__25</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.11e-06</td>
+      <td style="text-align:left;">2.46e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTCCCCAGGCATCTGGCACCTGTACCTAATCC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-1*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__708</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.11e-06</td>
+      <td style="text-align:left;">2.46e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTCCCCAGGCATCTGGCACCTGTACCTAATCC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-3*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__329</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.11e-06</td>
+      <td style="text-align:left;">2.46e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTCCCCAGGCATCTGGCACCTGTACCTAATCC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV13-1*01_Oryctolagus_cuniculus_Thorbecke_inbred__490</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.11e-06</td>
+      <td style="text-align:left;">2.46e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACATTGCTCCCCAGGCATCTGGCACCTGTACCTAATCC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV29*01_Oryctolagus_cuniculus_Thorbecke_inbred__460</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.85e-06</td>
+      <td style="text-align:left;">4.46e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTCCATGCACCTACAGCCTGTGTCCACACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV29*01_Oryctolagus_cuniculus_Thorbecke_inbred__680</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">3.85e-06</td>
+      <td style="text-align:left;">4.46e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACAGTGCTCTCCATGCACCTACAGCCTGTGTCCACACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV32*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_2__304</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">5.34e-06</td>
+      <td style="text-align:left;">6.16e-06</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACGGTGCTCTACAAGAACCTGCAGTCTGTAGCCAAACC</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV46*01_Oryctolagus_cuniculus_Thorbecke_inbred__450</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.16e-05</td>
+      <td style="text-align:left;">2.45e-05</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCATGATACATGCTGGAGAGCACACTGAGCAAAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV46*01_Oryctolagus_cuniculus_Thorbecke_inbred__670</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.16e-05</td>
+      <td style="text-align:left;">2.45e-05</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCATGATACATGCTGGAGAGCACACTGAGCAAAAACT</td>
+   </tr>
+    <tr>
+      <td style="text-align:left;">CACAGTGMMMMMMMMMMMMMMMMMMMMMMMACMCAAACC</td>
+      <td style="text-align:left;">MEME-1</td>
+      <td style="text-align:left;">BK064757_TRAV46*01_Oryctolagus_cuniculus_Thorbecke_inbred-like_1__62</td>
+      <td style="text-align:center;">+</td>
+      <td style="text-align:left;">1</td>
+      <td style="text-align:left;">39</td>
+      <td style="text-align:left;">2.16e-05</td>
+      <td style="text-align:left;">2.45e-05</td>
+      <td style="text-align:left;font-size:x-large;font-family:monospace;">CACCATGATACATGCTGGAGAGCACACTGAGCAAAAACT</td>
+   </tr>
+</tbody>
+</table>
+
+<hr>
+<center><big><b><a name="debugging_information">DEBUGGING INFORMATION</a></b></big></center>
+<hr>
+<p>
+Command line:
+</p>
+<pre>
+fimo --thresh 0.0001 --o /content/rabbit_tr_results/tmp/RSS/fimo_output/TRAV_23 /content/rabbit_tr_results/tmp/RSS/meme_output/TRAV_23/meme.txt /content/rabbit_tr_results/tmp/RSS/fasta/TRAV_23.fasta
+</pre>
+<p>
+Settings:
+</p>
+<pre>
+<table>
+  <tr>
+    <td style="padding-right: 2em">output_directory = /content/rabbit_tr_results/tmp/RSS/fimo_output/TRAV_23</td>
+    <td style="padding-left: 5em; padding-right: 2em">MEME file name = /content/rabbit_tr_results/tmp/RSS/meme_output/TRAV_23/meme.txt</td>
+    <td style="padding-left: 5em; padding-right: 2em">sequence file name = /content/rabbit_tr_results/tmp/RSS/fasta/TRAV_23.fasta</td>
+  </tr>  <tr>
+    <td style="padding-right: 2em">background file name = --nrdb--</td>
+    <td style="padding-left: 5em; padding-right: 2em">alphabet = DNA</td>
+    <td style="padding-left: 5em; padding-right: 2em">max stored scores = 100000</td>
+  </tr>  <tr>
+    <td style="padding-right: 2em">allow clobber = false</td>
+    <td style="padding-left: 5em; padding-right: 2em">compute q-values = true</td>
+    <td style="padding-left: 5em; padding-right: 2em">parse genomic coord. = true</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">text only = false</td>
+    <td style="padding-left: 5em; padding-right: 2em">scan both strands = true</td>
+    <td style="padding-left: 5em; padding-right: 2em">max strand = false</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">threshold type = p-value</td>
+    <td style="padding-left: 5em; padding-right: 2em">output theshold = 0.0001</td>
+    <td style="padding-left: 5em; padding-right: 2em">pseudocount = 0.1</td>
+  </tr>
+  <tr>
+    <td style="padding-right: 2em">alpha = 1</td>
+    <td style="padding-left: 5em; padding-right: 2em">verbosity = 2</td>
+    <td style="padding-left: 5em; padding-right: 2em"></td>
+  </tr>
+
+</table>
+</pre>
+<p>
+This information can be useful in the event you wish to report a
+problem with the FIMO software.
+</p>
+<hr>
+<span style="background-color: #DDDDFF"><a href="#top_buttons"><b>Go to top</b></a></span>
+</body>
+</html>

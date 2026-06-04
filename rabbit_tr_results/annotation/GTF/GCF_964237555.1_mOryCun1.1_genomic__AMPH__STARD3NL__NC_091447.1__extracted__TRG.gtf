@@ -1,0 +1,16 @@
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	69403	69453	.	-	.	gene_id "TRGJ2*01"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	71925	71989	.	-	.	gene_id "TRGJ1*01"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	78977	79270	.	-	.	gene_id "TRGV4*01-like_3"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	84291	84600	.	-	.	gene_id "TRGV3*01-like_3"; region "TRG"; function "Pseudo";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	88771	89078	.	-	.	gene_id "TRGV2*01-like"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	96612	96908	.	-	.	gene_id "TRGV1-7*01"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	99792	100088	.	-	.	gene_id "TRGV1-7*02-like"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	103687	103983	.	-	.	gene_id "TRGV1-3*02-like"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	106681	106974	.	-	.	gene_id "TRGV1-4*02"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	111306	111602	.	-	.	gene_id "TRGV1-3*08-like_4"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	114280	114573	.	-	.	gene_id "TRGV1-4*02"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	118908	119204	.	-	.	gene_id "TRGV1-3*08-like_4"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	121899	122192	.	-	.	gene_id "TRGV1-4*03-like_1"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	125810	126106	.	-	.	gene_id "TRGV1-3*06-like"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	128747	129040	.	-	.	gene_id "TRGV1-4*03-like_2"; region "TRG"; function "Functional";
+GCF_964237555.1_mOryCun1.1_genomic__AMPH__STARD3NL__NC_091447.1__extracted__TRG	genomic_annotation	gene	140196	140492	.	-	.	gene_id "TRGV1-1*02-like"; region "TRG"; function "Functional";

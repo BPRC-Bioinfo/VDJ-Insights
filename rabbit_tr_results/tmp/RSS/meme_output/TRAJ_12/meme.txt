@@ -1,0 +1,823 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.8 (Release date: Thu May 15 15:01:46 2025 -0700)
+
+For further information on how to interpret these results please access https://meme-suite.org/meme.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /content/rabbit_tr_results/tmp/RSS/fasta_gaps/TRAJ_12.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+BK064757_TRDJ3*01_Orycto 1.0000     28  BK064757_TRAJ58*01_Oryct 1.0000     28  
+BK064757_TRAJ57*01_Oryct 1.0000     28  BK064757_TRAJ56*01_Oryct 1.0000     28  
+BK064757_TRAJ54*01_Oryct 1.0000     28  BK064757_TRAJ53*01_Oryct 1.0000     28  
+BK064757_TRAJ58*01_Oryct 1.0000     28  BK064757_TRAJ57*01_Oryct 1.0000     28  
+BK064757_TRAJ56*01_Oryct 1.0000     28  BK064757_TRAJ54*01_Oryct 1.0000     28  
+BK064757_TRAJ53*01_Oryct 1.0000     28  BK064757_TRAJ52*01_Oryct 1.0000     28  
+BK064757_TRAJ49*01_Oryct 1.0000     28  BK064757_TRAJ48*01_Oryct 1.0000     28  
+BK064757_TRAJ47*01_Oryct 1.0000     28  BK064757_TRAJ45*01_Oryct 1.0000     28  
+BK064757_TRAJ43*01_Oryct 1.0000     28  BK064757_TRAJ42*01_Oryct 1.0000     28  
+BK064757_TRAJ41*01_Oryct 1.0000     28  BK064757_TRAJ40*01_Oryct 1.0000     28  
+BK064757_TRAJ39*01_Oryct 1.0000     28  BK064757_TRAJ37*01_Oryct 1.0000     28  
+BK064757_TRAJ35*01_Oryct 1.0000     28  BK064757_TRAJ33*01_Oryct 1.0000     28  
+BK064757_TRAJ32*01_Oryct 1.0000     28  BK064757_TRAJ29*01_Oryct 1.0000     28  
+BK064757_TRAJ27*01_Oryct 1.0000     28  BK064757_TRAJ26*01_Oryct 1.0000     28  
+BK064757_TRAJ25*01_Oryct 1.0000     28  BK064757_TRAJ24*01_Oryct 1.0000     28  
+BK064757_TRAJ23*01_Oryct 1.0000     28  BK064757_TRAJ22*01_Oryct 1.0000     28  
+BK064757_TRAJ21*01_Oryct 1.0000     28  BK064757_TRAJ20*01_Oryct 1.0000     28  
+BK064757_TRAJ19*01_Oryct 1.0000     28  BK064757_TRAJ18*01_Oryct 1.0000     28  
+BK064757_TRAJ17*01_Oryct 1.0000     28  BK064757_TRAJ16*01_Oryct 1.0000     28  
+BK064757_TRAJ15*01_Oryct 1.0000     28  BK064757_TRAJ13*01_Oryct 1.0000     28  
+BK064757_TRAJ12*01_Oryct 1.0000     28  BK064757_TRAJ9*01_Orycto 1.0000     28  
+BK064757_TRAJ7*01_Orycto 1.0000     28  BK064757_TRAJ4*01_Orycto 1.0000     28  
+BK064757_TRAJ3*01_Orycto 1.0000     28  BK064757_TRAJ2*01_Orycto 1.0000     28  
+BK064757_TRAJ1*01_Orycto 1.0000     28  BK064757_TRAJ11*01_Oryct 1.0000     28  
+BK064757_TRAJ12*01_Oryct 1.0000     28  BK064757_TRAJ16*01_Oryct 1.0000     28  
+BK064757_TRAJ19*01_Oryct 1.0000     28  BK064757_TRAJ32*01_Oryct 1.0000     28  
+BK064757_TRAJ39*01_Oryct 1.0000     28  BK064757_TRAJ40*01_Oryct 1.0000     28  
+BK064757_TRAJ49*01_Oryct 1.0000     28  BK064757_TRAJ1*01_Orycto 1.0000     28  
+BK064757_TRAJ2*01_Orycto 1.0000     28  BK064757_TRAJ3*01_Orycto 1.0000     28  
+BK064757_TRAJ4*01_Orycto 1.0000     28  BK064757_TRAJ7*01_Orycto 1.0000     28  
+BK064757_TRAJ9*01_Orycto 1.0000     28  BK064757_TRAJ11*01_Oryct 1.0000     28  
+BK064757_TRAJ12*01_Oryct 1.0000     28  BK064757_TRAJ13*01_Oryct 1.0000     28  
+BK064757_TRAJ16*01_Oryct 1.0000     28  BK064757_TRAJ17*01_Oryct 1.0000     28  
+BK064757_TRAJ18*01_Oryct 1.0000     28  BK064757_TRAJ19*01_Oryct 1.0000     28  
+BK064757_TRAJ20*01_Oryct 1.0000     28  BK064757_TRAJ21*01_Oryct 1.0000     28  
+BK064757_TRAJ22*01_Oryct 1.0000     28  BK064757_TRAJ23*01_Oryct 1.0000     28  
+BK064757_TRAJ24*01_Oryct 1.0000     28  BK064757_TRAJ25*01_Oryct 1.0000     28  
+BK064757_TRAJ27*01_Oryct 1.0000     28  BK064757_TRAJ29*01_Oryct 1.0000     28  
+BK064757_TRAJ30*01_Oryct 1.0000     28  BK064757_TRAJ32*01_Oryct 1.0000     28  
+BK064757_TRAJ33*01_Oryct 1.0000     28  BK064757_TRAJ37*01_Oryct 1.0000     28  
+BK064757_TRAJ39*01_Oryct 1.0000     28  BK064757_TRAJ40*01_Oryct 1.0000     28  
+BK064757_TRAJ41*01_Oryct 1.0000     28  BK064757_TRAJ42*01_Oryct 1.0000     28  
+BK064757_TRAJ43*01_Oryct 1.0000     28  BK064757_TRAJ45*01_Oryct 1.0000     28  
+BK064757_TRAJ47*01_Oryct 1.0000     28  BK064757_TRAJ48*01_Oryct 1.0000     28  
+BK064757_TRAJ49*01_Oryct 1.0000     28  BK064757_TRAJ50*01_Oryct 1.0000     28  
+BK064757_TRAJ52*01_Oryct 1.0000     28  BK064757_TRAJ53*01_Oryct 1.0000     28  
+BK064757_TRAJ54*01_Oryct 1.0000     28  BK064757_TRAJ56*01_Oryct 1.0000     28  
+BK064757_TRAJ57*01_Oryct 1.0000     28  BK064757_TRAJ58*01_Oryct 1.0000     28  
+BK064757_TRAJ1*01_Orycto 1.0000     28  BK064757_TRAJ2*01_Orycto 1.0000     28  
+BK064757_TRAJ3*01_Orycto 1.0000     28  BK064757_TRAJ4*01_Orycto 1.0000     28  
+BK064757_TRAJ6*01_Orycto 1.0000     28  BK064757_TRAJ7*01_Orycto 1.0000     28  
+BK064757_TRAJ8*01_Orycto 1.0000     28  BK064757_TRAJ9*01_Orycto 1.0000     28  
+BK064757_TRAJ11*01_Oryct 1.0000     28  BK064757_TRAJ12*01_Oryct 1.0000     28  
+BK064757_TRAJ13*01_Oryct 1.0000     28  BK064757_TRAJ15*01_Oryct 1.0000     28  
+BK064757_TRAJ16*01_Oryct 1.0000     28  BK064757_TRAJ17*01_Oryct 1.0000     28  
+BK064757_TRAJ18*01_Oryct 1.0000     28  BK064757_TRAJ19*01_Oryct 1.0000     28  
+BK064757_TRAJ20*01_Oryct 1.0000     28  BK064757_TRAJ21*01_Oryct 1.0000     28  
+BK064757_TRAJ22*01_Oryct 1.0000     28  BK064757_TRAJ23*01_Oryct 1.0000     28  
+BK064757_TRAJ24*01_Oryct 1.0000     28  BK064757_TRAJ25*01_Oryct 1.0000     28  
+BK064757_TRAJ26*01_Oryct 1.0000     28  BK064757_TRAJ27*01_Oryct 1.0000     28  
+BK064757_TRAJ29*01_Oryct 1.0000     28  BK064757_TRAJ30*01_Oryct 1.0000     28  
+BK064757_TRAJ31*01_Oryct 1.0000     28  BK064757_TRAJ33*01_Oryct 1.0000     28  
+BK064757_TRAJ37*01_Oryct 1.0000     28  BK064757_TRAJ39*01_Oryct 1.0000     28  
+BK064757_TRAJ40*01_Oryct 1.0000     28  BK064757_TRAJ41*01_Oryct 1.0000     28  
+BK064757_TRAJ42*01_Oryct 1.0000     28  BK064757_TRAJ43*01_Oryct 1.0000     28  
+BK064757_TRAJ45*01_Oryct 1.0000     28  BK064757_TRAJ47*01_Oryct 1.0000     28  
+BK064757_TRAJ48*01_Oryct 1.0000     28  BK064757_TRAJ49*01_Oryct 1.0000     28  
+BK064757_TRAJ52*01_Oryct 1.0000     28  BK064757_TRAJ54*01_Oryct 1.0000     28  
+BK064757_TRAJ57*01_Oryct 1.0000     28  BK064757_TRAJ58*01_Oryct 1.0000     28  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /content/rabbit_tr_results/tmp/RSS/fasta_gaps/TRAJ_12.fasta -o /content/rabbit_tr_results/tmp/RSS/meme_output/TRAJ_12 -dna -mod zoops -nmotifs 1 -minw 28 -maxw 28 -maxsize 3864 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: +
+width:  minw=           28    maxw=           28
+nsites: minsites=        2    maxsites=      138    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=            3864    N=             138
+sample: seed=            0    hsfrac=          0
+        searchsize=   3864    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.111 C 0.13 G 0.311 T 0.447 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.111 C 0.131 G 0.311 T 0.447 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF RGTTTTTGTKKKKKKKKKKKKCACWGTG MEME-1	width =  28  sites = 133  llr = 1523  E-value = 1.1e-577
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif RGTTTTTGTKKKKKKKKKKKKCACWGTG MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  311111::1111111111111:8:3:::
+pos.-specific     C  12::11::21111111111116:7::::
+probability       G  58:::::a:3333333333332211a:a
+matrix            T  1:99889:84444444444442:16:a:
+
+         bits    3.2                             
+                 2.9                             
+                 2.5                             
+                 2.2                             
+Relative         1.9                       *     
+Entropy          1.6        *              *  * *
+(16.5 bits)      1.3        *              ** * *
+                 1.0  ***  **             *** ***
+                 0.6 *********            *******
+                 0.3 *********            *******
+                 0.0 ----------------------------
+
+Multilevel           GGTTTTTGTTTTTTTTTTTTTCACTGTG
+consensus            A        GGGGGGGGGGGG G A   
+sequence                                         
+                                                 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTTTTGTKKKKKKKKKKKKCACWGTG MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value                        Site          
+-------------             ----- ---------            ----------------------------
+BK064757_TRAJ58*01_Oryct      1  1.01e-09          . AGTTTTTGCNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ58*01_Oryct      1  1.01e-09          . AGTTTTTGCNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ22*01_Oryct      1  3.21e-09          . GGTTTTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ22*01_Oryct      1  3.21e-09          . GGTTTTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ22*01_Oryct      1  3.21e-09          . GGTTTTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ20*01_Oryct      1  7.56e-09          . AGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ20*01_Oryct      1  7.56e-09          . AGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ20*01_Oryct      1  7.56e-09          . AGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ58*01_Oryct      1  7.72e-09          . AGTTTCTGCNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ58*01_Oryct      1  7.72e-09          . AGTTTCTGCNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ49*01_Oryct      1  1.18e-08          . GCTTTTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ49*01_Oryct      1  1.18e-08          . GCTTTTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ49*01_Oryct      1  1.18e-08          . GCTTTTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ49*01_Oryct      1  1.18e-08          . GCTTTTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ29*01_Oryct      1  2.16e-08          . GGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ16*01_Oryct      1  2.16e-08          . GGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ29*01_Oryct      1  2.16e-08          . GGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ16*01_Oryct      1  2.16e-08          . GGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ16*01_Oryct      1  2.16e-08          . GGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ16*01_Oryct      1  2.16e-08          . GGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ29*01_Oryct      1  2.16e-08          . GGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ35*01_Oryct      1  2.16e-08          . GGTTTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ26*01_Oryct      1  2.86e-08          . GGTTTTTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ17*01_Oryct      1  2.86e-08          . GGTTTTTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ17*01_Oryct      1  2.86e-08          . GGTTTTTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ17*01_Oryct      1  2.86e-08          . GGTTTTTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ26*01_Oryct      1  2.86e-08          . GGTTTTTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ52*01_Oryct      1  5.91e-08          . GCTTCTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ39*01_Oryct      1  5.91e-08          . GGTTTCTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ52*01_Oryct      1  5.91e-08          . GCTTCTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ39*01_Oryct      1  5.91e-08          . GGTTTCTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ39*01_Oryct      1  5.91e-08          . GGTTTCTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ39*01_Oryct      1  5.91e-08          . GGTTTCTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ52*01_Oryct      1  5.91e-08          . GCTTCTTGTNNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ37*01_Oryct      1  8.70e-08          . AGTTTTTGTNNNNNNNNNNNNTACAGTG           
+BK064757_TRAJ37*01_Oryct      1  8.70e-08          . AGTTTTTGTNNNNNNNNNNNNTACAGTG           
+BK064757_TRAJ37*01_Oryct      1  8.70e-08          . AGTTTTTGTNNNNNNNNNNNNTACAGTG           
+BK064757_TRAJ27*01_Oryct      1  1.03e-07          . GGTTATTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ25*01_Oryct      1  1.03e-07          . GGTTTTTGANNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ15*01_Oryct      1  1.03e-07          . GGTATTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ27*01_Oryct      1  1.03e-07          . GGTTATTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ25*01_Oryct      1  1.03e-07          . GGTTTTTGANNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ15*01_Oryct      1  1.03e-07          . GGTATTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ25*01_Oryct      1  1.03e-07          . GGTTTTTGANNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ27*01_Oryct      1  1.03e-07          . GGTTATTGCNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ21*01_Oryct      1  1.12e-07          . ACTTTTTGTNNNNNNNNNNNNCACGGTG           
+BK064757_TRAJ21*01_Oryct      1  1.12e-07          . ACTTTTTGTNNNNNNNNNNNNCACGGTG           
+BK064757_TRAJ21*01_Oryct      1  1.12e-07          . ACTTTTTGTNNNNNNNNNNNNCACGGTG           
+BK064757_TRAJ18*01_Oryct      1  4.00e-07          . GGTTCATGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ18*01_Oryct      1  4.00e-07          . GGTTCATGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ18*01_Oryct      1  4.00e-07          . GGTTCATGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ43*01_Oryct      1  4.70e-07          . GGTTTTTGTNNNNNNNNNNNNTACTGTG           
+BK064757_TRAJ23*01_Oryct      1  4.70e-07          . TGTTTTTGANNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ9*01_Orycto      1  4.70e-07          . CCATTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ56*01_Oryct      1  4.70e-07          . AGTTTTTGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ43*01_Oryct      1  4.70e-07          . GGTTTTTGTNNNNNNNNNNNNTACTGTG           
+BK064757_TRAJ23*01_Oryct      1  4.70e-07          . TGTTTTTGANNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ9*01_Orycto      1  4.70e-07          . CCATTTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ23*01_Oryct      1  4.70e-07          . TGTTTTTGANNNNNNNNNNNNCACAGTG           
+BK064757_TRAJ43*01_Oryct      1  4.70e-07          . GGTTTTTGTNNNNNNNNNNNNTACTGTG           
+BK064757_TRAJ56*01_Oryct      1  4.70e-07          . AGTTTTTGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ56*01_Oryct      1  4.70e-07          . AGTTTTTGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ7*01_Orycto      1  8.83e-07          . CCTTTTTGTNNNNNNNNNNNNCAGAGTG           
+BK064757_TRAJ9*01_Orycto      1  8.83e-07          . CGATTTTGANNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ7*01_Orycto      1  8.83e-07          . CCTTTTTGTNNNNNNNNNNNNCAGAGTG           
+BK064757_TRAJ7*01_Orycto      1  8.83e-07          . CCTTTTTGTNNNNNNNNNNNNCAGAGTG           
+BK064757_TRAJ8*01_Orycto      1  1.02e-06          . ACATTTTGTNNNNNNNNNNNNCAGAGTG           
+BK064757_TRAJ40*01_Oryct      1  1.79e-06          . AGTTTATGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ40*01_Oryct      1  1.79e-06          . AGTTTATGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ40*01_Oryct      1  1.79e-06          . AGTTTATGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ45*01_Oryct      1  3.37e-06          . GGTTTCTGTNNNNNNNNNNNNCAGGGTG           
+BK064757_TRAJ24*01_Oryct      1  3.37e-06          . CCATTTTGTNNNNNNNNNNNNCAAAGTG           
+BK064757_TRAJ45*01_Oryct      1  3.37e-06          . GGTTTCTGTNNNNNNNNNNNNCAGGGTG           
+BK064757_TRAJ24*01_Oryct      1  3.37e-06          . CCATTTTGTNNNNNNNNNNNNCAAAGTG           
+BK064757_TRAJ24*01_Oryct      1  3.37e-06          . CCATTTTGTNNNNNNNNNNNNCAAAGTG           
+BK064757_TRAJ45*01_Oryct      1  3.37e-06          . GGTTTCTGTNNNNNNNNNNNNCAGGGTG           
+BK064757_TRAJ48*01_Oryct      1  4.63e-06          . GGTTTTTGTNNNNNNNNNNNNTGCTGTG           
+BK064757_TRAJ1*01_Orycto      1  4.63e-06          . GGTTTCTGTNNNNNNNNNNNNGAGAGTG           
+BK064757_TRAJ48*01_Oryct      1  4.63e-06          . GGTTTTTGTNNNNNNNNNNNNTGCTGTG           
+BK064757_TRAJ40*01_Oryct      1  4.63e-06          . CGTTTATGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ48*01_Oryct      1  4.63e-06          . GGTTTTTGTNNNNNNNNNNNNTGCTGTG           
+BK064757_TRAJ47*01_Oryct      1  5.18e-06          . TGTTTTTGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ42*01_Oryct      1  5.18e-06          . GATTATTGTNNNNNNNNNNNNGACTGTG           
+BK064757_TRAJ47*01_Oryct      1  5.18e-06          . TGTTTTTGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ42*01_Oryct      1  5.18e-06          . GATTATTGTNNNNNNNNNNNNGACTGTG           
+BK064757_TRAJ42*01_Oryct      1  5.18e-06          . GATTATTGTNNNNNNNNNNNNGACTGTG           
+BK064757_TRAJ47*01_Oryct      1  5.18e-06          . TGTTTTTGTNNNNNNNNNNNNCATTGTG           
+BK064757_TRAJ12*01_Oryct      1  6.27e-06          . TGTTTTGGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ12*01_Oryct      1  6.27e-06          . TGTTTTGGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ12*01_Oryct      1  6.27e-06          . TGTTTTGGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ12*01_Oryct      1  6.27e-06          . TGTTTTGGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ41*01_Oryct      1  6.97e-06          . GTTATTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ41*01_Oryct      1  6.97e-06          . GTTATTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ41*01_Oryct      1  6.97e-06          . GTTATTTGTNNNNNNNNNNNNCACTGTG           
+BK064757_TRAJ50*01_Oryct      1  1.01e-05          . GGTTATTGTNNNNNNNNNNNNGGCTGTG           
+BK064757_TRAJ32*01_Oryct      1  1.01e-05          . GGTTCTTGTNNNNNNNNNNNNGGCTGTG           
+BK064757_TRAJ32*01_Oryct      1  1.01e-05          . GGTTCTTGTNNNNNNNNNNNNGGCTGTG           
+BK064757_TRAJ32*01_Oryct      1  1.01e-05          . GGTTCTTGTNNNNNNNNNNNNGGCTGTG           
+BK064757_TRAJ31*01_Oryct      1  1.46e-05          . AGTTTCAGTNNNNNNNNNNNNTACTGTG           
+BK064757_TRAJ4*01_Orycto      1  1.46e-05          . AGTTCTTGCNNNNNNNNNNNNTATTGTG           
+BK064757_TRAJ4*01_Orycto      1  1.46e-05          . AGTTCTTGCNNNNNNNNNNNNTATTGTG           
+BK064757_TRAJ4*01_Orycto      1  1.46e-05          . AGTTCTTGCNNNNNNNNNNNNTATTGTG           
+BK064757_TRAJ13*01_Oryct      1  1.72e-05          . CCATTTTGTNNNNNNNNNNNNTGCAGTG           
+BK064757_TRAJ13*01_Oryct      1  1.72e-05          . CCATTTTGTNNNNNNNNNNNNTGCAGTG           
+BK064757_TRAJ13*01_Oryct      1  1.72e-05          . CCATTTTGTNNNNNNNNNNNNTGCAGTG           
+BK064757_TRAJ30*01_Oryct      1  2.03e-05          . AATTTTTGTNNNNNNNNNNNNAAAAGTG           
+BK064757_TRAJ11*01_Oryct      1  2.03e-05          . CATTTTTGTNNNNNNNNNNNNTATAGTG           
+BK064757_TRAJ53*01_Oryct      1  2.03e-05          . TGTTTTTGTNNNNNNNNNNNNGGCTGTG           
+BK064757_TRAJ30*01_Oryct      1  2.03e-05          . AATTTTTGTNNNNNNNNNNNNAAAAGTG           
+BK064757_TRAJ11*01_Oryct      1  2.03e-05          . CATTTTTGTNNNNNNNNNNNNTATAGTG           
+BK064757_TRAJ11*01_Oryct      1  2.03e-05          . CATTTTTGTNNNNNNNNNNNNTATAGTG           
+BK064757_TRAJ53*01_Oryct      1  2.03e-05          . TGTTTTTGTNNNNNNNNNNNNGGCTGTG           
+BK064757_TRAJ53*01_Oryct      1  2.03e-05          . TGTTTTTGTNNNNNNNNNNNNGGCTGTG           
+BK064757_TRAJ1*01_Orycto      1  2.79e-05          . GGTTTCTGTNNNNNNNNNNNNGGGAGTG           
+BK064757_TRAJ1*01_Orycto      1  2.79e-05          . GGTTTCTGTNNNNNNNNNNNNGGGAGTG           
+BK064757_TRAJ33*01_Oryct      1  3.28e-05          . GGTTTTTGTNNNNNNNNNNNNGTCTGTG           
+BK064757_TRAJ33*01_Oryct      1  3.28e-05          . GGTTTTTGTNNNNNNNNNNNNGTCTGTG           
+BK064757_TRAJ33*01_Oryct      1  3.28e-05          . GGTTTTTGTNNNNNNNNNNNNGTCTGTG           
+BK064757_TRAJ3*01_Orycto      1  4.40e-05          . GGTTATCGCNNNNNNNNNNNNTGCAGTG           
+BK064757_TRAJ3*01_Orycto      1  4.40e-05          . GGTTATCGCNNNNNNNNNNNNTGCAGTG           
+BK064757_TRAJ3*01_Orycto      1  4.40e-05          . GGTTATCGCNNNNNNNNNNNNTGCAGTG           
+BK064757_TRAJ54*01_Oryct      1  6.75e-05          . AGTTTGTGTNNNNNNNNNNNNCGGGGTG           
+BK064757_TRAJ54*01_Oryct      1  6.75e-05          . AGTTTGTGTNNNNNNNNNNNNCGGGGTG           
+BK064757_TRAJ54*01_Oryct      1  6.75e-05          . AGTTTGTGTNNNNNNNNNNNNCGGGGTG           
+BK064757_TRAJ54*01_Oryct      1  6.75e-05          . AGTTTGTGTNNNNNNNNNNNNCGGGGTG           
+BK064757_TRAJ2*01_Orycto      1  9.31e-05          . AGTTTCTGTNNNNNNNNNNNNTGTGGTG           
+BK064757_TRAJ2*01_Orycto      1  9.31e-05          . AGTTTCTGTNNNNNNNNNNNNTGTGGTG           
+BK064757_TRAJ2*01_Orycto      1  9.31e-05          . AGTTTCTGTNNNNNNNNNNNNTGTGGTG           
+BK064757_TRAJ57*01_Oryct      1  9.91e-05          . AGTATTTGTNNNNNNNNNNNNGGGGGTG           
+BK064757_TRAJ57*01_Oryct      1  9.91e-05          . AGTATTTGTNNNNNNNNNNNNGGGGGTG           
+BK064757_TRAJ57*01_Oryct      1  9.91e-05          . AGTATTTGTNNNNNNNNNNNNGGGGGTG           
+BK064757_TRAJ57*01_Oryct      1  9.91e-05          . AGTATTTGTNNNNNNNNNNNNGGGGGTG           
+BK064757_TRAJ6*01_Orycto      1  1.59e-04          . GGTTTTTTCNNNNNNNNNNNNCACTGGG           
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTTTTGTKKKKKKKKKKKKCACWGTG MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+BK064757_TRAJ58*01_Oryct            1e-09  [+1]
+BK064757_TRAJ58*01_Oryct            1e-09  [+1]
+BK064757_TRAJ22*01_Oryct          3.2e-09  [+1]
+BK064757_TRAJ22*01_Oryct          3.2e-09  [+1]
+BK064757_TRAJ22*01_Oryct          3.2e-09  [+1]
+BK064757_TRAJ20*01_Oryct          7.6e-09  [+1]
+BK064757_TRAJ20*01_Oryct          7.6e-09  [+1]
+BK064757_TRAJ20*01_Oryct          7.6e-09  [+1]
+BK064757_TRAJ58*01_Oryct          7.7e-09  [+1]
+BK064757_TRAJ58*01_Oryct          7.7e-09  [+1]
+BK064757_TRAJ49*01_Oryct          1.2e-08  [+1]
+BK064757_TRAJ49*01_Oryct          1.2e-08  [+1]
+BK064757_TRAJ49*01_Oryct          1.2e-08  [+1]
+BK064757_TRAJ49*01_Oryct          1.2e-08  [+1]
+BK064757_TRAJ29*01_Oryct          2.2e-08  [+1]
+BK064757_TRAJ16*01_Oryct          2.2e-08  [+1]
+BK064757_TRAJ29*01_Oryct          2.2e-08  [+1]
+BK064757_TRAJ16*01_Oryct          2.2e-08  [+1]
+BK064757_TRAJ16*01_Oryct          2.2e-08  [+1]
+BK064757_TRAJ16*01_Oryct          2.2e-08  [+1]
+BK064757_TRAJ29*01_Oryct          2.2e-08  [+1]
+BK064757_TRAJ35*01_Oryct          2.2e-08  [+1]
+BK064757_TRAJ26*01_Oryct          2.9e-08  [+1]
+BK064757_TRAJ17*01_Oryct          2.9e-08  [+1]
+BK064757_TRAJ17*01_Oryct          2.9e-08  [+1]
+BK064757_TRAJ17*01_Oryct          2.9e-08  [+1]
+BK064757_TRAJ26*01_Oryct          2.9e-08  [+1]
+BK064757_TRAJ52*01_Oryct          5.9e-08  [+1]
+BK064757_TRAJ39*01_Oryct          5.9e-08  [+1]
+BK064757_TRAJ52*01_Oryct          5.9e-08  [+1]
+BK064757_TRAJ39*01_Oryct          5.9e-08  [+1]
+BK064757_TRAJ39*01_Oryct          5.9e-08  [+1]
+BK064757_TRAJ39*01_Oryct          5.9e-08  [+1]
+BK064757_TRAJ52*01_Oryct          5.9e-08  [+1]
+BK064757_TRAJ37*01_Oryct          8.7e-08  [+1]
+BK064757_TRAJ37*01_Oryct          8.7e-08  [+1]
+BK064757_TRAJ37*01_Oryct          8.7e-08  [+1]
+BK064757_TRAJ27*01_Oryct            1e-07  [+1]
+BK064757_TRAJ25*01_Oryct            1e-07  [+1]
+BK064757_TRAJ15*01_Oryct            1e-07  [+1]
+BK064757_TRAJ27*01_Oryct            1e-07  [+1]
+BK064757_TRAJ25*01_Oryct            1e-07  [+1]
+BK064757_TRAJ15*01_Oryct            1e-07  [+1]
+BK064757_TRAJ25*01_Oryct            1e-07  [+1]
+BK064757_TRAJ27*01_Oryct            1e-07  [+1]
+BK064757_TRAJ21*01_Oryct          1.1e-07  [+1]
+BK064757_TRAJ21*01_Oryct          1.1e-07  [+1]
+BK064757_TRAJ21*01_Oryct          1.1e-07  [+1]
+BK064757_TRAJ18*01_Oryct            4e-07  [+1]
+BK064757_TRAJ18*01_Oryct            4e-07  [+1]
+BK064757_TRAJ18*01_Oryct            4e-07  [+1]
+BK064757_TRAJ43*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ23*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ9*01_Orycto          4.7e-07  [+1]
+BK064757_TRAJ56*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ43*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ23*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ9*01_Orycto          4.7e-07  [+1]
+BK064757_TRAJ23*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ43*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ56*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ56*01_Oryct          4.7e-07  [+1]
+BK064757_TRAJ7*01_Orycto          8.8e-07  [+1]
+BK064757_TRAJ9*01_Orycto          8.8e-07  [+1]
+BK064757_TRAJ7*01_Orycto          8.8e-07  [+1]
+BK064757_TRAJ7*01_Orycto          8.8e-07  [+1]
+BK064757_TRAJ8*01_Orycto            1e-06  [+1]
+BK064757_TRAJ40*01_Oryct          1.8e-06  [+1]
+BK064757_TRAJ40*01_Oryct          1.8e-06  [+1]
+BK064757_TRAJ40*01_Oryct          1.8e-06  [+1]
+BK064757_TRAJ45*01_Oryct          3.4e-06  [+1]
+BK064757_TRAJ24*01_Oryct          3.4e-06  [+1]
+BK064757_TRAJ45*01_Oryct          3.4e-06  [+1]
+BK064757_TRAJ24*01_Oryct          3.4e-06  [+1]
+BK064757_TRAJ24*01_Oryct          3.4e-06  [+1]
+BK064757_TRAJ45*01_Oryct          3.4e-06  [+1]
+BK064757_TRAJ48*01_Oryct          4.6e-06  [+1]
+BK064757_TRAJ1*01_Orycto          4.6e-06  [+1]
+BK064757_TRAJ48*01_Oryct          4.6e-06  [+1]
+BK064757_TRAJ40*01_Oryct          4.6e-06  [+1]
+BK064757_TRAJ48*01_Oryct          4.6e-06  [+1]
+BK064757_TRAJ47*01_Oryct          5.2e-06  [+1]
+BK064757_TRAJ42*01_Oryct          5.2e-06  [+1]
+BK064757_TRAJ47*01_Oryct          5.2e-06  [+1]
+BK064757_TRAJ42*01_Oryct          5.2e-06  [+1]
+BK064757_TRAJ42*01_Oryct          5.2e-06  [+1]
+BK064757_TRAJ47*01_Oryct          5.2e-06  [+1]
+BK064757_TRAJ12*01_Oryct          6.3e-06  [+1]
+BK064757_TRAJ12*01_Oryct          6.3e-06  [+1]
+BK064757_TRAJ12*01_Oryct          6.3e-06  [+1]
+BK064757_TRAJ12*01_Oryct          6.3e-06  [+1]
+BK064757_TRAJ41*01_Oryct            7e-06  [+1]
+BK064757_TRAJ41*01_Oryct            7e-06  [+1]
+BK064757_TRAJ41*01_Oryct            7e-06  [+1]
+BK064757_TRAJ50*01_Oryct            1e-05  [+1]
+BK064757_TRAJ32*01_Oryct            1e-05  [+1]
+BK064757_TRAJ32*01_Oryct            1e-05  [+1]
+BK064757_TRAJ32*01_Oryct            1e-05  [+1]
+BK064757_TRAJ31*01_Oryct          1.5e-05  [+1]
+BK064757_TRAJ4*01_Orycto          1.5e-05  [+1]
+BK064757_TRAJ4*01_Orycto          1.5e-05  [+1]
+BK064757_TRAJ4*01_Orycto          1.5e-05  [+1]
+BK064757_TRAJ13*01_Oryct          1.7e-05  [+1]
+BK064757_TRAJ13*01_Oryct          1.7e-05  [+1]
+BK064757_TRAJ13*01_Oryct          1.7e-05  [+1]
+BK064757_TRAJ30*01_Oryct            2e-05  [+1]
+BK064757_TRAJ11*01_Oryct            2e-05  [+1]
+BK064757_TRAJ53*01_Oryct            2e-05  [+1]
+BK064757_TRAJ30*01_Oryct            2e-05  [+1]
+BK064757_TRAJ11*01_Oryct            2e-05  [+1]
+BK064757_TRAJ11*01_Oryct            2e-05  [+1]
+BK064757_TRAJ53*01_Oryct            2e-05  [+1]
+BK064757_TRAJ53*01_Oryct            2e-05  [+1]
+BK064757_TRAJ1*01_Orycto          2.8e-05  [+1]
+BK064757_TRAJ1*01_Orycto          2.8e-05  [+1]
+BK064757_TRAJ33*01_Oryct          3.3e-05  [+1]
+BK064757_TRAJ33*01_Oryct          3.3e-05  [+1]
+BK064757_TRAJ33*01_Oryct          3.3e-05  [+1]
+BK064757_TRAJ3*01_Orycto          4.4e-05  [+1]
+BK064757_TRAJ3*01_Orycto          4.4e-05  [+1]
+BK064757_TRAJ3*01_Orycto          4.4e-05  [+1]
+BK064757_TRAJ54*01_Oryct          6.8e-05  [+1]
+BK064757_TRAJ54*01_Oryct          6.8e-05  [+1]
+BK064757_TRAJ54*01_Oryct          6.8e-05  [+1]
+BK064757_TRAJ54*01_Oryct          6.8e-05  [+1]
+BK064757_TRAJ2*01_Orycto          9.3e-05  [+1]
+BK064757_TRAJ2*01_Orycto          9.3e-05  [+1]
+BK064757_TRAJ2*01_Orycto          9.3e-05  [+1]
+BK064757_TRAJ57*01_Oryct          9.9e-05  [+1]
+BK064757_TRAJ57*01_Oryct          9.9e-05  [+1]
+BK064757_TRAJ57*01_Oryct          9.9e-05  [+1]
+BK064757_TRAJ57*01_Oryct          9.9e-05  [+1]
+BK064757_TRAJ6*01_Orycto          0.00016  [+1]
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTTTTGTKKKKKKKKKKKKCACWGTG MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF RGTTTTTGTKKKKKKKKKKKKCACWGTG width=28 seqs=133
+BK064757_TRAJ58*01_Oryct (    1) AGTTTTTGCNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ58*01_Oryct (    1) AGTTTTTGCNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ22*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ22*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ22*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ20*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ20*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ20*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ58*01_Oryct (    1) AGTTTCTGCNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ58*01_Oryct (    1) AGTTTCTGCNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ49*01_Oryct (    1) GCTTTTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ49*01_Oryct (    1) GCTTTTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ49*01_Oryct (    1) GCTTTTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ49*01_Oryct (    1) GCTTTTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ29*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ16*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ29*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ16*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ16*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ16*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ29*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ35*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ26*01_Oryct (    1) GGTTTTTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ17*01_Oryct (    1) GGTTTTTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ17*01_Oryct (    1) GGTTTTTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ17*01_Oryct (    1) GGTTTTTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ26*01_Oryct (    1) GGTTTTTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ52*01_Oryct (    1) GCTTCTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ39*01_Oryct (    1) GGTTTCTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ52*01_Oryct (    1) GCTTCTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ39*01_Oryct (    1) GGTTTCTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ39*01_Oryct (    1) GGTTTCTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ39*01_Oryct (    1) GGTTTCTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ52*01_Oryct (    1) GCTTCTTGTNNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ37*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNTACAGTG  1 
+BK064757_TRAJ37*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNTACAGTG  1 
+BK064757_TRAJ37*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNTACAGTG  1 
+BK064757_TRAJ27*01_Oryct (    1) GGTTATTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ25*01_Oryct (    1) GGTTTTTGANNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ15*01_Oryct (    1) GGTATTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ27*01_Oryct (    1) GGTTATTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ25*01_Oryct (    1) GGTTTTTGANNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ15*01_Oryct (    1) GGTATTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ25*01_Oryct (    1) GGTTTTTGANNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ27*01_Oryct (    1) GGTTATTGCNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ21*01_Oryct (    1) ACTTTTTGTNNNNNNNNNNNNCACGGTG  1 
+BK064757_TRAJ21*01_Oryct (    1) ACTTTTTGTNNNNNNNNNNNNCACGGTG  1 
+BK064757_TRAJ21*01_Oryct (    1) ACTTTTTGTNNNNNNNNNNNNCACGGTG  1 
+BK064757_TRAJ18*01_Oryct (    1) GGTTCATGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ18*01_Oryct (    1) GGTTCATGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ18*01_Oryct (    1) GGTTCATGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ43*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNTACTGTG  1 
+BK064757_TRAJ23*01_Oryct (    1) TGTTTTTGANNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ9*01_Orycto (    1) CCATTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ56*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ43*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNTACTGTG  1 
+BK064757_TRAJ23*01_Oryct (    1) TGTTTTTGANNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ9*01_Orycto (    1) CCATTTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ23*01_Oryct (    1) TGTTTTTGANNNNNNNNNNNNCACAGTG  1 
+BK064757_TRAJ43*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNTACTGTG  1 
+BK064757_TRAJ56*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ56*01_Oryct (    1) AGTTTTTGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ7*01_Orycto (    1) CCTTTTTGTNNNNNNNNNNNNCAGAGTG  1 
+BK064757_TRAJ9*01_Orycto (    1) CGATTTTGANNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ7*01_Orycto (    1) CCTTTTTGTNNNNNNNNNNNNCAGAGTG  1 
+BK064757_TRAJ7*01_Orycto (    1) CCTTTTTGTNNNNNNNNNNNNCAGAGTG  1 
+BK064757_TRAJ8*01_Orycto (    1) ACATTTTGTNNNNNNNNNNNNCAGAGTG  1 
+BK064757_TRAJ40*01_Oryct (    1) AGTTTATGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ40*01_Oryct (    1) AGTTTATGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ40*01_Oryct (    1) AGTTTATGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ45*01_Oryct (    1) GGTTTCTGTNNNNNNNNNNNNCAGGGTG  1 
+BK064757_TRAJ24*01_Oryct (    1) CCATTTTGTNNNNNNNNNNNNCAAAGTG  1 
+BK064757_TRAJ45*01_Oryct (    1) GGTTTCTGTNNNNNNNNNNNNCAGGGTG  1 
+BK064757_TRAJ24*01_Oryct (    1) CCATTTTGTNNNNNNNNNNNNCAAAGTG  1 
+BK064757_TRAJ24*01_Oryct (    1) CCATTTTGTNNNNNNNNNNNNCAAAGTG  1 
+BK064757_TRAJ45*01_Oryct (    1) GGTTTCTGTNNNNNNNNNNNNCAGGGTG  1 
+BK064757_TRAJ48*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNTGCTGTG  1 
+BK064757_TRAJ1*01_Orycto (    1) GGTTTCTGTNNNNNNNNNNNNGAGAGTG  1 
+BK064757_TRAJ48*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNTGCTGTG  1 
+BK064757_TRAJ40*01_Oryct (    1) CGTTTATGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ48*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNTGCTGTG  1 
+BK064757_TRAJ47*01_Oryct (    1) TGTTTTTGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ42*01_Oryct (    1) GATTATTGTNNNNNNNNNNNNGACTGTG  1 
+BK064757_TRAJ47*01_Oryct (    1) TGTTTTTGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ42*01_Oryct (    1) GATTATTGTNNNNNNNNNNNNGACTGTG  1 
+BK064757_TRAJ42*01_Oryct (    1) GATTATTGTNNNNNNNNNNNNGACTGTG  1 
+BK064757_TRAJ47*01_Oryct (    1) TGTTTTTGTNNNNNNNNNNNNCATTGTG  1 
+BK064757_TRAJ12*01_Oryct (    1) TGTTTTGGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ12*01_Oryct (    1) TGTTTTGGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ12*01_Oryct (    1) TGTTTTGGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ12*01_Oryct (    1) TGTTTTGGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ41*01_Oryct (    1) GTTATTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ41*01_Oryct (    1) GTTATTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ41*01_Oryct (    1) GTTATTTGTNNNNNNNNNNNNCACTGTG  1 
+BK064757_TRAJ50*01_Oryct (    1) GGTTATTGTNNNNNNNNNNNNGGCTGTG  1 
+BK064757_TRAJ32*01_Oryct (    1) GGTTCTTGTNNNNNNNNNNNNGGCTGTG  1 
+BK064757_TRAJ32*01_Oryct (    1) GGTTCTTGTNNNNNNNNNNNNGGCTGTG  1 
+BK064757_TRAJ32*01_Oryct (    1) GGTTCTTGTNNNNNNNNNNNNGGCTGTG  1 
+BK064757_TRAJ31*01_Oryct (    1) AGTTTCAGTNNNNNNNNNNNNTACTGTG  1 
+BK064757_TRAJ4*01_Orycto (    1) AGTTCTTGCNNNNNNNNNNNNTATTGTG  1 
+BK064757_TRAJ4*01_Orycto (    1) AGTTCTTGCNNNNNNNNNNNNTATTGTG  1 
+BK064757_TRAJ4*01_Orycto (    1) AGTTCTTGCNNNNNNNNNNNNTATTGTG  1 
+BK064757_TRAJ13*01_Oryct (    1) CCATTTTGTNNNNNNNNNNNNTGCAGTG  1 
+BK064757_TRAJ13*01_Oryct (    1) CCATTTTGTNNNNNNNNNNNNTGCAGTG  1 
+BK064757_TRAJ13*01_Oryct (    1) CCATTTTGTNNNNNNNNNNNNTGCAGTG  1 
+BK064757_TRAJ30*01_Oryct (    1) AATTTTTGTNNNNNNNNNNNNAAAAGTG  1 
+BK064757_TRAJ11*01_Oryct (    1) CATTTTTGTNNNNNNNNNNNNTATAGTG  1 
+BK064757_TRAJ53*01_Oryct (    1) TGTTTTTGTNNNNNNNNNNNNGGCTGTG  1 
+BK064757_TRAJ30*01_Oryct (    1) AATTTTTGTNNNNNNNNNNNNAAAAGTG  1 
+BK064757_TRAJ11*01_Oryct (    1) CATTTTTGTNNNNNNNNNNNNTATAGTG  1 
+BK064757_TRAJ11*01_Oryct (    1) CATTTTTGTNNNNNNNNNNNNTATAGTG  1 
+BK064757_TRAJ53*01_Oryct (    1) TGTTTTTGTNNNNNNNNNNNNGGCTGTG  1 
+BK064757_TRAJ53*01_Oryct (    1) TGTTTTTGTNNNNNNNNNNNNGGCTGTG  1 
+BK064757_TRAJ1*01_Orycto (    1) GGTTTCTGTNNNNNNNNNNNNGGGAGTG  1 
+BK064757_TRAJ1*01_Orycto (    1) GGTTTCTGTNNNNNNNNNNNNGGGAGTG  1 
+BK064757_TRAJ33*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNGTCTGTG  1 
+BK064757_TRAJ33*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNGTCTGTG  1 
+BK064757_TRAJ33*01_Oryct (    1) GGTTTTTGTNNNNNNNNNNNNGTCTGTG  1 
+BK064757_TRAJ3*01_Orycto (    1) GGTTATCGCNNNNNNNNNNNNTGCAGTG  1 
+BK064757_TRAJ3*01_Orycto (    1) GGTTATCGCNNNNNNNNNNNNTGCAGTG  1 
+BK064757_TRAJ3*01_Orycto (    1) GGTTATCGCNNNNNNNNNNNNTGCAGTG  1 
+BK064757_TRAJ54*01_Oryct (    1) AGTTTGTGTNNNNNNNNNNNNCGGGGTG  1 
+BK064757_TRAJ54*01_Oryct (    1) AGTTTGTGTNNNNNNNNNNNNCGGGGTG  1 
+BK064757_TRAJ54*01_Oryct (    1) AGTTTGTGTNNNNNNNNNNNNCGGGGTG  1 
+BK064757_TRAJ54*01_Oryct (    1) AGTTTGTGTNNNNNNNNNNNNCGGGGTG  1 
+BK064757_TRAJ2*01_Orycto (    1) AGTTTCTGTNNNNNNNNNNNNTGTGGTG  1 
+BK064757_TRAJ2*01_Orycto (    1) AGTTTCTGTNNNNNNNNNNNNTGTGGTG  1 
+BK064757_TRAJ2*01_Orycto (    1) AGTTTCTGTNNNNNNNNNNNNTGTGGTG  1 
+BK064757_TRAJ57*01_Oryct (    1) AGTATTTGTNNNNNNNNNNNNGGGGGTG  1 
+BK064757_TRAJ57*01_Oryct (    1) AGTATTTGTNNNNNNNNNNNNGGGGGTG  1 
+BK064757_TRAJ57*01_Oryct (    1) AGTATTTGTNNNNNNNNNNNNGGGGGTG  1 
+BK064757_TRAJ57*01_Oryct (    1) AGTATTTGTNNNNNNNNNNNNGGGGGTG  1 
+BK064757_TRAJ6*01_Orycto (    1) GGTTTTTTCNNNNNNNNNNNNCACTGGG  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTTTTGTKKKKKKKKKKKKCACWGTG MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 28 n= 2 bayes= -664.386 E= 1.1e-577 
+   132    -12     70   -219 
+   -89     34    127   -431 
+   -56  -1370  -1370    105 
+   -72  -1370  -1370    106 
+   -56    -53  -1370     90 
+  -108    -12   -337     83 
+  -389   -253   -337    107 
+ -1370  -1370    167   -589 
+  -108     40  -1370     79 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+  -289    231   -105   -125 
+   277  -1370    -51   -431 
+  -156    239   -120   -165 
+   147  -1370   -128     33 
+ -1370  -1370    168  -1370 
+ -1370  -1370   -537    115 
+ -1370  -1370    168  -1370 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTTTTGTKKKKKKKKKKKKCACWGTG MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 28 nsites= 133 E= 1.1e-577 
+ 0.278195  0.120301  0.503759  0.097744 
+ 0.060150  0.165414  0.751880  0.022556 
+ 0.075188  0.000000  0.000000  0.924812 
+ 0.067669  0.000000  0.000000  0.932331 
+ 0.075188  0.090226  0.000000  0.834586 
+ 0.052632  0.120301  0.030075  0.796992 
+ 0.007519  0.022556  0.030075  0.939850 
+ 0.000000  0.000000  0.992481  0.007519 
+ 0.052632  0.172932  0.000000  0.774436 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.111212  0.130651  0.311031  0.447107 
+ 0.015038  0.646617  0.150376  0.187970 
+ 0.759398  0.000000  0.218045  0.022556 
+ 0.037594  0.684211  0.135338  0.142857 
+ 0.308271  0.000000  0.127820  0.563910 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  0.007519  0.992481 
+ 0.000000  0.000000  1.000000  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif RGTTTTTGTKKKKKKKKKKKKCACWGTG MEME-1 regular expression
+--------------------------------------------------------------------------------
+[GA]GTTTTTGT[TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG]C[AG]C[TA]GTG
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.48 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+BK064757_TRDJ3*01_Orycto         7.50e-03  28
+BK064757_TRAJ58*01_Oryct         7.72e-09  [+1(7.72e-09)]
+BK064757_TRAJ57*01_Oryct         9.91e-05  [+1(9.91e-05)]
+BK064757_TRAJ56*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ54*01_Oryct         6.75e-05  [+1(6.75e-05)]
+BK064757_TRAJ53*01_Oryct         2.03e-05  [+1(2.03e-05)]
+BK064757_TRAJ58*01_Oryct         7.72e-09  [+1(7.72e-09)]
+BK064757_TRAJ57*01_Oryct         9.91e-05  [+1(9.91e-05)]
+BK064757_TRAJ56*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ54*01_Oryct         6.75e-05  [+1(6.75e-05)]
+BK064757_TRAJ53*01_Oryct         2.03e-05  [+1(2.03e-05)]
+BK064757_TRAJ52*01_Oryct         5.91e-08  [+1(5.91e-08)]
+BK064757_TRAJ49*01_Oryct         1.18e-08  [+1(1.18e-08)]
+BK064757_TRAJ48*01_Oryct         4.63e-06  [+1(4.63e-06)]
+BK064757_TRAJ47*01_Oryct         5.18e-06  [+1(5.18e-06)]
+BK064757_TRAJ45*01_Oryct         3.37e-06  [+1(3.37e-06)]
+BK064757_TRAJ43*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ42*01_Oryct         5.18e-06  [+1(5.18e-06)]
+BK064757_TRAJ41*01_Oryct         6.97e-06  [+1(6.97e-06)]
+BK064757_TRAJ40*01_Oryct         1.79e-06  [+1(1.79e-06)]
+BK064757_TRAJ39*01_Oryct         5.91e-08  [+1(5.91e-08)]
+BK064757_TRAJ37*01_Oryct         8.70e-08  [+1(8.70e-08)]
+BK064757_TRAJ35*01_Oryct         2.16e-08  [+1(2.16e-08)]
+BK064757_TRAJ33*01_Oryct         3.28e-05  [+1(3.28e-05)]
+BK064757_TRAJ32*01_Oryct         1.01e-05  [+1(1.01e-05)]
+BK064757_TRAJ29*01_Oryct         2.16e-08  [+1(2.16e-08)]
+BK064757_TRAJ27*01_Oryct         1.03e-07  [+1(1.03e-07)]
+BK064757_TRAJ26*01_Oryct         2.86e-08  [+1(2.86e-08)]
+BK064757_TRAJ25*01_Oryct         1.03e-07  [+1(1.03e-07)]
+BK064757_TRAJ24*01_Oryct         3.37e-06  [+1(3.37e-06)]
+BK064757_TRAJ23*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ22*01_Oryct         3.21e-09  [+1(3.21e-09)]
+BK064757_TRAJ21*01_Oryct         1.12e-07  [+1(1.12e-07)]
+BK064757_TRAJ20*01_Oryct         7.56e-09  [+1(7.56e-09)]
+BK064757_TRAJ19*01_Oryct         6.97e-01  28
+BK064757_TRAJ18*01_Oryct         4.00e-07  [+1(4.00e-07)]
+BK064757_TRAJ17*01_Oryct         2.86e-08  [+1(2.86e-08)]
+BK064757_TRAJ16*01_Oryct         2.16e-08  [+1(2.16e-08)]
+BK064757_TRAJ15*01_Oryct         1.03e-07  [+1(1.03e-07)]
+BK064757_TRAJ13*01_Oryct         1.72e-05  [+1(1.72e-05)]
+BK064757_TRAJ12*01_Oryct         6.27e-06  [+1(6.27e-06)]
+BK064757_TRAJ9*01_Orycto         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ7*01_Orycto         8.83e-07  [+1(8.83e-07)]
+BK064757_TRAJ4*01_Orycto         1.46e-05  [+1(1.46e-05)]
+BK064757_TRAJ3*01_Orycto         4.40e-05  [+1(4.40e-05)]
+BK064757_TRAJ2*01_Orycto         9.31e-05  [+1(9.31e-05)]
+BK064757_TRAJ1*01_Orycto         2.79e-05  [+1(2.79e-05)]
+BK064757_TRAJ11*01_Oryct         2.03e-05  [+1(2.03e-05)]
+BK064757_TRAJ12*01_Oryct         6.27e-06  [+1(6.27e-06)]
+BK064757_TRAJ16*01_Oryct         2.16e-08  [+1(2.16e-08)]
+BK064757_TRAJ19*01_Oryct         6.97e-01  28
+BK064757_TRAJ32*01_Oryct         1.01e-05  [+1(1.01e-05)]
+BK064757_TRAJ39*01_Oryct         5.91e-08  [+1(5.91e-08)]
+BK064757_TRAJ40*01_Oryct         4.63e-06  [+1(4.63e-06)]
+BK064757_TRAJ49*01_Oryct         1.18e-08  [+1(1.18e-08)]
+BK064757_TRAJ1*01_Orycto         2.79e-05  [+1(2.79e-05)]
+BK064757_TRAJ2*01_Orycto         9.31e-05  [+1(9.31e-05)]
+BK064757_TRAJ3*01_Orycto         4.40e-05  [+1(4.40e-05)]
+BK064757_TRAJ4*01_Orycto         1.46e-05  [+1(1.46e-05)]
+BK064757_TRAJ7*01_Orycto         8.83e-07  [+1(8.83e-07)]
+BK064757_TRAJ9*01_Orycto         8.83e-07  [+1(8.83e-07)]
+BK064757_TRAJ11*01_Oryct         2.03e-05  [+1(2.03e-05)]
+BK064757_TRAJ12*01_Oryct         6.27e-06  [+1(6.27e-06)]
+BK064757_TRAJ13*01_Oryct         1.72e-05  [+1(1.72e-05)]
+BK064757_TRAJ16*01_Oryct         2.16e-08  [+1(2.16e-08)]
+BK064757_TRAJ17*01_Oryct         2.86e-08  [+1(2.86e-08)]
+BK064757_TRAJ18*01_Oryct         4.00e-07  [+1(4.00e-07)]
+BK064757_TRAJ19*01_Oryct         6.97e-01  28
+BK064757_TRAJ20*01_Oryct         7.56e-09  [+1(7.56e-09)]
+BK064757_TRAJ21*01_Oryct         1.12e-07  [+1(1.12e-07)]
+BK064757_TRAJ22*01_Oryct         3.21e-09  [+1(3.21e-09)]
+BK064757_TRAJ23*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ24*01_Oryct         3.37e-06  [+1(3.37e-06)]
+BK064757_TRAJ25*01_Oryct         1.03e-07  [+1(1.03e-07)]
+BK064757_TRAJ27*01_Oryct         1.03e-07  [+1(1.03e-07)]
+BK064757_TRAJ29*01_Oryct         2.16e-08  [+1(2.16e-08)]
+BK064757_TRAJ30*01_Oryct         2.03e-05  [+1(2.03e-05)]
+BK064757_TRAJ32*01_Oryct         1.01e-05  [+1(1.01e-05)]
+BK064757_TRAJ33*01_Oryct         3.28e-05  [+1(3.28e-05)]
+BK064757_TRAJ37*01_Oryct         8.70e-08  [+1(8.70e-08)]
+BK064757_TRAJ39*01_Oryct         5.91e-08  [+1(5.91e-08)]
+BK064757_TRAJ40*01_Oryct         1.79e-06  [+1(1.79e-06)]
+BK064757_TRAJ41*01_Oryct         6.97e-06  [+1(6.97e-06)]
+BK064757_TRAJ42*01_Oryct         5.18e-06  [+1(5.18e-06)]
+BK064757_TRAJ43*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ45*01_Oryct         3.37e-06  [+1(3.37e-06)]
+BK064757_TRAJ47*01_Oryct         5.18e-06  [+1(5.18e-06)]
+BK064757_TRAJ48*01_Oryct         4.63e-06  [+1(4.63e-06)]
+BK064757_TRAJ49*01_Oryct         1.18e-08  [+1(1.18e-08)]
+BK064757_TRAJ50*01_Oryct         1.01e-05  [+1(1.01e-05)]
+BK064757_TRAJ52*01_Oryct         5.91e-08  [+1(5.91e-08)]
+BK064757_TRAJ53*01_Oryct         2.03e-05  [+1(2.03e-05)]
+BK064757_TRAJ54*01_Oryct         6.75e-05  [+1(6.75e-05)]
+BK064757_TRAJ56*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ57*01_Oryct         9.91e-05  [+1(9.91e-05)]
+BK064757_TRAJ58*01_Oryct         1.01e-09  [+1(1.01e-09)]
+BK064757_TRAJ1*01_Orycto         4.63e-06  [+1(4.63e-06)]
+BK064757_TRAJ2*01_Orycto         9.31e-05  [+1(9.31e-05)]
+BK064757_TRAJ3*01_Orycto         4.40e-05  [+1(4.40e-05)]
+BK064757_TRAJ4*01_Orycto         1.46e-05  [+1(1.46e-05)]
+BK064757_TRAJ6*01_Orycto         1.59e-04  28
+BK064757_TRAJ7*01_Orycto         8.83e-07  [+1(8.83e-07)]
+BK064757_TRAJ8*01_Orycto         1.02e-06  [+1(1.02e-06)]
+BK064757_TRAJ9*01_Orycto         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ11*01_Oryct         2.03e-05  [+1(2.03e-05)]
+BK064757_TRAJ12*01_Oryct         6.27e-06  [+1(6.27e-06)]
+BK064757_TRAJ13*01_Oryct         1.72e-05  [+1(1.72e-05)]
+BK064757_TRAJ15*01_Oryct         1.03e-07  [+1(1.03e-07)]
+BK064757_TRAJ16*01_Oryct         2.16e-08  [+1(2.16e-08)]
+BK064757_TRAJ17*01_Oryct         2.86e-08  [+1(2.86e-08)]
+BK064757_TRAJ18*01_Oryct         4.00e-07  [+1(4.00e-07)]
+BK064757_TRAJ19*01_Oryct         6.97e-01  28
+BK064757_TRAJ20*01_Oryct         7.56e-09  [+1(7.56e-09)]
+BK064757_TRAJ21*01_Oryct         1.12e-07  [+1(1.12e-07)]
+BK064757_TRAJ22*01_Oryct         3.21e-09  [+1(3.21e-09)]
+BK064757_TRAJ23*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ24*01_Oryct         3.37e-06  [+1(3.37e-06)]
+BK064757_TRAJ25*01_Oryct         1.03e-07  [+1(1.03e-07)]
+BK064757_TRAJ26*01_Oryct         2.86e-08  [+1(2.86e-08)]
+BK064757_TRAJ27*01_Oryct         1.03e-07  [+1(1.03e-07)]
+BK064757_TRAJ29*01_Oryct         2.16e-08  [+1(2.16e-08)]
+BK064757_TRAJ30*01_Oryct         2.03e-05  [+1(2.03e-05)]
+BK064757_TRAJ31*01_Oryct         1.46e-05  [+1(1.46e-05)]
+BK064757_TRAJ33*01_Oryct         3.28e-05  [+1(3.28e-05)]
+BK064757_TRAJ37*01_Oryct         8.70e-08  [+1(8.70e-08)]
+BK064757_TRAJ39*01_Oryct         5.91e-08  [+1(5.91e-08)]
+BK064757_TRAJ40*01_Oryct         1.79e-06  [+1(1.79e-06)]
+BK064757_TRAJ41*01_Oryct         6.97e-06  [+1(6.97e-06)]
+BK064757_TRAJ42*01_Oryct         5.18e-06  [+1(5.18e-06)]
+BK064757_TRAJ43*01_Oryct         4.70e-07  [+1(4.70e-07)]
+BK064757_TRAJ45*01_Oryct         3.37e-06  [+1(3.37e-06)]
+BK064757_TRAJ47*01_Oryct         5.18e-06  [+1(5.18e-06)]
+BK064757_TRAJ48*01_Oryct         4.63e-06  [+1(4.63e-06)]
+BK064757_TRAJ49*01_Oryct         1.18e-08  [+1(1.18e-08)]
+BK064757_TRAJ52*01_Oryct         5.91e-08  [+1(5.91e-08)]
+BK064757_TRAJ54*01_Oryct         6.75e-05  [+1(6.75e-05)]
+BK064757_TRAJ57*01_Oryct         9.91e-05  [+1(9.91e-05)]
+BK064757_TRAJ58*01_Oryct         1.01e-09  [+1(1.01e-09)]
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 23d8d39df3be
+
+********************************************************************************

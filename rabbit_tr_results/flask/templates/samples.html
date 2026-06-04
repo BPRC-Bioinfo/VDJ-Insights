@@ -1,0 +1,115 @@
+{% extends 'sharedTemplates/base.html' %}
+{% block title %}Samples{% endblock %}
+{% block body %}
+    <div class="container">
+
+        <div class="collapse" id="collapse_info">
+         <div id="infoBox" class="card mt-3 shadow">
+              <button
+              type="button"
+              class="btn p-0 position-absolute"
+              style="top: 0.5rem; right: 0.5rem; color: #6c757d; font-size: 1.25rem; line-height: 1;"
+              data-toggle="collapse"
+              data-target="#collapse_info"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+           <div class="card-body">
+  <h5 class="card-title">Information</h5>
+  <p class="card-text">
+    The table provides an overview of all available samples within the selected region. (default: all)<br><br>
+    For each sample, three values are shown:
+    <ul>
+      <li><strong>Known</strong>: the number of segments annotated with previously identified V, D, and, J gene segments.</li>
+      <li><strong>Novel</strong>: the number of segments with newly discovered gene segments.</li>
+      <li><strong>Total</strong>: the sum of known and novel segments for that sample.</li>
+    </ul>
+  </p>
+</div>
+
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <h2 class="mt-0">Samples</h2>
+            <a class="btn gap-2" data-toggle="collapse" href="#collapse_info" role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </a>
+        </div>
+
+
+        {% if regions %}
+            <form action="/get_sample_table" method="POST" id="form">
+                <div class="row g-3 mb-4 ">
+                    <div class="col">
+                        <label for="region" class="form-label">Select regio:</label>
+                        <select name="region" id="region" class="form-select" onchange="this.form.submit()">
+                            <option value="">-- Select region --</option>
+                            {% for region in regions %}
+                                <option value="{{ region }}" {% if region== selected_region %}selected{% endif %}>
+                                    {{ region }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </form>
+        {% endif %}
+
+
+        {% if vdj_plot %}
+            <div class="card card-body mb-4 shadow">
+                {{ vdj_plot | safe }}
+            </div>
+        {% endif %}
+
+        <div class="card card-body mb-4 shadow">
+            <div class="row d-flex align-items-center g-3">
+                <div class="col">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search in sample data...">
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-warning" type="button" id="amountTable"></button>
+                </div>
+            </div>
+            <div class="table-responsive" style="height: 1000px;">
+
+                <table class="table table-hover" id="DataTable">
+
+                    <thead>
+                    <tr>
+                        <th class="column-header sortable" data-column=Reference">Sample</th>
+                        <th class="column-header sortable" data-column=Known">Known</th>
+                        <th class="column-header sortable" data-column=Novel">Novel</th>
+                        <th class="column-header sortable" data-column=Total">Total</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in pivot_data %}
+                        <tr>
+                            <td><a href="https://www.ebi.ac.uk/ena/browser/view/{{row['Sample'] }}" target="_blank">{{ row['Sample'] }}</a></td>
+                            <td>{{ row["Known"] }}</td>
+                            <td>{{ row["Novel"] }}</td>
+                            <td>{{ row["Total"] }}</td>
+
+                            <td>
+                                <form method="POST" action="/get_sample_table">
+                                    <input type="hidden" name="selected_sample" value="{{ row['Sample'] }}">
+                                    <input type="hidden" name="selected_region" value="{{ selected_region }}">
+                                    <button type="submit" class="btn btn-primary">&#8594;</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

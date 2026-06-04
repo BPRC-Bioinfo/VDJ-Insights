@@ -1,0 +1,271 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.8 (Release date: Thu May 15 15:01:46 2025 -0700)
+
+For further information on how to interpret these results please access https://meme-suite.org/meme.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /content/rabbit_tr_results/tmp/RSS/fasta_gaps/TRBD_23.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+IMGT000032_TRBD1*01_Oryc 1.0000     39  S60737_TRBD2*01_Oryctola 1.0000     39  
+IMGT000032_TRBD1*01_Oryc 1.0000     39  IMGT000032_TRBD1*01_Oryc 1.0000     39  
+IMGT000032_TRBD1*01_Oryc 1.0000     39  S60737_TRBD2*01_Oryctola 1.0000     39  
+IMGT000032_TRBD1*01_Oryc 1.0000     39  S60737_TRBD2*01_Oryctola 1.0000     39  
+IMGT000032_TRBD1*01_Oryc 1.0000     39  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /content/rabbit_tr_results/tmp/RSS/fasta_gaps/TRBD_23.fasta -o /content/rabbit_tr_results/tmp/RSS/meme_output/TRBD_23 -dna -mod zoops -nmotifs 1 -minw 39 -maxw 39 -maxsize 351 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: +
+width:  minw=           39    maxw=           39
+nsites: minsites=        2    maxsites=        9    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             351    N=               9
+sample: seed=            0    hsfrac=          0
+        searchsize=    351    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.458 C 0.285 G 0.181 T 0.0764 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.453 C 0.284 G 0.182 T 0.0811 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC MEME-1	width =  39  sites =   6  llr = 107  E-value = 1.8e-009
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  :a:22::55555555555555555555555a:aaaaa::
+pos.-specific     C  a:a::::33333333333333333333333:a:::::8a
+probability       G  :::88:a22222222222222222222222:::::::2:
+matrix            T  :::::a:11111111111111111111111:::::::::
+
+         bits    3.6      *                                 
+                 3.3      *                                 
+                 2.9      *                                 
+                 2.5      **                                
+Relative         2.2      **                                
+Entropy          1.8 * *  **                        *      *
+(25.8 bits)      1.4 * *****                        *     **
+                 1.1 *******                       *********
+                 0.7 *******                       *********
+                 0.4 *******                       *********
+                 0.0 ---------------------------------------
+
+Multilevel           CACGGTGAAAAAAAAAAAAAAAAAAAAAAAACAAAAACC
+consensus                   CCCCCCCCCCCCCCCCCCCCCCC         
+sequence                                                    
+                                                            
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value                             Site                
+-------------             ----- ---------            ---------------------------------------
+IMGT000032_TRBD1*01_Oryc      1  3.54e-09          . CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC           
+IMGT000032_TRBD1*01_Oryc      1  3.54e-09          . CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC           
+IMGT000032_TRBD1*01_Oryc      1  3.54e-09          . CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC           
+IMGT000032_TRBD1*01_Oryc      1  3.54e-09          . CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC           
+IMGT000032_TRBD1*01_Oryc      1  3.54e-09          . CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC           
+S60737_TRBD2*01_Oryctola      1  7.08e-08          . CACAATGNNNNNNNNNNNNNNNNNNNNNNNACAAAAAGC           
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+IMGT000032_TRBD1*01_Oryc          3.5e-09  [+1]
+IMGT000032_TRBD1*01_Oryc          3.5e-09  [+1]
+IMGT000032_TRBD1*01_Oryc          3.5e-09  [+1]
+IMGT000032_TRBD1*01_Oryc          3.5e-09  [+1]
+IMGT000032_TRBD1*01_Oryc          3.5e-09  [+1]
+S60737_TRBD2*01_Oryctola          7.1e-08  [+1]
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC width=39 seqs=6
+IMGT000032_TRBD1*01_Oryc (    1) CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC  1 
+IMGT000032_TRBD1*01_Oryc (    1) CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC  1 
+IMGT000032_TRBD1*01_Oryc (    1) CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC  1 
+IMGT000032_TRBD1*01_Oryc (    1) CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC  1 
+IMGT000032_TRBD1*01_Oryc (    1) CACGGTGNNNNNNNNNNNNNNNNNNNNNNNACAAAAACC  1 
+S60737_TRBD2*01_Oryctola (    1) CACAATGNNNNNNNNNNNNNNNNNNNNNNNACAAAAAGC  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 39 n= 2 bayes= -664.386 E= 1.8e-009 
+  -923    182   -923   -923 
+   114   -923   -923   -923 
+  -923    182   -923   -923 
+  -144   -923    219   -923 
+  -144   -923    219   -923 
+  -923   -923   -923    362 
+  -923   -923    245   -923 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+   114   -923   -923   -923 
+  -923    182   -923   -923 
+   114   -923   -923   -923 
+   114   -923   -923   -923 
+   114   -923   -923   -923 
+   114   -923   -923   -923 
+   114   -923   -923   -923 
+  -923    155    -13   -923 
+  -923    182   -923   -923 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 39 nsites= 6 E= 1.8e-009 
+ 0.000000  1.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.166667  0.000000  0.833333  0.000000 
+ 0.166667  0.000000  0.833333  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 0.452703  0.283784  0.182432  0.081081 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.000000  1.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.000000  0.833333  0.166667  0.000000 
+ 0.000000  1.000000  0.000000  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC MEME-1 regular expression
+--------------------------------------------------------------------------------
+CACGGTG[AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC]ACAAAAACC
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.30 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+IMGT000032_TRBD1*01_Oryc         3.54e-09  [+1(3.54e-09)]
+S60737_TRBD2*01_Oryctola         7.08e-08  [+1(7.08e-08)]
+IMGT000032_TRBD1*01_Oryc         3.54e-09  [+1(3.54e-09)]
+IMGT000032_TRBD1*01_Oryc         1.26e-01  39
+IMGT000032_TRBD1*01_Oryc         3.54e-09  [+1(3.54e-09)]
+S60737_TRBD2*01_Oryctola         6.01e-01  39
+IMGT000032_TRBD1*01_Oryc         3.54e-09  [+1(3.54e-09)]
+S60737_TRBD2*01_Oryctola         6.01e-01  39
+IMGT000032_TRBD1*01_Oryc         3.54e-09  [+1(3.54e-09)]
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 23d8d39df3be
+
+********************************************************************************

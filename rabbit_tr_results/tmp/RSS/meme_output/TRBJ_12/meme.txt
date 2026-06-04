@@ -1,0 +1,366 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.8 (Release date: Thu May 15 15:01:46 2025 -0700)
+
+For further information on how to interpret these results please access https://meme-suite.org/meme.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /content/rabbit_tr_results/tmp/RSS/fasta_gaps/TRBJ_12.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+IMGT000032_TRBJ1-1*01_Or 1.0000     28  IMGT000032_TRBJ1-2*01_Or 1.0000     28  
+IMGT000032_TRBJ1-4*01_Or 1.0000     28  IMGT000032_TRBJ1-5*01_Or 1.0000     28  
+IMGT000032_TRBJ1-6*01_Or 1.0000     28  S60737_TRBJ2-1*01_Orycto 1.0000     28  
+S60737_TRBJ2-2*01_Orycto 1.0000     28  S60737_TRBJ2-3*01_Orycto 1.0000     28  
+S60737_TRBJ2-4*01_Orycto 1.0000     28  S60737_TRBJ2-5*01_Orycto 1.0000     28  
+IMGT000032_TRBJ2-6*02_Or 1.0000     28  IMGT000032_TRBJ1-1*01_Or 1.0000     28  
+IMGT000032_TRBJ1-5*01_Or 1.0000     28  IMGT000032_TRBJ1-6*01_Or 1.0000     28  
+IMGT000032_TRBJ1-2*01_Or 1.0000     28  IMGT000032_TRBJ1-5*01_Or 1.0000     28  
+S60737_TRBJ2-2*01_Orycto 1.0000     28  S60737_TRBJ2-3*01_Orycto 1.0000     28  
+IMGT000032_TRBJ2-6*02_Or 1.0000     28  S60737_TRBJ2-3*01_Orycto 1.0000     28  
+S60737_TRBJ2-1*01_Orycto 1.0000     28  IMGT000032_TRBJ1-6*01_Or 1.0000     28  
+IMGT000032_TRBJ1-5*01_Or 1.0000     28  IMGT000032_TRBJ1-4*01_Or 1.0000     28  
+IMGT000032_TRBJ1-2*01_Or 1.0000     28  IMGT000032_TRBJ1-1*01_Or 1.0000     28  
+IMGT000032_TRBJ2-6*02_Or 1.0000     28  S60737_TRBJ2-3*01_Orycto 1.0000     28  
+S60737_TRBJ2-1*01_Orycto 1.0000     28  IMGT000032_TRBJ1-6*01_Or 1.0000     28  
+IMGT000032_TRBJ1-5*01_Or 1.0000     28  IMGT000032_TRBJ1-4*01_Or 1.0000     28  
+IMGT000032_TRBJ1-1*01_Or 1.0000     28  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /content/rabbit_tr_results/tmp/RSS/fasta_gaps/TRBJ_12.fasta -o /content/rabbit_tr_results/tmp/RSS/meme_output/TRBJ_12 -dna -mod zoops -nmotifs 1 -minw 28 -maxw 28 -maxsize 924 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: +
+width:  minw=           28    maxw=           28
+nsites: minsites=        2    maxsites=       33    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             924    N=              33
+sample: seed=            0    hsfrac=          0
+        searchsize=    924    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.0985 C 0.165 G 0.326 T 0.411 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.0996 C 0.165 G 0.325 T 0.41 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF VGTTTTBSTKKKKKKKKKKKKNRCTGTG MEME-1	width =  28  sites =  33  llr = 341  E-value = 9.5e-099
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif VGTTTTBSTKKKKKKKKKKKKNRCTGTG MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  32:1::11111111111111134:::::
+pos.-specific     C  2:1:::4322222222222223:a1:::
+probability       G  4822:225133333333333325::a:a
+matrix            T  ::87a831644444444444421:9:a:
+
+         bits    3.3                             
+                 3.0                             
+                 2.7                        *    
+                 2.3                        *    
+Relative         2.0                        *    
+Entropy          1.7                        * * *
+(14.9 bits)      1.3  *  *                  * ***
+                 1.0  *  *                  *****
+                 0.7 **  **                ******
+                 0.3 *********            *******
+                 0.0 ----------------------------
+
+Multilevel           GGTTTTCGTTTTTTTTTTTTTCGCTGTG
+consensus            AA    TCCGGGGGGGGGGGGAA     
+sequence             C                    G      
+                                                 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VGTTTTBSTKKKKKKKKKKKKNRCTGTG MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value                        Site          
+-------------             ----- ---------            ----------------------------
+IMGT000032_TRBJ1-1*01_Or      1  4.92e-08          . CATTTTCCTNNNNNNNNNNNNCACTGTG           
+IMGT000032_TRBJ1-1*01_Or      1  4.92e-08          . CATTTTCCTNNNNNNNNNNNNCACTGTG           
+IMGT000032_TRBJ1-1*01_Or      1  4.92e-08          . CATTTTCCTNNNNNNNNNNNNCACTGTG           
+IMGT000032_TRBJ1-1*01_Or      1  4.92e-08          . CATTTTCCTNNNNNNNNNNNNCACTGTG           
+IMGT000032_TRBJ1-6*01_Or      1  3.01e-07          . GGTTTTACTNNNNNNNNNNNNAGCTGTG           
+IMGT000032_TRBJ1-6*01_Or      1  3.01e-07          . GGTTTTACTNNNNNNNNNNNNAGCTGTG           
+IMGT000032_TRBJ1-6*01_Or      1  3.01e-07          . GGTTTTACTNNNNNNNNNNNNAGCTGTG           
+IMGT000032_TRBJ1-6*01_Or      1  3.01e-07          . GGTTTTACTNNNNNNNNNNNNAGCTGTG           
+IMGT000032_TRBJ1-4*01_Or      1  3.47e-06          . AGTTTTGCTNNNNNNNNNNNNTGCTGTG           
+IMGT000032_TRBJ1-4*01_Or      1  3.47e-06          . AGTTTTGCTNNNNNNNNNNNNTGCTGTG           
+IMGT000032_TRBJ1-4*01_Or      1  3.47e-06          . AGTTTTGCTNNNNNNNNNNNNTGCTGTG           
+IMGT000032_TRBJ1-5*01_Or      1  4.36e-06          . AGGGTTTGCNNNNNNNNNNNNAACTGTG           
+IMGT000032_TRBJ1-5*01_Or      1  4.36e-06          . AGGGTTTGCNNNNNNNNNNNNAACTGTG           
+IMGT000032_TRBJ1-5*01_Or      1  4.36e-06          . AGGGTTTGCNNNNNNNNNNNNAACTGTG           
+IMGT000032_TRBJ1-5*01_Or      1  4.36e-06          . AGGGTTTGCNNNNNNNNNNNNAACTGTG           
+IMGT000032_TRBJ1-5*01_Or      1  4.36e-06          . AGGGTTTGCNNNNNNNNNNNNAACTGTG           
+S60737_TRBJ2-3*01_Orycto      1  5.47e-06          . GGTTTTTGTNNNNNNNNNNNNGGCTGTG           
+S60737_TRBJ2-3*01_Orycto      1  5.47e-06          . GGTTTTTGTNNNNNNNNNNNNGGCTGTG           
+S60737_TRBJ2-3*01_Orycto      1  5.47e-06          . GGTTTTTGTNNNNNNNNNNNNGGCTGTG           
+S60737_TRBJ2-3*01_Orycto      1  5.47e-06          . GGTTTTTGTNNNNNNNNNNNNGGCTGTG           
+IMGT000032_TRBJ1-2*01_Or      1  1.63e-05          . CATTTTGGTNNNNNNNNNNNNTGCTGTG           
+IMGT000032_TRBJ1-2*01_Or      1  1.63e-05          . CATTTTGGTNNNNNNNNNNNNTGCTGTG           
+IMGT000032_TRBJ1-2*01_Or      1  1.63e-05          . CATTTTGGTNNNNNNNNNNNNTGCTGTG           
+S60737_TRBJ2-2*01_Orycto      1  2.44e-05          . GGTTTGCACNNNNNNNNNNNNGGCTGTG           
+S60737_TRBJ2-2*01_Orycto      1  2.44e-05          . GGTTTGCACNNNNNNNNNNNNGGCTGTG           
+S60737_TRBJ2-1*01_Orycto      1  4.33e-05          . GGCATTCTGNNNNNNNNNNNNCACTGTG           
+IMGT000032_TRBJ2-6*02_Or      1  4.33e-05          . AGTTTGCGANNNNNNNNNNNNCTCCGTG           
+S60737_TRBJ2-1*01_Orycto      1  4.33e-05          . GGCATTCTGNNNNNNNNNNNNCACTGTG           
+IMGT000032_TRBJ2-6*02_Or      1  4.33e-05          . AGTTTGCGANNNNNNNNNNNNCTCCGTG           
+IMGT000032_TRBJ2-6*02_Or      1  4.33e-05          . AGTTTGCGANNNNNNNNNNNNCTCCGTG           
+S60737_TRBJ2-1*01_Orycto      1  4.33e-05          . GGCATTCTGNNNNNNNNNNNNCACTGTG           
+S60737_TRBJ2-5*01_Orycto      1  4.63e-05          . GGTATTTGTNNNNNNNNNNNNGCCTGTG           
+S60737_TRBJ2-4*01_Orycto      1  5.58e-05          . TGTTTTTGTNNNNNNNNNNNNGGCTGTG           
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VGTTTTBSTKKKKKKKKKKKKNRCTGTG MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+IMGT000032_TRBJ1-1*01_Or          4.9e-08  [+1]
+IMGT000032_TRBJ1-1*01_Or          4.9e-08  [+1]
+IMGT000032_TRBJ1-1*01_Or          4.9e-08  [+1]
+IMGT000032_TRBJ1-1*01_Or          4.9e-08  [+1]
+IMGT000032_TRBJ1-6*01_Or            3e-07  [+1]
+IMGT000032_TRBJ1-6*01_Or            3e-07  [+1]
+IMGT000032_TRBJ1-6*01_Or            3e-07  [+1]
+IMGT000032_TRBJ1-6*01_Or            3e-07  [+1]
+IMGT000032_TRBJ1-4*01_Or          3.5e-06  [+1]
+IMGT000032_TRBJ1-4*01_Or          3.5e-06  [+1]
+IMGT000032_TRBJ1-4*01_Or          3.5e-06  [+1]
+IMGT000032_TRBJ1-5*01_Or          4.4e-06  [+1]
+IMGT000032_TRBJ1-5*01_Or          4.4e-06  [+1]
+IMGT000032_TRBJ1-5*01_Or          4.4e-06  [+1]
+IMGT000032_TRBJ1-5*01_Or          4.4e-06  [+1]
+IMGT000032_TRBJ1-5*01_Or          4.4e-06  [+1]
+S60737_TRBJ2-3*01_Orycto          5.5e-06  [+1]
+S60737_TRBJ2-3*01_Orycto          5.5e-06  [+1]
+S60737_TRBJ2-3*01_Orycto          5.5e-06  [+1]
+S60737_TRBJ2-3*01_Orycto          5.5e-06  [+1]
+IMGT000032_TRBJ1-2*01_Or          1.6e-05  [+1]
+IMGT000032_TRBJ1-2*01_Or          1.6e-05  [+1]
+IMGT000032_TRBJ1-2*01_Or          1.6e-05  [+1]
+S60737_TRBJ2-2*01_Orycto          2.4e-05  [+1]
+S60737_TRBJ2-2*01_Orycto          2.4e-05  [+1]
+S60737_TRBJ2-1*01_Orycto          4.3e-05  [+1]
+IMGT000032_TRBJ2-6*02_Or          4.3e-05  [+1]
+S60737_TRBJ2-1*01_Orycto          4.3e-05  [+1]
+IMGT000032_TRBJ2-6*02_Or          4.3e-05  [+1]
+IMGT000032_TRBJ2-6*02_Or          4.3e-05  [+1]
+S60737_TRBJ2-1*01_Orycto          4.3e-05  [+1]
+S60737_TRBJ2-5*01_Orycto          4.6e-05  [+1]
+S60737_TRBJ2-4*01_Orycto          5.6e-05  [+1]
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VGTTTTBSTKKKKKKKKKKKKNRCTGTG MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF VGTTTTBSTKKKKKKKKKKKKNRCTGTG width=28 seqs=33
+IMGT000032_TRBJ1-1*01_Or (    1) CATTTTCCTNNNNNNNNNNNNCACTGTG  1 
+IMGT000032_TRBJ1-1*01_Or (    1) CATTTTCCTNNNNNNNNNNNNCACTGTG  1 
+IMGT000032_TRBJ1-1*01_Or (    1) CATTTTCCTNNNNNNNNNNNNCACTGTG  1 
+IMGT000032_TRBJ1-1*01_Or (    1) CATTTTCCTNNNNNNNNNNNNCACTGTG  1 
+IMGT000032_TRBJ1-6*01_Or (    1) GGTTTTACTNNNNNNNNNNNNAGCTGTG  1 
+IMGT000032_TRBJ1-6*01_Or (    1) GGTTTTACTNNNNNNNNNNNNAGCTGTG  1 
+IMGT000032_TRBJ1-6*01_Or (    1) GGTTTTACTNNNNNNNNNNNNAGCTGTG  1 
+IMGT000032_TRBJ1-6*01_Or (    1) GGTTTTACTNNNNNNNNNNNNAGCTGTG  1 
+IMGT000032_TRBJ1-4*01_Or (    1) AGTTTTGCTNNNNNNNNNNNNTGCTGTG  1 
+IMGT000032_TRBJ1-4*01_Or (    1) AGTTTTGCTNNNNNNNNNNNNTGCTGTG  1 
+IMGT000032_TRBJ1-4*01_Or (    1) AGTTTTGCTNNNNNNNNNNNNTGCTGTG  1 
+IMGT000032_TRBJ1-5*01_Or (    1) AGGGTTTGCNNNNNNNNNNNNAACTGTG  1 
+IMGT000032_TRBJ1-5*01_Or (    1) AGGGTTTGCNNNNNNNNNNNNAACTGTG  1 
+IMGT000032_TRBJ1-5*01_Or (    1) AGGGTTTGCNNNNNNNNNNNNAACTGTG  1 
+IMGT000032_TRBJ1-5*01_Or (    1) AGGGTTTGCNNNNNNNNNNNNAACTGTG  1 
+IMGT000032_TRBJ1-5*01_Or (    1) AGGGTTTGCNNNNNNNNNNNNAACTGTG  1 
+S60737_TRBJ2-3*01_Orycto (    1) GGTTTTTGTNNNNNNNNNNNNGGCTGTG  1 
+S60737_TRBJ2-3*01_Orycto (    1) GGTTTTTGTNNNNNNNNNNNNGGCTGTG  1 
+S60737_TRBJ2-3*01_Orycto (    1) GGTTTTTGTNNNNNNNNNNNNGGCTGTG  1 
+S60737_TRBJ2-3*01_Orycto (    1) GGTTTTTGTNNNNNNNNNNNNGGCTGTG  1 
+IMGT000032_TRBJ1-2*01_Or (    1) CATTTTGGTNNNNNNNNNNNNTGCTGTG  1 
+IMGT000032_TRBJ1-2*01_Or (    1) CATTTTGGTNNNNNNNNNNNNTGCTGTG  1 
+IMGT000032_TRBJ1-2*01_Or (    1) CATTTTGGTNNNNNNNNNNNNTGCTGTG  1 
+S60737_TRBJ2-2*01_Orycto (    1) GGTTTGCACNNNNNNNNNNNNGGCTGTG  1 
+S60737_TRBJ2-2*01_Orycto (    1) GGTTTGCACNNNNNNNNNNNNGGCTGTG  1 
+S60737_TRBJ2-1*01_Orycto (    1) GGCATTCTGNNNNNNNNNNNNCACTGTG  1 
+IMGT000032_TRBJ2-6*02_Or (    1) AGTTTGCGANNNNNNNNNNNNCTCCGTG  1 
+S60737_TRBJ2-1*01_Orycto (    1) GGCATTCTGNNNNNNNNNNNNCACTGTG  1 
+IMGT000032_TRBJ2-6*02_Or (    1) AGTTTGCGANNNNNNNNNNNNCTCCGTG  1 
+IMGT000032_TRBJ2-6*02_Or (    1) AGTTTGCGANNNNNNNNNNNNCTCCGTG  1 
+S60737_TRBJ2-1*01_Orycto (    1) GGCATTCTGNNNNNNNNNNNNCACTGTG  1 
+S60737_TRBJ2-5*01_Orycto (    1) GGTATTTGTNNNNNNNNNNNNGCCTGTG  1 
+S60737_TRBJ2-4*01_Orycto (    1) TGTTTTTGTNNNNNNNNNNNNGGCTGTG  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VGTTTTBSTKKKKKKKKKKKKNRCTGTG MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 28 n= 2 bayes= -664.386 E= 9.5e-099 
+   174     36     38   -375 
+   109  -1169    128  -1169 
+ -1169    -86   -110     89 
+    28  -1169   -110     83 
+ -1169  -1169  -1169    129 
+ -1169  -1169   -110    105 
+    28    114    -84    -30 
+   -72    101     66   -217 
+   -13     36   -184     56 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+   145     87    -42   -117 
+   187   -245     66   -217 
+ -1169    260  -1169  -1169 
+ -1169    -86  -1169    115 
+ -1169  -1169    162  -1169 
+ -1169  -1169  -1169    129 
+ -1169  -1169    162  -1169 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VGTTTTBSTKKKKKKKKKKKKNRCTGTG MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 28 nsites= 33 E= 9.5e-099 
+ 0.333333  0.212121  0.424242  0.030303 
+ 0.212121  0.000000  0.787879  0.000000 
+ 0.000000  0.090909  0.151515  0.757576 
+ 0.121212  0.000000  0.151515  0.727273 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  0.151515  0.848485 
+ 0.121212  0.363636  0.181818  0.333333 
+ 0.060606  0.333333  0.515152  0.090909 
+ 0.090909  0.212121  0.090909  0.606061 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.099624  0.165414  0.325188  0.409774 
+ 0.272727  0.303030  0.242424  0.181818 
+ 0.363636  0.030303  0.515152  0.090909 
+ 0.000000  1.000000  0.000000  0.000000 
+ 0.000000  0.090909  0.000000  0.909091 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.000000  0.000000  1.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif VGTTTTBSTKKKKKKKKKKKKNRCTGTG MEME-1 regular expression
+--------------------------------------------------------------------------------
+[GAC][GA]TTTT[CT][GC][TC][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][TG][CAG][GA]CTGTG
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.40 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+IMGT000032_TRBJ1-1*01_Or         4.92e-08  [+1(4.92e-08)]
+IMGT000032_TRBJ1-2*01_Or         1.63e-05  [+1(1.63e-05)]
+IMGT000032_TRBJ1-4*01_Or         3.47e-06  [+1(3.47e-06)]
+IMGT000032_TRBJ1-5*01_Or         4.36e-06  [+1(4.36e-06)]
+IMGT000032_TRBJ1-6*01_Or         3.01e-07  [+1(3.01e-07)]
+S60737_TRBJ2-1*01_Orycto         4.33e-05  [+1(4.33e-05)]
+S60737_TRBJ2-2*01_Orycto         2.44e-05  [+1(2.44e-05)]
+S60737_TRBJ2-3*01_Orycto         5.47e-06  [+1(5.47e-06)]
+S60737_TRBJ2-4*01_Orycto         5.58e-05  [+1(5.58e-05)]
+S60737_TRBJ2-5*01_Orycto         4.63e-05  [+1(4.63e-05)]
+IMGT000032_TRBJ2-6*02_Or         4.33e-05  [+1(4.33e-05)]
+IMGT000032_TRBJ1-1*01_Or         4.92e-08  [+1(4.92e-08)]
+IMGT000032_TRBJ1-5*01_Or         4.36e-06  [+1(4.36e-06)]
+IMGT000032_TRBJ1-6*01_Or         3.01e-07  [+1(3.01e-07)]
+IMGT000032_TRBJ1-2*01_Or         1.63e-05  [+1(1.63e-05)]
+IMGT000032_TRBJ1-5*01_Or         4.36e-06  [+1(4.36e-06)]
+S60737_TRBJ2-2*01_Orycto         2.44e-05  [+1(2.44e-05)]
+S60737_TRBJ2-3*01_Orycto         5.47e-06  [+1(5.47e-06)]
+IMGT000032_TRBJ2-6*02_Or         4.33e-05  [+1(4.33e-05)]
+S60737_TRBJ2-3*01_Orycto         5.47e-06  [+1(5.47e-06)]
+S60737_TRBJ2-1*01_Orycto         4.33e-05  [+1(4.33e-05)]
+IMGT000032_TRBJ1-6*01_Or         3.01e-07  [+1(3.01e-07)]
+IMGT000032_TRBJ1-5*01_Or         4.36e-06  [+1(4.36e-06)]
+IMGT000032_TRBJ1-4*01_Or         3.47e-06  [+1(3.47e-06)]
+IMGT000032_TRBJ1-2*01_Or         1.63e-05  [+1(1.63e-05)]
+IMGT000032_TRBJ1-1*01_Or         4.92e-08  [+1(4.92e-08)]
+IMGT000032_TRBJ2-6*02_Or         4.33e-05  [+1(4.33e-05)]
+S60737_TRBJ2-3*01_Orycto         5.47e-06  [+1(5.47e-06)]
+S60737_TRBJ2-1*01_Orycto         4.33e-05  [+1(4.33e-05)]
+IMGT000032_TRBJ1-6*01_Or         3.01e-07  [+1(3.01e-07)]
+IMGT000032_TRBJ1-5*01_Or         4.36e-06  [+1(4.36e-06)]
+IMGT000032_TRBJ1-4*01_Or         3.47e-06  [+1(3.47e-06)]
+IMGT000032_TRBJ1-1*01_Or         4.92e-08  [+1(4.92e-08)]
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 23d8d39df3be
+
+********************************************************************************

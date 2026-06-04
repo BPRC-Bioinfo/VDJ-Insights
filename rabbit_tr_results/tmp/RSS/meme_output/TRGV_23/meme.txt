@@ -1,0 +1,329 @@
+********************************************************************************
+MEME - Motif discovery tool
+********************************************************************************
+MEME version 5.5.8 (Release date: Thu May 15 15:01:46 2025 -0700)
+
+For further information on how to interpret these results please access https://meme-suite.org/meme.
+To get a copy of the MEME Suite software please access https://meme-suite.org.
+
+********************************************************************************
+
+
+********************************************************************************
+REFERENCE
+********************************************************************************
+If you use this program in your research, please cite:
+
+Timothy L. Bailey and Charles Elkan,
+"Fitting a mixture model by expectation maximization to
+discover motifs in biopolymers",
+Proceedings of the Second International Conference on Intelligent Systems
+for Molecular Biology, pp. 28-36, AAAI Press, Menlo Park, California, 1994.
+********************************************************************************
+
+
+********************************************************************************
+TRAINING SET
+********************************************************************************
+PRIMARY SEQUENCES= /content/rabbit_tr_results/tmp/RSS/fasta_gaps/TRGV_23.fasta
+CONTROL SEQUENCES= --none--
+ALPHABET= ACGT
+Sequence name            Weight Length  Sequence name            Weight Length  
+-------------            ------ ------  -------------            ------ ------  
+AY748341_TRGV1-6*02_Oryc 1.0000     39  AY748341_TRGV1-6*02_Oryc 1.0000     39  
+IMGT000030_TRGV1-6*01_Or 1.0000     39  IMGT000030_TRGV1-6*01_Or 1.0000     39  
+IMGT000030_TRGV4*01_Oryc 1.0000     39  IMGT000030_TRGV2*01_Oryc 1.0000     39  
+IMGT000030_TRGV1-7*01_Or 1.0000     39  IMGT000030_TRGV1-6*01_Or 1.0000     39  
+AY748333_TRGV1-3*03_Oryc 1.0000     39  IMGT000030_TRGV1-6*01_Or 1.0000     39  
+AY748329_TRGV1-1*03_Oryc 1.0000     39  AY748341_TRGV1-6*02_Oryc 1.0000     39  
+IMGT000030_TRGV1-5*01_Or 1.0000     39  AY748338_TRGV1-4*03_Oryc 1.0000     39  
+IMGT000030_TRGV1-5*01_Or 1.0000     39  AY748338_TRGV1-4*03_Oryc 1.0000     39  
+IMGT000030_TRGV1-1*01_Or 1.0000     39  IMGT000030_TRGV1-7*01_Or 1.0000     39  
+AY748337_TRGV1-4*02_Oryc 1.0000     39  AY748337_TRGV1-4*02_Oryc 1.0000     39  
+********************************************************************************
+
+********************************************************************************
+COMMAND LINE SUMMARY
+********************************************************************************
+This information can also be useful in the event you wish to report a
+problem with the MEME software.
+
+command: meme /content/rabbit_tr_results/tmp/RSS/fasta_gaps/TRGV_23.fasta -o /content/rabbit_tr_results/tmp/RSS/meme_output/TRGV_23 -dna -mod zoops -nmotifs 1 -minw 39 -maxw 39 -maxsize 780 
+
+model:  mod=         zoops    nmotifs=         1    evt=           inf
+objective function:           em=       E-value of product of p-values
+                              starts=   E-value of product of p-values
+strands: +
+width:  minw=           39    maxw=           39
+nsites: minsites=        2    maxsites=       20    wnsites=       0.8
+theta:  spmap=         uni    spfuzz=        0.5
+em:     prior=   dirichlet    b=            0.01    maxiter=        50
+        distance=    1e-05
+trim:   wg=             11    ws=              1    endgaps=       yes
+data:   n=             780    N=              20
+sample: seed=            0    hsfrac=          0
+        searchsize=    780    norand=         no    csites=       1000
+Letter frequencies in dataset:
+A 0.447 C 0.228 G 0.188 T 0.138 
+Background letter frequencies (from file dataset with add-one prior applied):
+A 0.444 C 0.228 G 0.188 T 0.139 
+Background model order: 0
+********************************************************************************
+
+
+********************************************************************************
+MOTIF CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW MEME-1	width =  39  sites =  20  llr = 297  E-value = 3.4e-074
+********************************************************************************
+--------------------------------------------------------------------------------
+	Motif CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW MEME-1 Description
+--------------------------------------------------------------------------------
+Simplified        A  :a:a::144444444444444444444444121a9aa56
+pos.-specific     C  a:a::1:22222222222222222222222816::::2:
+probability       G  ::::a:a22222222222222222222222:5412::::
+matrix            T  :::::9:1111111111111111111111114::::145
+
+         bits    2.8                                        
+                 2.6                                        
+                 2.3     **                                 
+                 2.0 * * ***                                
+Relative         1.7 * * ***                                
+Entropy          1.4 * * ***                                
+(21.4 bits)      1.1 *******                       *    *   
+                 0.9 *******                       * ***** *
+                 0.6 *******                       *********
+                 0.3 *******                       *********
+                 0.0 ---------------------------------------
+
+Multilevel           CACAGTGAAAAAAAAAAAAAAAAAAAAAAACGCAAAAAA
+consensus                   CCCCCCCCCCCCCCCCCCCCCCC TG    TT
+sequence                                                    
+                                                            
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW MEME-1 sites sorted by position p-value
+--------------------------------------------------------------------------------
+Sequence name             Start   P-value                             Site                
+-------------             ----- ---------            ---------------------------------------
+IMGT000030_TRGV1-1*01_Or      1  8.48e-10          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT           
+IMGT000030_TRGV1-5*01_Or      1  8.48e-10          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT           
+IMGT000030_TRGV1-5*01_Or      1  8.48e-10          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT           
+AY748329_TRGV1-1*03_Oryc      1  8.48e-10          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT           
+AY748333_TRGV1-3*03_Oryc      1  8.48e-10          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT           
+AY748338_TRGV1-4*03_Oryc      1  2.01e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA           
+AY748338_TRGV1-4*03_Oryc      1  2.01e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA           
+AY748341_TRGV1-6*02_Oryc      1  2.01e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA           
+IMGT000030_TRGV1-6*01_Or      1  2.01e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA           
+IMGT000030_TRGV1-6*01_Or      1  2.01e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA           
+IMGT000030_TRGV1-6*01_Or      1  2.01e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA           
+AY748341_TRGV1-6*02_Oryc      1  2.01e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA           
+AY748341_TRGV1-6*02_Oryc      1  2.01e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA           
+IMGT000030_TRGV1-6*01_Or      1  3.32e-08          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAACA           
+AY748337_TRGV1-4*02_Oryc      1  1.33e-07          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCACAAAAAA           
+AY748337_TRGV1-4*02_Oryc      1  1.33e-07          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCACAAAAAA           
+IMGT000030_TRGV1-7*01_Or      1  3.89e-07          . CACAGCGNNNNNNNNNNNNNNNNNNNNNNNTTGAGAATT           
+IMGT000030_TRGV1-7*01_Or      1  3.89e-07          . CACAGCGNNNNNNNNNNNNNNNNNNNNNNNTTGAGAATT           
+IMGT000030_TRGV4*01_Oryc      1  2.10e-06          . CACAGTGNNNNNNNNNNNNNNNNNNNNNNNAAGGAAACT           
+IMGT000030_TRGV2*01_Oryc      1  4.22e-05          . CACAGTANNNNNNNNNNNNNNNNNNNNNNNACAAGATCT           
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW MEME-1 block diagrams
+--------------------------------------------------------------------------------
+SEQUENCE NAME            POSITION P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+IMGT000030_TRGV1-1*01_Or          8.5e-10  [+1]
+IMGT000030_TRGV1-5*01_Or          8.5e-10  [+1]
+IMGT000030_TRGV1-5*01_Or          8.5e-10  [+1]
+AY748329_TRGV1-1*03_Oryc          8.5e-10  [+1]
+AY748333_TRGV1-3*03_Oryc          8.5e-10  [+1]
+AY748338_TRGV1-4*03_Oryc            2e-08  [+1]
+AY748338_TRGV1-4*03_Oryc            2e-08  [+1]
+AY748341_TRGV1-6*02_Oryc            2e-08  [+1]
+IMGT000030_TRGV1-6*01_Or            2e-08  [+1]
+IMGT000030_TRGV1-6*01_Or            2e-08  [+1]
+IMGT000030_TRGV1-6*01_Or            2e-08  [+1]
+AY748341_TRGV1-6*02_Oryc            2e-08  [+1]
+AY748341_TRGV1-6*02_Oryc            2e-08  [+1]
+IMGT000030_TRGV1-6*01_Or          3.3e-08  [+1]
+AY748337_TRGV1-4*02_Oryc          1.3e-07  [+1]
+AY748337_TRGV1-4*02_Oryc          1.3e-07  [+1]
+IMGT000030_TRGV1-7*01_Or          3.9e-07  [+1]
+IMGT000030_TRGV1-7*01_Or          3.9e-07  [+1]
+IMGT000030_TRGV4*01_Oryc          2.1e-06  [+1]
+IMGT000030_TRGV2*01_Oryc          4.2e-05  [+1]
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW MEME-1 in BLOCKS format
+--------------------------------------------------------------------------------
+BL   MOTIF CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW width=39 seqs=20
+IMGT000030_TRGV1-1*01_Or (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT  1 
+IMGT000030_TRGV1-5*01_Or (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT  1 
+IMGT000030_TRGV1-5*01_Or (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT  1 
+AY748329_TRGV1-1*03_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT  1 
+AY748333_TRGV1-3*03_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCTGAAAATT  1 
+AY748338_TRGV1-4*03_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA  1 
+AY748338_TRGV1-4*03_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA  1 
+AY748341_TRGV1-6*02_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA  1 
+IMGT000030_TRGV1-6*01_Or (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA  1 
+IMGT000030_TRGV1-6*01_Or (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA  1 
+IMGT000030_TRGV1-6*01_Or (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA  1 
+AY748341_TRGV1-6*02_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA  1 
+AY748341_TRGV1-6*02_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAAAA  1 
+IMGT000030_TRGV1-6*01_Or (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCGCAAAACA  1 
+AY748337_TRGV1-4*02_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCACAAAAAA  1 
+AY748337_TRGV1-4*02_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNCACAAAAAA  1 
+IMGT000030_TRGV1-7*01_Or (    1) CACAGCGNNNNNNNNNNNNNNNNNNNNNNNTTGAGAATT  1 
+IMGT000030_TRGV1-7*01_Or (    1) CACAGCGNNNNNNNNNNNNNNNNNNNNNNNTTGAGAATT  1 
+IMGT000030_TRGV4*01_Oryc (    1) CACAGTGNNNNNNNNNNNNNNNNNNNNNNNAAGGAAACT  1 
+IMGT000030_TRGV2*01_Oryc (    1) CACAGTANNNNNNNNNNNNNNNNNNNNNNNACAAGATCT  1 
+//
+
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW MEME-1 position-specific scoring matrix
+--------------------------------------------------------------------------------
+log-odds matrix: alength= 4 w= 39 n= 2 bayes= -664.386 E= 3.4e-074 
+ -1097    213  -1097  -1097 
+   117  -1097  -1097  -1097 
+ -1097    213  -1097  -1097 
+   117  -1097  -1097  -1097 
+ -1097  -1097    241  -1097 
+ -1097   -119  -1097    270 
+  -315  -1097    233  -1097 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+     0      0      0      0 
+  -215    181  -1097    -47 
+  -157   -219    126    133 
+  -315    127    109  -1097 
+   110  -1097   -191  -1097 
+    94  -1097    -33  -1097 
+   117  -1097  -1097  -1097 
+   110  -1097  -1097   -147 
+    17    -61  -1097    133 
+    31  -1097  -1097    170 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW MEME-1 position-specific probability matrix
+--------------------------------------------------------------------------------
+letter-probability matrix: alength= 4 w= 39 nsites= 20 E= 3.4e-074 
+ 0.000000  1.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.000000  1.000000  0.000000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.000000  0.000000  1.000000  0.000000 
+ 0.000000  0.100000  0.000000  0.900000 
+ 0.050000  0.000000  0.950000  0.000000 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.444444  0.228395  0.188272  0.138889 
+ 0.100000  0.800000  0.000000  0.100000 
+ 0.150000  0.050000  0.450000  0.350000 
+ 0.050000  0.550000  0.400000  0.000000 
+ 0.950000  0.000000  0.050000  0.000000 
+ 0.850000  0.000000  0.150000  0.000000 
+ 1.000000  0.000000  0.000000  0.000000 
+ 0.950000  0.000000  0.000000  0.050000 
+ 0.500000  0.150000  0.000000  0.350000 
+ 0.550000  0.000000  0.000000  0.450000 
+--------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------
+	Motif CACAGTGMMMMMMMMMMMMMMMMMMMMMMMCKSAAAAWW MEME-1 regular expression
+--------------------------------------------------------------------------------
+CACAGTG[AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC][AC]C[GT][CG]AAAA[AT][AT]
+--------------------------------------------------------------------------------
+
+
+
+
+Time  0.32 secs.
+
+********************************************************************************
+
+
+********************************************************************************
+SUMMARY OF MOTIFS
+********************************************************************************
+
+--------------------------------------------------------------------------------
+	Combined block diagrams: non-overlapping sites with p-value < 0.0001
+--------------------------------------------------------------------------------
+SEQUENCE NAME            COMBINED P-VALUE  MOTIF DIAGRAM
+-------------            ----------------  -------------
+AY748341_TRGV1-6*02_Oryc         2.01e-08  [+1(2.01e-08)]
+AY748341_TRGV1-6*02_Oryc         2.01e-08  [+1(2.01e-08)]
+IMGT000030_TRGV1-6*01_Or         2.01e-08  [+1(2.01e-08)]
+IMGT000030_TRGV1-6*01_Or         3.32e-08  [+1(3.32e-08)]
+IMGT000030_TRGV4*01_Oryc         2.10e-06  [+1(2.10e-06)]
+IMGT000030_TRGV2*01_Oryc         4.22e-05  [+1(4.22e-05)]
+IMGT000030_TRGV1-7*01_Or         3.89e-07  [+1(3.89e-07)]
+IMGT000030_TRGV1-6*01_Or         2.01e-08  [+1(2.01e-08)]
+AY748333_TRGV1-3*03_Oryc         8.48e-10  [+1(8.48e-10)]
+IMGT000030_TRGV1-6*01_Or         2.01e-08  [+1(2.01e-08)]
+AY748329_TRGV1-1*03_Oryc         8.48e-10  [+1(8.48e-10)]
+AY748341_TRGV1-6*02_Oryc         2.01e-08  [+1(2.01e-08)]
+IMGT000030_TRGV1-5*01_Or         8.48e-10  [+1(8.48e-10)]
+AY748338_TRGV1-4*03_Oryc         2.01e-08  [+1(2.01e-08)]
+IMGT000030_TRGV1-5*01_Or         8.48e-10  [+1(8.48e-10)]
+AY748338_TRGV1-4*03_Oryc         2.01e-08  [+1(2.01e-08)]
+IMGT000030_TRGV1-1*01_Or         8.48e-10  [+1(8.48e-10)]
+IMGT000030_TRGV1-7*01_Or         3.89e-07  [+1(3.89e-07)]
+AY748337_TRGV1-4*02_Oryc         1.33e-07  [+1(1.33e-07)]
+AY748337_TRGV1-4*02_Oryc         1.33e-07  [+1(1.33e-07)]
+--------------------------------------------------------------------------------
+
+********************************************************************************
+
+
+********************************************************************************
+Stopped because requested number of motifs (1) found.
+********************************************************************************
+
+CPU: 23d8d39df3be
+
+********************************************************************************

@@ -1,0 +1,11 @@
+motif_id	motif_alt_id	sequence_name	start	stop	strand	score	p-value	q-value	matched_sequence
+CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC	MEME-1	IMGT000032_TRBD1*01_Oryctolagus_cuniculus_Thorbecke_inbred__209	1	39	+	27.5492	3.04e-10	1.22e-09	CACGGTGATGCAAGTCAACAGGCCGCCTTTACAAAAACC
+CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC	MEME-1	IMGT000032_TRBD1*01_Oryctolagus_cuniculus_Thorbecke_inbred__229	1	39	+	27.5492	3.04e-10	1.22e-09	CACGGTGATGCAAGTCAACAGGCCGCCTTTACAAAAACC
+CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC	MEME-1	IMGT000032_TRBD1*01_Oryctolagus_cuniculus_Thorbecke_inbred__372	1	39	+	27.5492	3.04e-10	1.22e-09	CACGGTGATGCAAGTCAACAGGCCGCCTTTACAAAAACC
+CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC	MEME-1	IMGT000032_TRBD1*01_Oryctolagus_cuniculus_Thorbecke_inbred__533	1	39	+	27.5492	3.04e-10	1.22e-09	CACGGTGATGCAAGTCAACAGGCCGCCTTTACAAAAACC
+CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC	MEME-1	IMGT000032_TRBD1*01_Oryctolagus_cuniculus_Thorbecke_inbred__743	1	39	+	27.5492	3.04e-10	1.22e-09	CACGGTGATGCAAGTCAACAGGCCGCCTTTACAAAAACC
+CACGGTGMMMMMMMMMMMMMMMMMMMMMMMACAAAAACC	MEME-1	S60737_TRBD2*01_Oryctolagus_cuniculus__216	1	39	+	13.7623	1.24e-07	4.12e-07	CACAATGATTCAGATAGAGGAGATGCTTTTACAAAAAGC
+
+# FIMO (Find Individual Motif Occurrences): Version 5.5.8 compiled on May 19 2025 at 00:20:33
+# The format of this file is described at https://meme-suite.org/meme/doc/fimo-output-format.html#tsv_results.
+# fimo --thresh 0.0001 --o /content/rabbit_tr_results/tmp/RSS/fimo_output/TRBD_23 /content/rabbit_tr_results/tmp/RSS/meme_output/TRBD_23/meme.txt /content/rabbit_tr_results/tmp/RSS/fasta/TRBD_23.fasta

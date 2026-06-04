@@ -1,0 +1,57 @@
+{
+    "set_release": "4 June 2026",
+    "species": "Oryctolagus cuniculus",
+    "type": "TR",
+    "output": "/content/rabbit_tr_results",
+    "frame_selection": "7.2",
+    "create_library": true,
+    "cleanup": true,
+    "simple_headers": true,
+    "fasta_files": [
+        {
+            "name": "TRBV.fasta",
+            "entries": 80,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRDD&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRBJ.fasta",
+            "entries": 13,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRDJ&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRBD.fasta",
+            "entries": 2,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRDV&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRAV.fasta",
+            "entries": 62,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRGV&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRAJ.fasta",
+            "entries": 58,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRGJ&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRDD.fasta",
+            "entries": 2
+        },
+        {
+            "name": "TRDJ.fasta",
+            "entries": 3
+        },
+        {
+            "name": "TRDV.fasta",
+            "entries": 4
+        },
+        {
+            "name": "TRGV.fasta",
+            "entries": 25
+        },
+        {
+            "name": "TRGJ.fasta",
+            "entries": 2
+        }
+    ]
+}

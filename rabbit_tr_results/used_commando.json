@@ -1,0 +1,33 @@
+{
+    "command": "annotation",
+    "flanking_genes": {
+        "TRA": [
+            "SALL2",
+            "DAD1"
+        ],
+        "TRB": [
+            "MGAM",
+            "EPHB6"
+        ],
+        "TRG": [
+            "AMPH",
+            "STARD3NL"
+        ]
+    },
+    "receptor_type": "TR",
+    "input": "/content/VDJ-Insights/VDJ-Insights_tutorial_regions/TR",
+    "assembly": null,
+    "library": "/content/rabbit_tr_results/library/library.fasta",
+    "scaffolding": null,
+    "metadata": null,
+    "species": "Oryctolagus cuniculus",
+    "output": "rabbit_tr_results/",
+    "mapping_tool": [
+        "minimap2",
+        "bowtie",
+        "bowtie2"
+    ],
+    "threads": 1,
+    "verbose": false,
+    "command line": "/content/VDJ-Insights/vdj_insights/scripts/vdj_insights.py annotation -i /content/VDJ-Insights/VDJ-Insights_tutorial_regions/TR/ -r TR -s Oryctolagus cuniculus -o rabbit_tr_results/"
+}

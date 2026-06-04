@@ -1,0 +1,77 @@
+{
+    "set_release": "4 June 2026",
+    "species": "Oryctolagus cuniculus",
+    "type": "TR",
+    "output": "/content/rabbit_tr_results/tmp/functionality",
+    "frame_selection": "8.1",
+    "create_library": true,
+    "cleanup": true,
+    "simple_headers": false,
+    "fasta_files": [
+        {
+            "name": "TRBV.fasta",
+            "entries": 80,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRDD&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRBJ.fasta",
+            "entries": 13,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRDJ&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRBD.fasta",
+            "entries": 2,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRDV&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRAV.fasta",
+            "entries": 62,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRGV&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRAJ.fasta",
+            "entries": 58,
+            "url": "https://www.imgt.org/genedb/GENElect?query=7.2+TRGJ&species=Oryctolagus+cuniculus"
+        },
+        {
+            "name": "TRDD.fasta",
+            "entries": 2,
+            "url": "https://www.imgt.org/genedb/GENElect?query=8.1+TRBV&species=Oryctolagus+cuniculus&IMGTlabel=L-PART1+L-PART2"
+        },
+        {
+            "name": "TRDJ.fasta",
+            "entries": 3,
+            "url": "https://www.imgt.org/genedb/GENElect?query=8.1+TRAV&species=Oryctolagus+cuniculus&IMGTlabel=L-PART1+L-PART2"
+        },
+        {
+            "name": "TRDV.fasta",
+            "entries": 4,
+            "url": "https://www.imgt.org/genedb/GENElect?query=8.1+TRDV&species=Oryctolagus+cuniculus&IMGTlabel=L-PART1+L-PART2"
+        },
+        {
+            "name": "TRGV.fasta",
+            "entries": 25,
+            "url": "https://www.imgt.org/genedb/GENElect?query=8.1+TRGV&species=Oryctolagus+cuniculus&IMGTlabel=L-PART1+L-PART2"
+        },
+        {
+            "name": "TRGJ.fasta",
+            "entries": 2
+        },
+        {
+            "name": "TRBV.fasta",
+            "entries": 77
+        },
+        {
+            "name": "TRAV.fasta",
+            "entries": 61
+        },
+        {
+            "name": "TRDV.fasta",
+            "entries": 4
+        },
+        {
+            "name": "TRGV.fasta",
+            "entries": 24
+        }
+    ]
+}

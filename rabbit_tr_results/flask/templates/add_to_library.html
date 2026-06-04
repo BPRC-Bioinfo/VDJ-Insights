@@ -1,0 +1,189 @@
+{% extends 'sharedTemplates/base.html' %}
+{% block title %}Add novel sequences{% endblock %}
+{% block body %}
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/add_novel" method="POST" id="addNovelForm">
+
+
+            <div class="collapse" id="collapse_info">
+         <div id="infoBox" class="card mt-3 shadow">
+              <button
+              type="button"
+              class="btn p-0 position-absolute"
+              style="top: 0.5rem; right: 0.5rem; color: #6c757d; font-size: 1.25rem; line-height: 1;"
+              data-toggle="collapse"
+              data-target="#collapse_info"
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <div class="card-body">
+  <h5 class="card-title">Information</h5>
+  <p class="card-text">
+This panel allows you to explore novel gene segments discovered across multiple samples, and optionally add them to the segment library.
+    The bar chart shows how many novel segments are supported by a given number of samples. Segments found in <strong>more than 2 samples</strong> are generally considered reliable and are more likely to represent true novel alleles, rather than sequencing or assembly artifacts.
+    The table below lists each novel segment with:
+    <ul>
+      <li><strong>Reference</strong>: Assigned name of the novel segment</li>
+      <li><strong>% identity</strong>: Sequence similarity to the closest known reference</li>
+      <li><strong>SNPs / Insertions / Deletions</strong>: Number of differences from the closest reference</li>
+      <li><strong>Found in N Samples</strong>: Number of samples in which the segment was found</li>
+    </ul>
+    Use the filter to select segments supported by a minimum number of samples, then select entries and click “Add to library” to include them to the library.
+  </p>
+</div>
+
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mt-5">
+            <h2 class="mt-0">Add novel segments</h2>
+            <a class="btn gap-2" data-toggle="collapse" href="#collapse_info" role="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                    <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+                </svg>
+            </a>
+        </div>
+
+            <div class="card card-body mb-4">
+                {% if plot_count_distribution %}
+                    {{ plot_count_distribution|safe }}
+                {% endif %}
+            </div>
+            <div class="row d-flex align-items-center g-3 mb-4">
+                <div class="col">
+                    <div class="form-group">
+                        <label>Filter on number of samples</label>
+                        <input type="number" class="form-control" id="filter_amount" name="filter_amount" min="0"
+                               step="1" value="{{ selected_filter_amount }}">
+                        <small class="form-text text-muted">All novel segments filtered based on this number</small>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary">Filter</button>
+                </div>
+            </div>
+
+            <div class="card card-body mb-4">
+                <div class="row d-flex align-items-center g-3">
+                    <div class="col">
+                        <input type="text" id="searchInput" class="form-control"
+                               placeholder="Search in annotation data...">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-warning" type="button" id="amountTable"></button>
+                    </div>
+                    <div class="d-flex gap-2 mb-4">
+                        <button class="btn btn-success flex-grow-1" type="button" id="toggleButton">Select</button>
+                        <button class="btn btn-primary flex-grow-1" id="addToLibraryButton" name="add_to_library"
+                                value="add_to_library" type="submit">
+                            <span class="spinner-border spinner-border-sm d-none" id="loadingSpinner" role="status"
+                                  aria-hidden="true"></span>
+                            <span id="buttonText">Add to library (0)</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="table-responsive" style="height: 1000px;">
+                    {% if pivot_data %}
+
+                        <table class="table table-hover" id="DataTable">
+                            <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th class="column-header sortable" data-column="Reference">Reference</th>
+                                <th class="column-header sortable" data-column="% identity">% identity</th>
+                                <th class="column-header sortable" data-column="SNPs">SNPs</th>
+                                <th class="column-header sortable" data-column="Insertions">Insertions</th>
+                                <th class="column-header sortable" data-column="Deletions">Deletions</th>
+                                <th class="column-header sortable" data-column="Amount">Found in N Samples</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for row in pivot_data %}
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="selected_sequences"
+                                               value="{{ row['Short name'] }}">
+                                    </td>
+                                    <td>{{ row["Short name"] }}</td>
+                                    <td>{{ row["% identity"] }}</td>
+                                    <td>{{ row["SNPs"] }}</td>
+                                    <td>{{ row["Insertions"] }}</td>
+                                    <td>{{ row["Deletions"] }}</td>
+                                    <td>{{ row["Count"] }}</td>
+                                    <td>
+                                        <form action="{{ url_for('msa_sequence') }}" method="POST">
+                                            <input type="hidden" name="reference" value="{{ row["Target name"] }}">
+                                            <input type="hidden" name="allele" value="{{ row["Library name"] }}">
+
+                                            <input type="hidden" name="query" value="{{ row["Library sequence"] }}">
+                                            <input type="hidden" name="subject" value="{{ row["Target sequence"] }}">
+                                            <button type="submit" class="btn btn-primary">
+                                                MSA
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const addButton = document.getElementById("addToLibraryButton");
+            const toggleButton = document.getElementById("toggleButton");
+            const checkboxes = document.querySelectorAll("#DataTable tbody input[type='checkbox']");
+            const form = document.getElementById("addNovelForm");
+            const spinner = document.getElementById("loadingSpinner");
+
+            function updateAddButtonText() {
+                const selectedCount = document.querySelectorAll("#DataTable tbody input[type='checkbox']:checked").length;
+                addButton.querySelector("#buttonText").textContent = `Add to library (${selectedCount})`; // ✅ Alleen tekst updaten
+            }
+
+            toggleButton.addEventListener("click", function () {
+                const rows = document.querySelectorAll("#DataTable tbody tr");
+                const visibleRows = Array.from(rows).filter(row => row.style.display !== "none");
+
+                const allChecked = visibleRows.every(row => row.querySelector("input[type='checkbox']").checked);
+
+                visibleRows.forEach(row => {
+                    row.querySelector("input[type='checkbox']").checked = !allChecked;
+                });
+
+                toggleButton.textContent = allChecked ? "Select" : "Deselect";
+                updateAddButtonText();
+            });
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener("change", updateAddButtonText);
+            });
+
+            form.addEventListener("submit", function () {
+                addButton.disabled = true;
+                spinner.classList.remove("d-none"); // ✅ Laat spinner zien
+            });
+
+            updateAddButtonText(); // ✅ Zorgt ervoor dat de knop de juiste waarde heeft bij het laden
+        });
+    </script>
+{% endblock %}

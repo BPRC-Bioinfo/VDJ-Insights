@@ -1,0 +1,4 @@
+GCA_047496845.1_LepYark_1.0_genomic__AMPH__STARD3NL__CM105099.1__extracted__TRG	genomic_annotation	gene	42005	42055	.	-	.	gene_id "TRGJ2*01"; region "TRG"; function "Functional";
+GCA_047496845.1_LepYark_1.0_genomic__AMPH__STARD3NL__CM105099.1__extracted__TRG	genomic_annotation	gene	52181	52474	.	-	.	gene_id "TRGV4*01-like_2"; region "TRG"; function "Pseudo";
+GCA_047496845.1_LepYark_1.0_genomic__AMPH__STARD3NL__CM105099.1__extracted__TRG	genomic_annotation	gene	57586	57895	.	-	.	gene_id "TRGV3*01-like_2"; region "TRG"; function "Pseudo";
+GCA_047496845.1_LepYark_1.0_genomic__AMPH__STARD3NL__CM105099.1__extracted__TRG	genomic_annotation	gene	69783	70079	.	-	.	gene_id "TRGV1-7*01-like_3"; region "TRG"; function "Functional";
