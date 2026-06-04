@@ -91,7 +91,6 @@ def get_fimo_output(fimo_intput: Path) -> pd.DataFrame:
     """
     try:
         fimo_output = fimo_intput / "fimo.tsv"
-        print('Reading FIMO output from:', fimo_output)
         df_fimo = pd.read_csv(fimo_output, sep='\t', comment='#')
         if df_fimo.empty:
             return pd.DataFrame()
