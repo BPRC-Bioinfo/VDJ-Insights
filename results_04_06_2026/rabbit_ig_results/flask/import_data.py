@@ -42,6 +42,7 @@ def get_region_data(path: Path):
 def get_commando_data(path: Path):
     try:
         commando_json = open_json(path / "used_commando.json")
+        print(commando_json)
         records = []
         if commando_json:
             for command, values in commando_json.items():
