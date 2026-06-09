@@ -1,4 +1,3 @@
-# docker-compose.yml
 version: '3.8'
 
 services:
@@ -6,10 +5,12 @@ services:
     build: .
     ports:
       - "5004:5004"
+    working_dir: /app/rabbit_ig_results
     command: gunicorn --chdir /app/rabbit_ig_results/flask --bind 0.0.0.0:5004 app:app
 
   rabbit_tr:
     build: .
     ports:
       - "5005:5005"
-    command: gunicorn --chdir /app/rabbit_tr_results/flask --bind 0.0.0.0:5005 app:app
+    working_dir: /app/rabbit_tr_results
+    command: gunicorn --chdir flask --bind 0.0.0.0:5005 app:app

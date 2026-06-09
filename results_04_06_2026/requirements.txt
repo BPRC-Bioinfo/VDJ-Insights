@@ -12,3 +12,5 @@ matplotlib-venn
 dna-features-viewer
 openpyxl
 gunicorn
+jsonify
+Flask-WTF

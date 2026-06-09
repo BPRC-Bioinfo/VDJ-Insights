@@ -6,12 +6,14 @@ import base64
 from pathlib import Path
 from datetime import datetime
 import io
+import re
+import tempfile
 
 import jsonify
 import pandas as pd
 import numpy as np
 from flask import Flask, render_template, request, make_response, flash, redirect, url_for, send_file, Response, session, abort
-
+from flask_wtf.csrf import CSRFProtect
 #from celery import Celery
 from flask_caching import Cache
 import base64
@@ -51,7 +53,8 @@ from NetworkBuilder import  NetworkBuilder
 
 
 app = Flask(__name__)
-app.secret_key = os.urandom(12)
+app.secret_key = os.urandom(32)
+csrf = CSRFProtect(app)
 
 app.config["CACHE_TYPE"] = "SimpleCache"
 app.config["CACHE_DEFAULT_TIMEOUT"] = 3600
@@ -63,10 +66,37 @@ app.config["CELERY_RESULT_BACKEND"] = "redis://localhost:6379/0"
 
 cache = Cache(app)
 
-BASE_PATH = Path("")
+BASE_PATH = Path(__file__).resolve().parent.parent
 LIBRARY_PATH =  BASE_PATH / "library"
 RSS_PATH = BASE_PATH / "tmp/RSS"
+SAFE_FILE_ROOT = BASE_PATH.resolve()
+SAFE_TOKEN_RE = re.compile(r"^[A-Za-z0-9_.-]+$")
 
+def resolve_safe_file(path_value, allowed_suffixes=None):
+    if not path_value:
+        abort(400, description="Missing file path")
+
+    path_value = str(path_value)
+
+    if "\x00" in path_value:
+        abort(400, description="Invalid file path")
+
+    candidate = Path(path_value)
+    if not candidate.is_absolute():
+        candidate = SAFE_FILE_ROOT / candidate
+
+    resolved = candidate.resolve()
+
+    if not resolved.is_relative_to(SAFE_FILE_ROOT):
+        abort(403, description="File outside allowed directory")
+
+    if not resolved.is_file():
+        abort(404, description="File not found")
+
+    if allowed_suffixes and resolved.suffix.lower() not in allowed_suffixes:
+        abort(403, description="File type not allowed")
+
+    return resolved
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
@@ -186,83 +216,6 @@ def get_fasta(file_names):
         for record in SeqIO.parse(file_name, "fasta"):
             sequences.append({"id": record.id, "sequence": str(record.seq)})
     return sequences
-
-
-@app.route('/run_mafft', methods=['POST', 'GET'])
-def run_mafft():
-    df = get_annotation_data()
-
-    samples = df["Sample"].unique()
-    regions = df["Region"].unique()
-
-    selected_sample_one = None
-    selected_sample_two = None
-    selected_region = None
-
-    if request.method == "POST":
-        selected_sample_one = request.form.get("sample_one", None)
-        selected_sample_two = request.form.get("sample_two", None)
-        selected_region = request.form.get("region", None)
-
-        if selected_sample_one == selected_sample_two:
-            flash("Same sample given! Please choose two different samples.", "warning")
-            return redirect(url_for("run_mafft"))
-        if not selected_region:
-            flash("Select region of interest", "warning")
-            return redirect(url_for("run_mafft"))
-
-        path_selected_sample_one = df[(df["Sample"] == selected_sample_one) & (df["Region"] == selected_region)]["Path"].unique()[0]
-        path_selected_sample_two = df[(df["Sample"] == selected_sample_two) & (df["Region"] == selected_region)]["Path"].unique()[0]
-
-        if not path_selected_sample_one or not path_selected_sample_two:
-            flash("One of the samples does not have data for the selected region", "warning")
-            return redirect(url_for("run_mafft"))
-
-        UUID = uuid.uuid4().hex[:8]
-        output_dir = os.path.join( BASE_PATH, f"tmp/mafft/mafft_{UUID}/")
-        merged_dir = os.path.join(output_dir, "merged")
-        aligned_dir = os.path.join(output_dir, "aligned")
-        split_dir = os.path.join(output_dir, "split_regions")
-
-        os.makedirs(merged_dir, exist_ok=True)
-        os.makedirs(aligned_dir, exist_ok=True)
-        os.makedirs(split_dir, exist_ok=True)
-
-        merged_path = os.path.join(merged_dir, "merged_sequences.fasta")
-        aligned_path = os.path.join(aligned_dir, "aligned_sequences.fasta")
-        log_file = os.path.join(output_dir, "mafft.log")
-
-        sequences = get_fasta([path_selected_sample_one, path_selected_sample_two])
-        records = [SeqRecord(Seq(seq["sequence"]), id=seq["id"], description="") for seq in sequences]
-        with open(merged_path, "w") as f:
-            SeqIO.write(records, f, "fasta")
-
-
-        conda_base = subprocess.run(["conda", "info", "--base"], stdout=subprocess.PIPE, text=True, check=True).stdout.strip()
-        cmd = f'''nohup bash -c "source {conda_base}/etc/profile.d/conda.sh && conda activate .tool/conda/vdj-insights_env && mafft '{merged_path}' > '{aligned_path}'" > '{log_file}' 2>&1 &'''
-
-        process = subprocess.Popen(cmd, shell=True)
-
-        #if result.returncode != 0:
-           # flash(f"{result.stderr}", "error")
-           # return redirect(url_for("run_mafft"))
-        """
-        aligned_sequences = get_fasta([aligned_path])
-        records = [SeqRecord(Seq(seq["sequence"]), id=seq["id"], description="") for seq in aligned_sequences]
-        for record in records:
-            fasta_file = os.path.join(split_dir, f"{record.id}.fasta")
-            with open(fasta_file, "w") as f:
-                SeqIO.write(record, f, "fasta")
-        """
-
-        return redirect(url_for("run_mafft"))
-
-    return render_template("mafft.html",
-                           samples=samples,
-                           regions=regions,
-                           selected_sample_one=selected_sample_one,
-                           selected_sample_two=selected_sample_two,
-                           selected_region=selected_region)
 
 
 def load_tooltip_data(data: pd.DataFrame, accessions: list, region: str, set_segments: list) -> dict:
@@ -716,23 +669,27 @@ def get_count_contigs():
 
 @app.route('/get_scaffold_figure', methods=['POST', 'GET'])
 def get_scaffold_figure():
-    selected_sample = request.form.get('selected_sample')
-    selected_contig = request.form.get('selected_contig')
+    selected_sample = request.form.get('selected_sample', '').strip()
+    selected_contig = request.form.get('selected_contig', '').strip()
 
     scaffold_data = get_scaffold_data(BASE_PATH)
 
-    contigs = scaffold_data[
+    filtered = scaffold_data[
         (scaffold_data['File'] == selected_sample) &
         (scaffold_data['Scaffold'] == selected_contig)
-        ]["Contig"].to_list()
+    ]
 
-    return send_file(
-        contigs,
-        mimetype="text/plain",
-        as_attachment=True,
-        download_name=f"{selected_sample}.bed"
-    )
+    if filtered.empty:
+        abort(404, description="No scaffold data found")
 
+    contigs = filtered["Contig"].dropna().astype(str).tolist()
+
+    bed_content = "\n".join(contigs) + "\n"
+
+    response = make_response(bed_content)
+    response.headers["Content-Type"] = "text/plain"
+    response.headers["Content-Disposition"] = f'attachment; filename="{selected_sample}.bed"'
+    return response
 
 
 @app.route('/get_sample_table', methods=['POST', 'GET'])
@@ -825,69 +782,118 @@ def get_sample_table():
 
 
 
+def validate_rss_choice(value: str, allowed_values, field_name: str) -> str:
+    value = str(value or "").strip()
+
+    if not value:
+        abort(400, description=f"Missing {field_name}")
+
+    if "\x00" in value or "/" in value or "\\" in value or ".." in value:
+        abort(400, description=f"Invalid {field_name}")
+
+    if value not in allowed_values:
+        abort(400, description=f"Unknown {field_name}")
+
+    return value
+
+
 @app.route('/get_rss', methods=['POST', 'GET'])
 def get_rss():
     df = get_annotation_data()
 
-    regions = df["Region"].unique()
-    selected_region = request.form.get("region", regions[0])
+    regions = df["Region"].dropna().astype(str).unique().tolist()
+    if not regions:
+        abort(404, description="No regions found")
 
-    filterd_df = df[(df["Region"] == selected_region) & (df["Segment"].isin(["V", "D", "J"]))]
-    segments = filterd_df["Segment"].unique()
-    selected_segment = request.form.get("segment", segments[0])
+    requested_region = request.form.get("region", regions[0])
+    selected_region = validate_rss_choice(
+        requested_region,
+        set(regions),
+        "region"
+    )
+
+    filterd_df = df[
+        (df["Region"] == selected_region) &
+        (df["Segment"].isin(["V", "D", "J"]))
+    ]
+
+    segments = filterd_df["Segment"].dropna().astype(str).unique().tolist()
+    if not segments:
+        abort(404, description="No RSS segments found for this region")
+
+    requested_segment = request.form.get("segment", segments[0])
+    selected_segment = validate_rss_choice(
+        requested_segment,
+        set(segments),
+        "segment"
+    )
 
     count_df = filterd_df[filterd_df["Segment"] == selected_segment]
     rss_plot = get_rss_plot(count_df)
 
     rss_data = {}
-    if RSS_PATH.is_dir():
-        meme_pattern = f"meme_output/{selected_region}{selected_segment}_*"
-        fimo_pattern = f"fimo_output/{selected_region}{selected_segment}_*"
 
-        meme_submappen = list(RSS_PATH.glob(meme_pattern))
-        fimo_submappen = list(RSS_PATH.glob(fimo_pattern))
+    meme_root = (RSS_PATH / "meme_output").resolve()
+    fimo_root = (RSS_PATH / "fimo_output").resolve()
+
+    if RSS_PATH.is_dir():
+        meme_pattern = f"{selected_region}{selected_segment}_*"
+        fimo_pattern = f"{selected_region}{selected_segment}_*"
+
+        meme_submappen = [
+            p for p in meme_root.glob(meme_pattern)
+            if p.resolve().is_relative_to(meme_root)
+        ]
+
+        fimo_submappen = [
+            p for p in fimo_root.glob(fimo_pattern)
+            if p.resolve().is_relative_to(fimo_root)
+        ]
 
         for meme_submap in meme_submappen:
             meme_logo = meme_submap / "logo1.png"
-            if meme_logo.exists():
+            if meme_logo.exists() and meme_logo.resolve().is_relative_to(meme_root):
                 with open(meme_logo, "rb") as img_file:
-                    encoded_image = base64.b64encode(img_file.read()).decode('utf-8')
+                    encoded_image = base64.b64encode(img_file.read()).decode("utf-8")
                 rss_data[meme_submap.name] = {
-                    'meme_logo': encoded_image
+                    "meme_logo": encoded_image
                 }
 
         for fimo_submap in fimo_submappen:
             fimo_txt = fimo_submap / "fimo.tsv"
-            if fimo_txt.exists():
+            if fimo_txt.exists() and fimo_txt.resolve().is_relative_to(fimo_root):
                 fimo_data = []
                 with open(fimo_txt, "r", encoding="utf-8") as txt_file:
                     headers = txt_file.readline().strip().split("\t")
                     selected_headers = [headers[i] for i in [2, 6, 7, 8, 9]]
+
                     for line in txt_file:
                         lines = line.strip().split("\t")
-                        if len(lines) < 2:
+                        if len(lines) < 10:
                             continue
-                        selected_lines = [lines[i] for i in [2, 6, 7, 8, 9]]
 
+                        selected_lines = [lines[i] for i in [2, 6, 7, 8, 9]]
                         fimo_data.append({
-                            header: value for header, value in zip(selected_headers, selected_lines)
+                            header: value
+                            for header, value in zip(selected_headers, selected_lines)
                         })
 
                 if fimo_submap.name in rss_data:
-                    rss_data[fimo_submap.name]['fimo_data'] = fimo_data
+                    rss_data[fimo_submap.name]["fimo_data"] = fimo_data
                 else:
                     rss_data[fimo_submap.name] = {
-                        'fimo_data': fimo_data
+                        "fimo_data": fimo_data
                     }
 
-    return render_template("rss.html",
-                           segments=segments,
-                           selected_segment=selected_segment,
-                           regions=regions,
-                           selected_region=selected_region,
-                           rss_plot=rss_plot,
-                           rss_data=rss_data
-                           )
+    return render_template(
+        "rss.html",
+        segments=segments,
+        selected_segment=selected_segment,
+        regions=regions,
+        selected_region=selected_region,
+        rss_plot=rss_plot,
+        rss_data=rss_data
+    )
 
 
 @app.route("/download_xlsx")
@@ -912,28 +918,52 @@ def download_xlsx():
     )
 
 
+def validate_safe_token(value: str, field_name: str) -> str:
+    if not value or not SAFE_TOKEN_RE.fullmatch(value):
+        abort(400, description=f"Invalid {field_name}")
+    return value
+
+
 @app.route("/download_gtf")
 def download_gtf():
     df = get_annotation_data()
-    selected_sample = request.args.get("reference_id", "").strip()
-    region = request.args.get("region", "").strip()
+
+    selected_sample = validate_safe_token(
+        request.args.get("reference_id", "").strip(),
+        "reference_id"
+    )
+    region = validate_safe_token(
+        request.args.get("region", "").strip(),
+        "region"
+    )
 
     df = df[(df["Sample"] == selected_sample) & (df["Region"] == region)]
-    gtf_path = Path(f"/tmp/{selected_sample}_{region}.gtf")
 
-    with open(gtf_path, "w") as f:
+    if df.empty:
+        abort(404, description="No GTF data found")
+
+    with tempfile.NamedTemporaryFile(
+        mode="w",
+        suffix=".gtf",
+        prefix="vdj_",
+        delete=False,
+        dir="/tmp",
+        encoding="utf-8"
+    ) as f:
+        gtf_path = Path(f.name)
+
         for _, row in df.iterrows():
             attribute_field = f'gene_id "{row["Target name"]}"'
             line = [
-                row["Contig"],              #seqname
-                "VDJ-Insights",             #source
-                "Gene",                     #feature
-                str(row["Start coord"]),    #start
-                str(row["Start coord"]),    #end
-                "0",                        #score
-                row["Strand"],              #strand
-                ".",                        #frame
-                attribute_field             #attribute
+                str(row["Contig"]),
+                "VDJ-Insights",
+                "Gene",
+                str(row["Start coord"]),
+                str(row["End coord"]),
+                "0",
+                str(row["Strand"]),
+                ".",
+                attribute_field
             ]
             f.write("\t".join(line) + "\n")
 
@@ -941,7 +971,7 @@ def download_gtf():
         gtf_path,
         mimetype="text/plain",
         as_attachment=True,
-        download_name=gtf_path.name
+        download_name=f"{selected_sample}_{region}.gtf"
     )
 
 
@@ -951,9 +981,20 @@ def download_fasta():
     selected_sample = request.args.get("reference_id", "").strip()
     region = request.args.get("region", "").strip()
 
-    fasta_path = Path(df[(df["Sample"] == selected_sample) & (df["Region"] == region)]["Path"].unique()[0])
-    if not fasta_path.exists():
-        abort(404, description="Fasta error")
+    filtered = df[(df["Sample"] == selected_sample) & (df["Region"] == region)]
+
+    if filtered.empty:
+        abort(404, description="No FASTA found for this sample/region")
+
+    fasta_values = filtered["Path"].dropna().unique()
+
+    if len(fasta_values) != 1:
+        abort(400, description="Expected exactly one FASTA path")
+
+    fasta_path = resolve_safe_file(
+        fasta_values[0],
+        allowed_suffixes={".fa", ".fasta", ".fna"}
+    )
 
     return send_file(
         fasta_path,
@@ -1003,63 +1044,10 @@ def download_sequences(selected_ids):
     return response
 
 
-@app.route('/remove_sequences', methods=['POST'])
-def remove_sequences(selected_ids):
-    sequences = get_sequences(LIBRARY_PATH / 'library.fasta')
-    selected_sequences = [seq for seq in sequences if seq['id'] not in selected_ids]
-
-    library_file = Path(LIBRARY_PATH / "library.fasta")
-
-    old_library_dir = Path(LIBRARY_PATH / "old")
-    old_library_dir.mkdir(parents=True, exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    archived_file = old_library_dir / f"library_{timestamp}.fasta"
-    shutil.copy(library_file, archived_file)
-
-    with open(library_file, "w") as file:
-        for seq in selected_sequences:
-            file.write(f">{seq['id']}\n{seq['sequence']}\n")
-
-    flash("Sequences removed from library.", "info")
-    clear_cache()
-    return redirect(request.referrer)
-
-
-def add_to_library(selected_ids: list):
-    df = get_annotation_data()
-    mask = df["Short name"].isin(selected_ids) & (df["Status"] == "Novel")
-    df.loc[mask, "Status"] = "Known"
-
-    df_known = df[df["Status"] == "Known"]
-    df_novel = df[df["Status"] == "Novel"]
-
-    file_known = Path(BASE_PATH / "annotation/annotation_report_known_rss.xlsx")
-    file_novel = Path(BASE_PATH / "annotation/annotation_report_novel_rss.xlsx")
-
-    df_known.to_excel(file_known, index=False)
-    df_novel.to_excel(file_novel, index=False)
-
-    selected_sequences = df[df["Short name"].isin(selected_ids)][["Short name", "Target sequence"]].drop_duplicates(subset=["Short name"])
-    selected_sequences["Target sequence"] = selected_sequences["Target sequence"].str.replace("_", "", regex=False)
-
-    library_file = Path(LIBRARY_PATH / "library.fasta")
-
-    old_library_dir = Path(LIBRARY_PATH / "old")
-    old_library_dir.mkdir(parents=True, exist_ok=True)
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    archived_file = old_library_dir / f"library_{timestamp}.fasta"
-    shutil.copy(library_file, archived_file)
-
-    with open(library_file, "a") as f:
-        for _, row in selected_sequences.iterrows():
-            f.write(f">{row['Short name']}\n{row['Target sequence']}\n")
-
-
 @app.route('/add_novel', methods=['POST', 'GET'])
 def add_novel():
     selected_ids = request.form.getlist('selected_sequences')
     if len(selected_ids) >= 1:
-        add_to_library(selected_ids)
         clear_cache()
         flash(f"Successfully added {len(selected_ids)} segment(s) to the library!", "success")
 
@@ -1101,9 +1089,7 @@ def get_library():
     action = request.form.get("action")
     selected_ids = request.form.getlist("selected_sequences")
 
-    if action == "remove":
-        return remove_sequences(selected_ids)
-    elif action == "download":
+    if action == "download":
         return download_sequences(selected_ids)
 
     sequences = get_sequences(LIBRARY_PATH / 'library.fasta')
