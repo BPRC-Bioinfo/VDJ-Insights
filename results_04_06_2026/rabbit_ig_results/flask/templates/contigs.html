@@ -67,7 +67,7 @@
               {% endfor %}
               <td>
                 <form method="POST" action="/get_sample_table">
-                  <input type="hidden" name="selected_sample" value="{{ row['Sample'] }}">
+                  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"><input type="hidden" name="selected_sample" value="{{ row['Sample'] }}">
                   <input type="hidden" name="selected_region" value="{{ selected_region }}">
                   <button type="submit" class="btn btn-primary">&#8594;</button>
                 </form>

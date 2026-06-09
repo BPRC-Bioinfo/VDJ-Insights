@@ -3,7 +3,7 @@
 {% block body %}
     <div class="container">
         <form action="/sequence_list" method="POST" id="form">
-
+<input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                <div class="collapse" id="collapse_info">
          <div id="infoBox" class="card mt-3 shadow">
               <button
@@ -97,6 +97,7 @@
                         <td>{{ row["Novel"] }}</td>
                         <td>
                             <form method="POST" action="/get_sequence_table">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                 <input type="hidden" name="reference_id" value="{{ row['Target name'] }}">
                                 <button type="submit" class="btn btn-primary">&#8594;</button>
                             </form>

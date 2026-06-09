@@ -14,7 +14,7 @@
         {% endwith %}
         <form action="/add_novel" method="POST" id="addNovelForm">
 
-
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="collapse" id="collapse_info">
          <div id="infoBox" class="card mt-3 shadow">
               <button
@@ -125,6 +125,7 @@ This panel allows you to explore novel gene segments discovered across multiple 
                                     <td>{{ row["Count"] }}</td>
                                     <td>
                                         <form action="{{ url_for('msa_sequence') }}" method="POST">
+                                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="reference" value="{{ row["Target name"] }}">
                                             <input type="hidden" name="allele" value="{{ row["Library name"] }}">
 

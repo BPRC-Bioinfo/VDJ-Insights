@@ -72,6 +72,7 @@
                             {% endfor %}
                             <td>
                                 <form action="{{ url_for('msa_sequence') }}" method="POST">
+                                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                     <input type="hidden" name="reference" value="{{ row[1]["Target name"] }}">
                                     <input type="hidden" name="allele" value="{{ row[1]["Library name"] }}">
 

@@ -76,6 +76,7 @@
                             {% endfor %}
                             <td>
                                 <form method="POST" action="/unique_sequences">
+                                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                                     <input type="hidden" name="reference_id" value="{{ row['Sample'] }}">
                                     <button type="submit" class="btn btn-primary">&#8594;</button>
                                 </form>

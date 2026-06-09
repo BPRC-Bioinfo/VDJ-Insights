@@ -8,6 +8,7 @@
     Er is een error! niet getreurd, druk hieronder om terug te keren naar het menu.
     <p>Error details: {{ error }}</p>
     <form action="/" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
         <div class="button">
             <input  type="submit" value="Go to menu">
         </div>

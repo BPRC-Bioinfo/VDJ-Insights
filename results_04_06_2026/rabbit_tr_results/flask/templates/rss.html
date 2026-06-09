@@ -4,6 +4,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <div class="container">
         <form action="/get_rss" method="POST" id="form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="collapse" id="collapse_info">
          <div id="infoBox" class="card mt-3 shadow">
               <button

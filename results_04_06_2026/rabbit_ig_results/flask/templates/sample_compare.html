@@ -3,6 +3,7 @@
 {% block body %}
     <div class="container">
         <form action="/get_compare" method="POST" id="form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                     {% for category, message in messages %}

@@ -44,6 +44,7 @@
 
         {% if regions %}
             <form action="/get_sample_table" method="POST" id="form">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                 <div class="row g-3 mb-4 ">
                     <div class="col">
                         <label for="region" class="form-label">Select regio:</label>

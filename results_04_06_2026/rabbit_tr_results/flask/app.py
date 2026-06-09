@@ -101,8 +101,9 @@ def resolve_safe_file(path_value, allowed_suffixes=None):
 @app.route('/', methods=['POST', 'GET'])
 def home():
     metadata_path = os.getenv("METADATA")
-
+    print(BASE_PATH)
     commando_data = get_commando_data(BASE_PATH)
+    print(commando_data)
     input_row = commando_data.loc[commando_data["Argument"] == "input", "Given argument"].iloc[0]
     if input_row == None:
         commando_data = commando_data[commando_data["Argument"] != "input"]
@@ -1087,7 +1088,6 @@ def add_novel():
 def get_library():
     action = request.form.get("action")
     selected_ids = request.form.getlist("selected_sequences")
-
 
     if action == "download":
         return download_sequences(selected_ids)
