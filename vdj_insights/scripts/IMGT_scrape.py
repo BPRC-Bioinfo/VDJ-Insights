@@ -158,7 +158,7 @@ def fetch_sequence(segment: str, directory: Union[str, Path], species: str, fram
     if attempt == retry_limit - 1 and response.status_code == 200 and not sequence:
         file_log.error(f"Max retries reached for {segment} of {species} without successful data retrieval.")
         console_log.error(f"Max retries reached for {segment} of {species} without successful data retrieval.")
-        raise
+        #raise
     fasta_file_urls.append(url)
 
 def scrape_IMGT(species: str, immune_type: str, directory: Union[str, Path], frame: str):

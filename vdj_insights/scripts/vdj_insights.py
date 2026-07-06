@@ -366,6 +366,14 @@ def setup_scrape_args(subparsers):
         type=str,
         help='Output directory for scraped data.'
     )
+    p.add_argument(
+        '-f', '--frame',
+        required=False,
+        type=str,
+        choices=['all', 'in-frame', 'out-of-frame', 'in-frame-gaps', 'L-PART1+L-PART2'],
+        default='all',
+        help='frame selection for scraped sequences (default: all)'
+    )
     p.set_defaults(func=run_scrape, parser=p)
 
 
@@ -481,7 +489,7 @@ def run_scrape(args):
         args (argparse.Namespace): Parsed command-line arguments.
     """
     console_log.info(f"Starting scrape for species: {args.species} ({args.receptor_type})")
-    imgt_main(species=args.species, immune_type=args.receptor_type, output_dir=args.output)
+    imgt_main(species=args.species, immune_type=args.receptor_type, output_dir=args.output, frame_selection=args.frame)
 
 
 def log_subprocess_error(e):
