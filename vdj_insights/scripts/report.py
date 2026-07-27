@@ -21,29 +21,6 @@ file_log = file_logger(__name__)
 pd.options.mode.copy_on_write = True
 
 
-def make_record_dict(fasta):
-    """
-    Creates a dictionary from a FASTA file, mapping sequence IDs to their corresponding SeqRecord objects.
-
-    Args:
-        fasta (str or Path): Path to the input FASTA file.
-
-    Returns:
-        dict: A dictionary where keys are sequence IDs and values are SeqRecord objects.
-
-    Raises:
-        FileNotFoundError: If the FASTA file does not exist.
-        IOError: If there is an error reading the FASTA file.
-    """
-    record_dict = {}
-    with open(fasta, 'r') as fasta_file:
-        for record in SeqIO.parse(fasta_file, "fasta"):
-            if record.id not in record_dict:
-                record_dict[record.id] = len(record.seq)
-
-    return record_dict
-
-
 def fetch_prefix(name, cell_type):
     """
     Extracts the prefix of a sequence name that starts with the specified cell type.
@@ -176,13 +153,13 @@ def rename_columns(df):
         pd.DataFrame: The DataFrame with the added 'Old name-like' column and renamed columns.
     """
     output_df = df[[
-        'subject', 'query','mismatches', '% Mismatches of total alignment',
+        'subject', 'slen', 's. start', 's. end', 'query', 'qlen', 'q. start', 'q. end', 'mismatches', '% Mismatches of total alignment',
         'start', 'stop', 'subject seq', 'query seq', 'tool', '% identity', 'strand', 'path',
         'btop', 'SNPs', 'Insertions', 'Deletions'
 
     ]]
     output_df.columns = [
-        'Library name', 'Target name', 'Mismatches', '% Mismatches of total alignment',
+        'Library name', 'Library length', 'Library alignment start', 'Library alignment end', 'Target name', 'Target length', 'Target alignment start', 'Target alignment end', 'Mismatches', '% Mismatches of total alignment',
         'Start coord', 'End coord', 'Library sequence', 'Target sequence', 'Mapping tool', '% identity','Strand', 'Path',
         'BTOP', 'SNPs', 'Insertions', 'Deletions'
     ]
@@ -224,44 +201,27 @@ def filter_df(group_df, cell_type):
     The remaining similar references are stored in the 'Similar references' column, and the 'Target name' is updated.
 
     Args:
-        group_df (pd.DataFrame): The current group of sequences.
-        cell_type (str): The cell type used to fetch the prefix.
+       group_df (pd.DataFrame): The current group of sequences.
+       cell_type (str): The cell type used to fetch the prefix.
 
     Returns:
-        pd.Series: The best reference sequence with an additional column for similar references.
+       pd.Series: The best reference sequence with an additional column for similar references.
     """
     group_df['Specific Part'] = group_df["Region"] + group_df["Segment"]
-    specific_part_in_reference = group_df.apply(lambda x: x['Specific Part'] in x['Library name'], axis=1)
-    query_subject_length_equal = group_df['Library sequence'].str.len() == group_df['Target sequence'].str.len()
-    filtered_rows = group_df[specific_part_in_reference & query_subject_length_equal]
-    best_row = filtered_rows.sort_values(by=['Mismatches', 'Library name']).head(1)
+    group_df['Correct Part'] = group_df.apply(lambda x: x['Specific Part'] in x['Library name'], axis=1)
 
-    if best_row.empty:
-        best_row = group_df.head(1)
+    best_row = group_df.sort_values(by=['Correct Part', '% identity', 'Mismatches'],ascending=[False, False, True]).head(1)
+
     all_references = ', '.join(set(group_df['Library name']) - set(best_row['Library name']))
     best_row['Similar references'] = all_references
     best_row["Target name"] = best_row["Library name"]
     best_row["Short name"] = best_row["Library name"].apply(lambda ref: fetch_prefix(ref, cell_type))
+
     if float(best_row["% identity"].iloc[0]) < 100.0:
         best_row["Target name"] = best_row["Library name"] + "-like"
         best_row["Short name"] = best_row["Library name"].apply(lambda ref: fetch_prefix(ref, cell_type)) + "-like"
+
     return best_row.squeeze()
-
-
-def add_reference_length(row, segments_library):
-    """
-    Adds the length of the reference sequence to the DataFrame row.
-    The length is determined by looking up the sequence in the record dictionary.
-
-    Args:
-        row (pd.Series): The current row of the DataFrame.
-        segments_library (dict): A dictionary mapping reference names to SeqRecord objects.
-
-    Returns:
-        pd.Series: The updated row with the 'Library Length' column added.
-    """
-    row["Library length"] = len(segments_library[row["subject"]].seq)
-    return row
 
 
 def extract_sample(path):
@@ -276,6 +236,7 @@ def extract_sample(path):
     """
     filename = path.split("/")[-1]
     return filename.split("__")[0]
+
 
 def extract_contig(path):
     """
@@ -500,8 +461,8 @@ def report_main(annotation_folder: Union[str, Path], blast_file: Union[str, Path
     annotation_file_all = annotation_folder / "annotation_report_all.xlsx"
     annotation_file_known = annotation_folder / "annotation_report_known.xlsx"
     annotation_file_novel = annotation_folder / "annotation_report_novel.xlsx"
-    if annotation_file_all.exists() and annotation_file_known.exists() and annotation_file_novel.exists():
-        return None
+    #if annotation_file_all.exists() and annotation_file_known.exists() and annotation_file_novel.exists():
+    #    return None
 
     tqdm.write("Reading BLAST file...")
     df = pd.read_csv(blast_file, low_memory=False)
@@ -509,18 +470,30 @@ def report_main(annotation_folder: Union[str, Path], blast_file: Union[str, Path
     tqdm.write("Preprocessing of BLAST results...")
     df = pre_processing(df, cell_type, assembly)
 
-    segments_library = make_record_dict(library)
+    df["% identity"] = (df["% identity"] * df["Target sequence"].str.len() / df["Library length"]).round(1)
 
-    lenght_mask = ((df['Library name'].map(segments_library).fillna(-1).astype(int) - df['Deletions'].astype(int) + df['Insertions'].astype(int)) == df['Target sequence'].str.len())
-    df = df[lenght_mask].copy()
+    df["Library sequence"] = df["Library name"].map(
+        {record.id: str(record.seq) for record in SeqIO.parse(library, "fasta")}
+    )
+
+    df["Full library hit"] = (
+            df[["Library alignment start", "Library alignment end"]].min(axis=1).eq(1)
+            & df[["Library alignment start", "Library alignment end"]].max(axis=1).eq(df["Library length"])
+    )
+    df = df[df['Target sequence'].str.len() >= (df['Library length'] * 0.90)].copy()
 
     tqdm.write("Filtering of report...")
     df = filtering_data(df, cell_type)
 
-    known_df = df[df['% identity'] == 100.0].copy()
+    known_mask = (
+        df["Full library hit"]
+        & df["% identity"].eq(100.0)
+    )
+
+    known_df = df[known_mask].copy()
     known_df["Status"] = "Known"
 
-    novel_df = df[df['% identity'] != 100.0].copy()
+    novel_df = df[~known_mask].copy()
     novel_df["Status"] = "Novel"
 
     tqdm.write("Exporting reports...")
