@@ -32,7 +32,7 @@ from .extract_region import region_main
 from .property import log_error
 from .report import make_bed, make_gtf, report_main
 from .scaffolding import scaffolding_main
-from .util import load_config, make_dir,validate_directory, validate_file, validate_input, validate_metadata_coverage
+from .util import load_config, make_dir,validate_directory, validate_file, validate_input_region, validate_input_assembly, validate_metadata_coverage
 from .env_manager import create_and_activate_env, deactivate_env
 
 from .figures.barplot import main as barplot_main
@@ -107,93 +107,6 @@ def validate_flanking_genes(value):
     return value
 
 
-def setup_annotation_args2(subparsers):
-    """
-    Configures the command-line arguments for the annotation command.
-
-    Args:
-        subparsers (argparse._SubParsersAction): Subparsers object for adding commands.
-    """
-    p = subparsers.add_parser(
-        'annotation',
-
-        help='Run VDJ segment annotation.'
-    )
-    group = p.add_mutually_exclusive_group()
-    group.add_argument(
-        '-f', '--flanking-genes',
-        type=validate_flanking_genes,
-        help='Comma-separated list of flanking genes (must be even count).'
-    )
-
-    p.add_argument(
-        '-l', '--library',
-        type=validate_file,
-        help='Path to library FASTA.'
-    )
-    p.add_argument(
-        '-r', '--receptor-type',
-        required=True,
-        type=str.upper,
-        choices=['TR', 'IG'],
-        help='TR or IG.'
-    )
-
-    data_choice = p.add_mutually_exclusive_group(required=True)
-    data_choice.add_argument(
-        '-i', '--input',
-        type=validate_input,
-        help='Directory with input FASTA regions.'
-    )
-    data_choice.add_argument(
-        '-a', '--assembly',
-        type=validate_input,
-        help='Directory with assembly FASTA (requires --flanking-genes and --species).'
-    )
-
-    p.add_argument(
-        '-S', '--scaffolding',
-        type=validate_file,
-        help='Reference genome FASTA.'
-    )
-    p.add_argument(
-        '-M', '--metadata',
-        type=validate_file,
-        help='Metadata file directory.'
-    )
-    p.add_argument(
-        '-s', '--species',
-        type=str,
-        help='Species name (required with --assembly).'
-    )
-    p.add_argument(
-        '-o', '--output',
-        type=str,
-        default=str(Path.cwd() / 'annotation_results'),
-        help='Output directory.'
-    )
-    p.add_argument(
-        '-m', '--mapping-tool',
-        nargs='*',
-        choices=['minimap2', 'bowtie', 'bowtie2'],
-        default=['minimap2', 'bowtie', 'bowtie2'],
-        help='Mapping tools to use.'
-    )
-    p.add_argument(
-        '-t', '--threads',
-        type=int,
-        default=8,
-        help='Number of threads.'
-    )
-    p.add_argument(
-        '--verbose',
-        help='Enable verbose logging.',
-        action='store_true'
-    )
-    p.set_defaults(func=run_annotation, parser=p)
-
-
-
 def setup_annotation_args(subparsers):
     """
     Configures the command-line arguments for the annotation command.
@@ -237,12 +150,12 @@ def setup_annotation_args(subparsers):
     data_choice = req.add_mutually_exclusive_group(required=True)
     data_choice.add_argument(
         '-i', '--input', metavar='<dir>',
-        type=validate_input,
+        type=validate_input_region,
         help='Directory with input FASTA regions.'
     )
     data_choice.add_argument(
         '-a', '--assembly', metavar='<dir>',
-        type=validate_input,
+        type=validate_input_assembly,
         help='Directory with genome assembly FASTA (requires --flanking-genes and --species).'
     )
 

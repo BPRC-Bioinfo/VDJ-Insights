@@ -10,6 +10,8 @@ import yaml
 import zipfile
 import argparse
 import psutil
+from Bio import SeqIO
+
 
 from .logger import console_logger, file_logger
 from .property import log_error
@@ -83,7 +85,7 @@ def validate_file(path: str) -> str:
     return path
 
 
-def validate_input(path: str) -> str:
+def validate_input_assembly(path: str) -> str:
     """
     Validates the input directory, ensuring it exists and contains FASTA files. Checks that the specified directory
     exists and contains at least one FASTA file (with extensions .fasta, .fa, or .fna). If the directory is empty
@@ -106,6 +108,67 @@ def validate_input(path: str) -> str:
             f"""The directory {
                 input_path} is empty or does not contain any FASTA files!"""
         )
+    return str(input_path)
+
+
+def validate_input_region(path: str) -> str:
+    """
+    Validates the input directory, ensuring it exists and contains region files. Checks that the specified directory
+    exists and contains at least one region file (with extensions .bed, .gff, or .gtf). If the directory is empty
+    or contains no region files, raises an `argparse.ArgumentTypeError`.
+
+    Args:
+        path (str): Path to the input directory.
+    returns:
+        str: The validated input directory path.
+    Raises:
+        argparse.ArgumentTypeError: If the directory is empty or contains no region files.
+    """
+
+    input_path = Path(path).resolve()
+    validate_directory(str(input_path))
+
+    fasta_files = sorted(
+        entry
+        for pattern in ("*.fasta", "*.fa", "*.fna")
+        for entry in input_path.glob(pattern)
+        if entry.is_file()
+    )
+
+    if not fasta_files:
+        raise argparse.ArgumentTypeError(
+            f"The directory {input_path} is empty or does not contain "
+            "any FASTA files!"
+        )
+
+    invalid_files = []
+
+    for fasta_file in fasta_files:
+        try:
+            with fasta_file.open("r", encoding="utf-8") as handle:
+                record_count = sum(
+                    1 for _ in SeqIO.parse(handle, "fasta")
+                )
+        except (OSError, ValueError) as error:
+            raise argparse.ArgumentTypeError(
+                f"Could not read FASTA file '{fasta_file}': {error}"
+            ) from error
+
+        if record_count != 1:
+            invalid_files.append((fasta_file, record_count))
+
+    if invalid_files:
+        details = "\n".join(
+            f"  - {fasta_file}: {record_count} record(s)"
+            for fasta_file, record_count in invalid_files
+        )
+
+        raise argparse.ArgumentTypeError(
+            "Every region FASTA file supplied through -i/--input must "
+            "contain exactly one sequence record.\n"
+            f"Invalid FASTA files:\n{details}"
+        )
+
     return str(input_path)
 
 

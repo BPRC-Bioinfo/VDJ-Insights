@@ -109,8 +109,6 @@ def get_blast_results(output_base, l_part, region, locus_fasta_file_name, librar
 
             length_l_part = {record.id: len(record.seq) for record in SeqIO.parse(library_file, 'fasta')}
             for index, blast_group in grouped_blast_results:
-                #if index == "":
-                   # print(blast_group.sort_values(by=["qstart", "qcovs", "length", "mismatch"], ascending=[True, False, False, True]).head())
                 best_hit = blast_group.sort_values(by=["qstart", "qcovs", "length", "mismatch"], ascending=[True, False, False, True]).iloc[0]
 
                 sseqid = best_hit["sseqid"]
