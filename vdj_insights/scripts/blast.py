@@ -96,11 +96,10 @@ def run_blast(df: pd.DataFrame, db_path: Path, tmp_dir: Path, sample: str, blast
             f"blastn -task megablast "
             f"-query {fasta_long} "
             f"-db {db_path}/blast_db "
-            f"-outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qseq sseq qcovs btop' "
+            f"-outfmt '6 qseqid sseqid pident length mismatch gapopen qlen qstart qend slen sstart send evalue bitscore qseq sseq qcovs btop' "
             f"-perc_identity 50 "
             f"-max_target_seqs 5 "
             f"-out {blast_long_out} "
-            f"-num_threads {threads}"
         )
         subprocess.run(cmd_long,
                        shell=True,
@@ -121,12 +120,11 @@ def run_blast(df: pd.DataFrame, db_path: Path, tmp_dir: Path, sample: str, blast
             f"blastn -task megablast "
             f"-query {fasta_short} "
             f"-db {db_path}/blast_db "
-            f"-outfmt '6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore qseq sseq qcovs btop' "
+            f"-outfmt '6 qseqid sseqid pident length mismatch gapopen qlen qstart qend slen sstart send evalue bitscore qseq sseq qcovs btop' "
             f"-perc_identity 50 "
             f"-max_target_seqs 5 "
             f"{extra} "
             f"-out {blast_short_out} "
-            f"-num_threads {threads}"
         )
         subprocess.run(cmd_short,
                        shell=True,
@@ -167,7 +165,7 @@ def run_blast_per_sample(df: pd.DataFrame, db_path: Path, output_csv: Path, thre
     df["sample"] = df["reference"].str.split("__", n=1).str[0]
     samples = df["sample"].unique()
 
-    blast_cols = ["query", "subject", "% identity", "alignment length", "mismatches", "gap opens", "q. start", "q. end", "s. start", "s. end", "evalue", "bit score", "query seq", "subject seq", "query cov", "btop"]
+    blast_cols = ["query", "subject", "% identity", "alignment length", "mismatches", "gap opens", "qlen", "q. start", "q. end", "slen", "s. start", "s. end", "evalue", "bit score", "query seq", "subject seq", "query cov", "btop"]
     aggregated_rows = []
 
     max_jobs = calculate_available_resources(max_cores=threads, threads=4, memory_per_process=12)

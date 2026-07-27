@@ -188,8 +188,9 @@ def scrape_IMGT(species: str, immune_type: str, directory: Union[str, Path], fra
                 "TRDD", "TRDJ", "TRDV", "TRGV", "TRGJ"
             ],
             "IG": [
-                'IGHV', 'IGHD', 'IGHJ', 'IGKV',
-                'IGKJ', 'IGLV', 'IGLJ'
+                "IGHV", "IGHD", "IGHJ",
+                "IGKV","IGKJ",
+                "IGLV", "IGLJ",
             ]
         }
         """
@@ -213,7 +214,7 @@ def scrape_IMGT(species: str, immune_type: str, directory: Union[str, Path], fra
                 "TRBV", "TRAV", "TRDV", "TRGV"
             ],
             "IG": [
-                'IGHV', 'IGKV', 'IGLV'
+                "IGHV", "IGKV", "IGLV"
             ]
         }
     make_dir(directory)
@@ -330,5 +331,5 @@ def main(species: str,
         )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main("Homo sapiens", "IG", "L-PART1+L-PART2","L-PART1+L-PART2")
