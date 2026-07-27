@@ -556,7 +556,7 @@ def annotation_main(args: argparse.Namespace):
     args.species = args.species.capitalize() if args.species else None
 
     timings = {}
-    start_total = time.time()
+    timings["start"] = round(time.time(), 2)
 
     # Scaffold
     if args.scaffolding:
@@ -612,12 +612,29 @@ def annotation_main(args: argparse.Namespace):
         for tool in args.mapping_tool:
             file_log.info(f"Processing tool: {tool}")
             mapping_df = mapping_main(tool, region_dir, args.library, args.threads, args.verbose)
-            report_df = pd.concat([report_df, mapping_df])
-        report_df = report_df.drop_duplicates(subset=["reference", "start", "stop", "name"]).reset_index(drop=True)
-        make_dir(annotation_folder / "tmp/")
-        report_df.to_csv(report, index=False)
+            if mapping_df is not None and not mapping_df.empty:
+                report_df = pd.concat([report_df, mapping_df], ignore_index=True)
+            else:
+                console_log.warning(f"No mapping results found for tool: {tool}.")
+        if not report_df.empty:
+            report_df = report_df.drop_duplicates(subset=["reference", "start", "stop", "name"]).reset_index(drop=True)
+            make_dir(annotation_folder / "tmp/")
+            report_df.to_csv(report, index=False)
     else:
-        report_df = pd.read_csv(report)
+        try:
+            report_df = pd.read_csv(report)
+        except pd.errors.EmptyDataError:
+            message = f"The existing mapping report is empty: {report}. Delete it and rerun the pipeline."
+            console_log.error(message)
+            file_log.error(message)
+            sys.exit(1)
+
+    if report_df.empty:
+        message = "No mapping results found. Please check your input files and parameters."
+        console_log.error(message)
+        file_log.error(message)
+        sys.exit(1)
+
     timings["library_mapping"] = round(time.time() - t0, 2)
 
     # BLAST
@@ -663,6 +680,7 @@ def annotation_main(args: argparse.Namespace):
 
     #timings["total_time"] = round(time.time() - start_total, 2)
     #timings["date"] = datetime.today().strftime("%Y-%m-%d")
+    timings["end"] = round(time.time(), 2)
 
     with open("timing.json", "w") as f:
         json.dump(timings, f, indent=4)
