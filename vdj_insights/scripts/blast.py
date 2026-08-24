@@ -9,6 +9,7 @@ import pandas as pd
 from typing import Union
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
+import sys
 
 from .util import make_dir, calculate_available_resources
 
@@ -62,16 +63,23 @@ def make_blast_db(cwd: Path, library: str, verbose: bool) -> Path:
         OSError: If the directory cannot be created or accessed.
     """
     blast_db_path = cwd / "tmp" / "mapping" / "blast_db"
-    if not blast_db_path.exists():
-        make_dir(blast_db_path)
-        cmd = f"makeblastdb -in {library} -dbtype nucl -out {blast_db_path}/blast_db"
-        subprocess.run(cmd,
-                       shell=True,
-                       check=True,
-                       stdout=subprocess.PIPE if not verbose else None,
-                       stderr=subprocess.PIPE if not verbose else None
-                       )
-    return blast_db_path
+    try:
+        if not blast_db_path.exists():
+            make_dir(blast_db_path)
+            cmd = f"makeblastdb -in {library} -dbtype nucl -out {blast_db_path}/blast_db"
+            subprocess.run(cmd,
+                           shell=True,
+                           check=True,
+                           stdout=subprocess.PIPE if not verbose else None,
+                           stderr=subprocess.PIPE if not verbose else None
+                           )
+        return blast_db_path
+    except Exception as e:
+        message = f"error creating BLAST database.: {e}"
+        console_log.error(message)
+        file_log.error(message)
+        sys.exit(1)
+
 
 
 def run_blast(df: pd.DataFrame, db_path: Path, tmp_dir: Path, sample: str, blast_cols: list, threads: int, verbose: bool) -> list[list[str]]:
