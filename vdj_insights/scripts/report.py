@@ -523,6 +523,10 @@ def report_main(annotation_folder: Union[str, Path], blast_file: Union[str, Path
     )
     df = df[df['Target sequence'].str.len() >= (df['Library length'] * 0.90)].copy()
 
+    # Remove "-" from the target sequence.
+    df["Target sequence"] = df["Target sequence"].str.replace("-", "", regex=False)
+
+
     tqdm.write("Filtering of report...")
     df = filtering_data(df, cell_type)
 
