@@ -9,7 +9,7 @@ from typing import Union
 import pandas as pd
 from Bio.Seq import Seq
 from pathlib import Path
-from Bio import SeqIO
+from Bio import SeqIO, pairwise2
 from tqdm import tqdm
 
 from .util import log_error, make_dir
@@ -217,10 +217,6 @@ def filter_df(group_df, cell_type):
     best_row["Target name"] = best_row["Library name"]
     best_row["Short name"] = best_row["Library name"].apply(lambda ref: fetch_prefix(ref, cell_type))
 
-    if float(best_row["% identity"].iloc[0]) < 100.0:
-        best_row["Target name"] = best_row["Library name"] + "-like"
-        best_row["Short name"] = best_row["Library name"].apply(lambda ref: fetch_prefix(ref, cell_type)) + "-like"
-
     return best_row.squeeze()
 
 
@@ -339,6 +335,23 @@ def filtering_data(df, cell_type):
         processed_groups.append(merged_group)
 
     result_df = pd.concat(processed_groups, ignore_index=True)
+    result_df["% identity"] = result_df.pop("BLAST % identity")
+    recalculate_mask = ~result_df["Full library hit"]
+
+    if recalculate_mask.any():
+        result_df.loc[recalculate_mask, "% identity"] = (
+            result_df.loc[recalculate_mask]
+            .apply(
+                lambda row: calculate_sequence_identity(
+                    row["Target sequence"],
+                    row["Library sequence"], ), axis=1, ))
+    result_df["Target name"] = result_df["Library name"]
+    result_df["Short name"] = result_df["Library name"].apply(lambda reference: fetch_prefix(reference, cell_type))
+
+    like_mask = result_df["% identity"].lt(100.0)
+
+    result_df.loc[like_mask, "Target name"] = (result_df.loc[like_mask, "Target name"] + "-like")
+    result_df.loc[like_mask, "Short name"] = (result_df.loc[like_mask, "Short name"] + "-like")
     return result_df
 
 
@@ -452,6 +465,32 @@ def make_gtf(data: pd.DataFrame, output: Union[str, Path]) -> None:
         with open(f"{output}/{Path(index[1]).stem}.gtf", "w") as f:
             f.write("\n".join(gtf_lines))
 
+def calculate_sequence_identity(target_sequence, library_sequence):
+    """
+    Make a new sequence identity between the target sequence and the library sequence.
+    """
+    target_sequence = target_sequence.replace("-", "").upper()
+    library_sequence = library_sequence.replace("-", "").upper()
+
+    if target_sequence == library_sequence:
+        return 100.0
+
+    alignment = pairwise2.align.globalms(
+        target_sequence,
+        library_sequence,
+        1,  # match reward
+        -3,  # mismatch penalty
+        -5,  # gap-opening penalty
+        -2,  # gap-extension penalty
+        one_alignment_only=True,
+    )[0]
+
+    matches = sum(target_base == library_base
+        for target_base, library_base
+        in zip(alignment.seqA, alignment.seqB)
+    )
+
+    return round(matches/ len(alignment.seqA) * 100, 3)
 
 @log_error()
 def report_main(annotation_folder: Union[str, Path], blast_file: Union[str, Path], cell_type: str, library: Union[str, Path], assembly: Union[str, Path], metadata_folder: Union[str, Path]):
@@ -470,6 +509,8 @@ def report_main(annotation_folder: Union[str, Path], blast_file: Union[str, Path
     tqdm.write("Preprocessing of BLAST results...")
     df = pre_processing(df, cell_type, assembly)
 
+    df["BLAST % identity"] = df["% identity"]
+
     df["% identity"] = (df["% identity"] * df["Target sequence"].str.len() / df["Library length"]).round(1)
 
     df["Library sequence"] = df["Library name"].map(
@@ -482,12 +523,18 @@ def report_main(annotation_folder: Union[str, Path], blast_file: Union[str, Path
     )
     df = df[df['Target sequence'].str.len() >= (df['Library length'] * 0.90)].copy()
 
+    # Remove "-" from the target sequence.
+    df["Target sequence"] = df["Target sequence"].str.replace("-", "", regex=False)
+
+
     tqdm.write("Filtering of report...")
     df = filtering_data(df, cell_type)
 
     known_mask = (
-        df["Full library hit"]
-        & df["% identity"].eq(100.0)
+            df["% identity"].eq(100.0)
+            & df["SNPs"].eq(0)
+            & df["Insertions"].eq(0)
+            & df["Deletions"].eq(0)
     )
 
     known_df = df[known_mask].copy()
